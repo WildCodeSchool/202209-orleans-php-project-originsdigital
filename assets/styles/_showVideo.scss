@@ -1,0 +1,45 @@
+.bloc-ads img{
+    opacity: .75;
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.bloc-thumb{
+    border: 2px solid $primary;
+    border-radius: 30px;
+    background-color: rgba($primary, .3);
+    color: $secondary;
+}
+
+.btn-left{
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    color: $light;
+}
+
+.btn-right{
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    color: $light;
+}
+
+.bloc-heart{
+    border: 2px solid $primary;
+    border-radius: 50%;
+    background-color: rgba($primary, .3);
+    color: $secondary;
+}
+
+.btn-love{
+    border-radius: 50%;
+    color: $light;
+}
+
+.btn-tag{
+    border: 2px solid $primary;
+    background-color: rgba($primary, .3);
+    color: $light;
+    text-decoration: none;
+    padding: .5rem;
+}
