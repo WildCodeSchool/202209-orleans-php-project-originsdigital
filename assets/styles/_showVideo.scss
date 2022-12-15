@@ -1,77 +1,74 @@
-.bg-video{
-    
-    .bloc-ads img{
-        opacity: .75;
-        width: 100%;
-        max-height: 400px;
-        object-fit: cover;
-    }
-    
-    .bloc-thumb{
-        border-radius: 30px;
-    }
-    
-    .btn-left{
-        border-top-left-radius: 30px;
-        border-bottom-left-radius: 30px;
-        color: $light;
-        border: 2px solid $primary;
-        background-color: rgba($primary, .3);
-    }
-    
-    .btn-left:hover{
-        background-color: $secondary;
-    }
-    
-    .btn-left:active{
-        border: 2px solid $secondary;
-    }
-    
-    .btn-right{
-        border-top-right-radius: 30px;
-        border-bottom-right-radius: 30px;
-        color: $light;
-        border: 2px solid $primary;
-        background-color: rgba($primary, .3);
-    }
-    
-    .btn-right:hover{
-        background-color: $secondary;
-    }
-    
-    .btn-right:active{
-        border: 2px solid $secondary;
-    }
-    
-    .bloc-heart{
-        border-radius: 30px;
-    }
-    
-    .btn-love{
-        border-radius: 30px;
-        color: $light;
-        background-color: rgba($primary, .3);
-        border: 2px solid $primary;
-    }
-    
-    .btn-love:hover{
-        background-color: $secondary;
-    }
-    
-    .btn-love:active{
-        border: 2px solid $secondary;
-    }
-    
-    .btn-tag{
-        border: 2px solid $primary;
-        background-color: rgba($primary, .3);
-        color: $light;
-        text-decoration: none;
-        padding: .5rem;
-    }
-    
-    .title-show{
-        padding-bottom: .5rem;
-        border-bottom: 3px solid $primary;
-    }
+.bloc-ads img {
+    opacity: 0.75;
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.bloc-thumb {
+    border-radius: 30px;
+}
+
+.btn-left {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    color: $light;
+    border: 2px solid $primary;
+    background-color: rgba($primary, 0.3);
+}
+
+.btn-left:hover {
+    background-color: $secondary;
+}
+
+.btn-left:active {
+    border: 2px solid $secondary;
+}
+
+.btn-right {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    color: $light;
+    border: 2px solid $primary;
+    background-color: rgba($primary, 0.3);
+}
+
+.btn-right:hover {
+    background-color: $secondary;
+}
+
+.btn-right:active {
+    border: 2px solid $secondary;
+}
+
+.bloc-heart {
+    border-radius: 30px;
+}
+
+.btn-love {
+    border-radius: 30px;
+    color: $light;
+    background-color: rgba($primary, 0.3);
+    border: 2px solid $primary;
+}
+
+.btn-love:hover {
+    background-color: $secondary;
+}
+
+.btn-love:active {
+    border: 2px solid $secondary;
+}
+
+.btn-tag {
+    border: 2px solid $primary;
+    background-color: rgba($primary, 0.3);
+    color: $light;
+    text-decoration: none;
+    padding: 0.5rem;
+}
+
+.title-show {
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid $primary;
 }
