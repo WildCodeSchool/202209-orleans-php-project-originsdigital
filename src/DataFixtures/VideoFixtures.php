@@ -20,10 +20,9 @@ class VideoFixtures extends Fixture
             $video->setName($faker->sentence(2, true));
             $video->setDescription($faker->paragraph(2));
             $video->setCategory($faker->word());
-            $video->setTags($faker->word());
-            $video->setViews($faker->numberBetween(1, 200));
-            $video->setDurations($faker->numberBetween(2, 5));
-            $video->setImageFileName($faker->imageUrl(640, 480, 'animals', true));
+            $video->setView($faker->numberBetween(1, 200));
+            $video->setDuration($faker->numberBetween(2, 5));
+            $video->setVideoFileName($faker->imageUrl(640, 480, 'animals', true));
             $manager->persist($video);
         }
 

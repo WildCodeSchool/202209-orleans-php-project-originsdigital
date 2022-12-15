@@ -23,17 +23,14 @@ class Video
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $tags = null;
+    #[ORM\Column]
+    private ?int $duration = null;
 
     #[ORM\Column]
-    private ?int $durations = null;
+    private ?int $view = null;
 
-    #[ORM\Column]
-    private ?int $views = null;
-
-    #[ORM\Column(type: Types::TEXT)]
-    private ?string $imageFileName = null;
+    #[ORM\Column(length: 255)]
+    private ?string $videoFileName = null;
 
     public function getId(): ?int
     {
@@ -76,50 +73,38 @@ class Video
         return $this;
     }
 
-    public function getTags(): ?string
+    public function getDuration(): ?int
     {
-        return $this->tags;
+        return $this->duration;
     }
 
-    public function setTags(?string $tags): self
+    public function setDuration(int $duration): self
     {
-        $this->tags = $tags;
+        $this->duration = $duration;
 
         return $this;
     }
 
-    public function getDurations(): ?int
+    public function getView(): ?int
     {
-        return $this->durations;
+        return $this->view;
     }
 
-    public function setDurations(int $durations): self
+    public function setView(int $view): self
     {
-        $this->durations = $durations;
+        $this->view = $view;
 
         return $this;
     }
 
-    public function getViews(): ?int
+    public function getvideoFileName(): ?string
     {
-        return $this->views;
+        return $this->videoFileName;
     }
 
-    public function setViews(int $views): self
+    public function setvideoFileName(string $videoFileName): self
     {
-        $this->views = $views;
-
-        return $this;
-    }
-
-    public function getImageFileName(): ?string
-    {
-        return $this->imageFileName;
-    }
-
-    public function setImageFileName(string $imageFileName): self
-    {
-        $this->imageFileName = $imageFileName;
+        $this->videoFileName = $videoFileName;
 
         return $this;
     }
