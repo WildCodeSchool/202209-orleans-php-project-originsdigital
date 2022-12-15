@@ -1,0 +1,15 @@
+section{
+    background-color: $dark;
+
+    .btn-network{
+        border-radius: 50%;
+    }
+
+    .btn-network:hover{
+        background-color: $primary;
+    }
+
+    .footer-nav-links a:hover{
+        background-color: $primary;
+    }
+}

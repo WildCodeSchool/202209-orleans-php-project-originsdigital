@@ -13,11 +13,11 @@ class SponsorFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
         for ($i = 0; $i < self::NB_SPONSOR; $i++) {
-        $sponsor = new Sponsor();
-        $sponsor->setName('sponsor' . $i);
-        $sponsor->setLogo('redbull.png');
-        $sponsor->setLink('www.redbull.com');
-        $manager->persist($sponsor);
+            $sponsor = new Sponsor();
+            $sponsor->setName('sponsor' . $i);
+            $sponsor->setLogo('placeHolder.png');
+            $sponsor->setLink('http://redbull.com');
+            $manager->persist($sponsor);
         }
         $manager->flush();
     }
