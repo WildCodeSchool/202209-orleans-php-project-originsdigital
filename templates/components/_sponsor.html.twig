@@ -3,8 +3,8 @@
 		<li class="nav-item">
 			{% for sponsor in sponsors %}
 				<a href= {{ sponsor.link }} class="px2 text-decoration-none">
-                <img src="{{ asset('build/images/placeHolder.png') }}" alt="{{ sponsor.logo }}"
-					</a>
+                <img src="{{ asset('build/images/placeHolder.png') }}" alt="{{ sponsor.logo }}">
+				</a>
 			{% endfor %}
 		</li>
 	</ul>
