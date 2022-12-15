@@ -1,25 +1,25 @@
 // assets/styles/global.scss
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Montserrat:ital,wght@0,400;0,700;1,100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Montserrat:ital,wght@0,400;0,700;1,100&display=swap");
 
-$font-family-body: 'Cairo', sans-serif;
-$font-family-title: 'Montserrat', sans-serif;
+$font-family-body: "Cairo", sans-serif;
+$font-family-title: "Montserrat", sans-serif;
 
 $font-weight-body-title: bold;
 $font-weight-title: bold;
 
 // customize some Bootstrap variables
-$primary: #00F0FF;
-$secondary: #E05757;
+$primary: #00f0ff;
+$secondary: #e05757;
 $light: #e4e4e4;
-$dark: #2A2A2A;
-$intermediate: #3D3D3D;
-$gray: #BDBDBD;
+$dark: #2a2a2a;
+$intermediate: #3d3d3d;
+$gray: #bdbdbd;
 
-*{
+* {
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: var($font-family-body);
 }
 
