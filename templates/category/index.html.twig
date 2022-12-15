@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Catégories
+{% endblock %}
+
+{% block body %}
+	<h1>Catégories</h1>
+	{% for category in categories %}
+		<div>
+			<h2>{{ loop.index}}
+				/
+				{{ category.name }}</h2>
+		</div>
+
+	{% else %}
+		Aucun jeu trouvé.
+	{% endfor %}
+
+
+	<a href="{{ path('app_home') }}">
+		Retour à l'accueil
+	</a>
+{% endblock %}
