@@ -10,21 +10,9 @@ class CategoryFixtures extends Fixture
 {
     public const CATEGORIES = [
         'League of Legends',
-        'Teamfight Tactics',
-        'CS:GO',
-        'Call of Duty',
         'World of Warcraft',
-        'FIFA',
         'Rocket League',
         'Overwatch 2',
-        'Hearthstone',
-        'Valorant',
-        'Apex Legends',
-        'Fortnite',
-        'Rainbow 6 Siege',
-        'Starcraft II',
-        'Smash',
-        'Les Sims 4',
     ];
 
     public function load(ObjectManager $manager): void
