@@ -21,9 +21,7 @@ $gray: #bdbdbd;
 body {
     font-family: $font-family-body;
     min-height: 100vh;
-    background: $gray;
-    background-image: url("/assets/images/illusion.png");
-    background-image: url("/assets/images/illusion.png"),
+    background: url("/assets/images/illusion.png"),
         linear-gradient(
             0deg,
             rgba($black, 1) 0%,
