@@ -26,9 +26,9 @@ body {
     background-image: url("/assets/images/illusion.png"),
         linear-gradient(
             0deg,
-            rgba(0, 0, 0, 1) 0%,
-            rgba(189, 189, 189, 1) 50%,
-            rgba(0, 0, 0, 1) 100%
+            rgba($black, 1) 0%,
+            rgba($gray, 1) 50%,
+            rgba($black, 1) 100%
         );
     color: $light;
 }
