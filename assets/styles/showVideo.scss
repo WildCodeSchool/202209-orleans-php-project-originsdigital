@@ -1,0 +1,19 @@
+@import "root";
+
+.title-show {
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid $primary;
+}
+
+.title-view h2{
+    font-size: 25px;
+}
+
+.title-view p{
+    font-size: 20px;
+}
+
+.video-col{
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px rgba($dark, .25);
+}
