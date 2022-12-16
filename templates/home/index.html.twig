@@ -15,12 +15,12 @@
 						<div class="col-10 col-md-4 my-4">
 							<a href="{{path('app_video_show', {'video': video.id})}}" class="link-card">
 								<div class="link-home ratio ratio-16x9 d-flex justify-content-center">
-									<video controls>
+									<video class="video-col" controls>
 										<source src="{{video.videoFileName}}" type="video/mp4">
 									</video>
 								</div>
 								<div class="title-view">
-									<h2>{{video.name}}</h2>
+									<h2 class="mx-2">{{video.name}}</h2>
 									<p class="mx-2">{{video.view ~ ' vues'}}</p>
 								</div>
 							</a>
