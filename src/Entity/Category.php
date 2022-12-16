@@ -15,8 +15,6 @@ class Category
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message: 'Donne-nous le nom d\'un jeu s\'il te plait')]
-    #[Assert\Length(max: 255, maxMessage:'Catégorie saisie {{ value }} trop longue ({{ limit }} caractères maximum)')]
     private ?string $name = null;
 
     public function getId(): ?int
