@@ -1,0 +1,59 @@
+{% extends 'layoutUser.html.twig' %}
+
+{% block title %}
+	{{parent()}}
+	| Connexion
+{% endblock %}
+{% block body %}
+	<section class="section-login">
+		<div class="container">
+			<div class="row d-flex justify-content-center align-items-center">
+				<div class="col-md-8 col-lg-6 col-xl-11">
+					<div class="card text-center">
+						<div class="card-body text-black">
+
+							<div class="mb-md-1 mt-md-4 pb-5">
+								{% if error %}
+									<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+								{% endif %}
+								<form action="{{ path('app_login') }}" method="post">
+									<img src="{{ asset('build/images/Ellipse2.png') }}" alt="avatarImage" class="img-fluid">
+									<h1 class="fw-bold text-light mb-2 text-uppercase">Connexion</h1>
+									<p class="text-light mb-5">Entrez vos identifiants de connexion !</p>
+
+									<div class="mb-2 text-light">
+										<label for="username" class="form-label">Email:</label>
+										<input type="text" id="username" name="_username" class="input-form form-control form-control-lg" value="{{ last_username }}">
+									</div>
+
+									<div class="mb-2 text-light">
+										<label for="password" class="form-label form-label-lg">Mot de passe :</label>
+										<input type="password" id="password" class="input-form form-control form-control-lg" name="_password">
+
+										<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+									</div>
+
+									<p class="small mb-2 pb-lg-2">
+										<a class="text-light-50 text-decoration-none" href="#!">Mot de passe oublié ?</a>
+									</p>
+
+									<button class="btn btn-outline-primary text-light btn-lg" type="submit">Se connecter</button>
+
+								</div>
+
+								<div>
+									<p class="mb-0 text-light">Pas encore de compte?</p>
+								</div>
+								<div>
+									<a href="#!" class="text-light-50 fw-bold text-decoration-none">Créez un !</a>
+								</p>
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>{% endblock %}
