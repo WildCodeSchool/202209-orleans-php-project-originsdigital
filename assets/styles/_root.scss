@@ -22,12 +22,13 @@ body {
     font-family: $font-family-body;
     min-height: 100vh;
     background: url("/assets/images/illusion.png"),
-        linear-gradient(
-            0deg,
-            rgba($black, 1) 0%,
-            rgba($gray, 1) 50%,
-            rgba($black, 1) 100%
+    linear-gradient(
+        0deg,
+        rgba($black, 1) 0%,
+        rgba($gray, 1) 50%,
+        rgba($black, 1) 100%
         );
+    background-attachment: fixed;
     color: $light;
 }
 
