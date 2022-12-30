@@ -22,19 +22,25 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('email', EmailType::class, [
                 'attr' => [
-                    'class' =>'form-control'
+                    'class' => 'form-control'
                 ],
                 'label' => 'E-mail'
             ])
+            ->add('userName', TextType::class, [
+                'attr' => [
+                'class' => 'form-control'
+                ],
+                'label' => 'Nom d\'utilisateur'
+            ])
             ->add('firstName', TextType::class, [
                 'attr' => [
-                'class' =>'form-control'
+                'class' => 'form-control'
                 ],
                 'label' => 'Prénom'
             ])
             ->add('lastName', TextType::class, [
                 'attr' => [
-                'class' =>'form-control'
+                'class' => 'form-control'
                 ],
                 'label' => 'Nom'
                 ])
@@ -43,9 +49,7 @@ class RegistrationFormType extends AbstractType
                 // this is read and encoded in the controller
                 'mapped' => false,
                 'attr' => ['autocomplete' => 'new-password',
-                'class' => 'form-control',
-            ],
-
+                'class' => 'form-control',],
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Veuillez entrer un mot de passse.',

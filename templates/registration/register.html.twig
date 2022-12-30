@@ -13,7 +13,7 @@
 				<div class="col-md-8 col-lg-6 col-xl-11">
 					<div class="card text-center">
 						<div class="card-body text-black">
-							<div class="mb-md-1 mt-md-4 pb-5">
+							<div class="mb-md-1 mt-md-4 pb-5 list-style-none">
 								{% for flash_error in app.flashes('verify_email_error') %}
 									<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
 								{% endfor %}
@@ -22,6 +22,7 @@
 								{{ form_start(registrationForm) }}
 								<div class="form-group mb-2 text-light ">
 									{{ form_row(registrationForm.email) }}
+									{{ form_row(registrationForm.userName) }}
 									{{ form_row(registrationForm.firstName) }}
 									{{ form_row(registrationForm.lastName) }}
 									{{ form_row(registrationForm.plainPassword, {
