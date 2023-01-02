@@ -23,7 +23,21 @@
 	<body>
 		{% block header %}{% endblock %}
 
-		{% block body %}{% endblock %}
+		{% block body %}
+				<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					{% for label, messages in app.flashes %}
+						{% for message in messages %}
+							<div class="alert alert-{{ label }}">
+								{{ message }}
+							</div>
+						{% endfor %}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		{% endblock %}
 
 		{% block footer %}{% endblock %}
 	</body>
