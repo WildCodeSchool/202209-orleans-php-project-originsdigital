@@ -17,9 +17,6 @@ class Category
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\Column]
-    private ?int $video = null;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -33,18 +30,6 @@ class Category
     public function setName(string $name): self
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    public function getvideo(): ?int
-    {
-        return $this->video;
-    }
-
-    public function setvideo(int $video): self
-    {
-        $this->video = $video;
 
         return $this;
     }
