@@ -2,10 +2,10 @@
 
 namespace App\Entity;
 
-use App\Repository\AdvertisementRepository;
+use App\Repository\AdvertRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: AdvertisementRepository::class)]
+#[ORM\Entity(repositoryClass: AdvertRepository::class)]
 class Advertisement
 {
     #[ORM\Id]
