@@ -28,8 +28,11 @@ class CategoryController extends AbstractController
     }
 
     #[Route('/{category}', methods: ['GET'], name: 'show')]
-    public function show(Category $category, CategoryRepository $categoryRepository, VideoRepository $videoRepository): Response
-    {
+    public function show(
+        Category $category,
+        CategoryRepository $categoryRepository,
+        VideoRepository $videoRepository
+    ): Response {
         $category = $categoryRepository->findOneBy(['name' => $category]);
         $video = $videoRepository->findby(['category' => $category->getId()]);
 
