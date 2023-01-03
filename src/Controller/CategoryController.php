@@ -7,7 +7,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\CategoryRepository;
-use App\Repository\VideoRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 #[Route('/category', name: 'category_')]
 class CategoryController extends AbstractController
@@ -27,20 +28,17 @@ class CategoryController extends AbstractController
         );
     }
 
-    #[Route('/{category}', methods: ['GET'], name: 'show')]
-    public function show(
-        Category $category,
-        CategoryRepository $categoryRepository,
-        VideoRepository $videoRepository
-    ): Response {
-        $category = $categoryRepository->findOneBy(['name' => $category]);
-        $video = $videoRepository->findby(['category' => $category->getId()]);
+    #[Route('/{slug}', methods: ['GET'], name: 'show')]
+    #[ParamConverter('category', options: ['mapping' => ['slug' => 'slug']])]
+    public function show(Category $category): Response
+    {
+        $video = $category->getVideo();
 
         return $this->render(
             'category/show.html.twig',
             [
-                'name' => $category,
-                'video' => $video,
+                'category' => $category,
+                'videos' => $video,
             ]
         );
     }
