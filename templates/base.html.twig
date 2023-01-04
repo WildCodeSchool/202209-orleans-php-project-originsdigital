@@ -10,6 +10,10 @@
 		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
+			{{ encore_entry_link_tags('categories')}}
+			{{ encore_entry_link_tags('showVideo') }}
+			{{ encore_entry_link_tags('login') }}
+			{{ encore_entry_link_tags('registration') }}
 		{% endblock %}
 
 		{% block javascripts %}
@@ -18,6 +22,10 @@
 	</head>
 	<body>
 		{% block header %}{% endblock %}
+
+		{% block flash %}
+			{% include 'components/_flash_messages.html.twig' %}
+		{% endblock %}
 
 		{% block body %}{% endblock %}
 

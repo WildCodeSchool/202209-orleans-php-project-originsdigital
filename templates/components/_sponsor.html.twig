@@ -1,11 +1,11 @@
-<section class="py-3 my-4">
-	<ul class="nav justify-content-center pb-3 mb-3">
-		<li class="nav-item">
+<section class="bloc-sponsor bg-gray mt-5">
+	<ul class="d-flex flex-wrap nav justify-content-center">
 			{% for sponsor in sponsors %}
-				<a href={{ sponsor.link }} class="px2 text-decoration-none">
-					<img src="{{ asset('build/images/placeHolder.png') }}" alt="{{ sponsor.logo }}">
+		<li class="nav-item">
+				<a href={{ sponsor.link }} class="px-5 text-decoration-none">
+					<img src="{{ asset('build/images/placeHolder.png') }}" alt="{{ sponsor.logo }}" class="py-5">
 				</a>
-			{% endfor %}
 		</li>
+			{% endfor %}
 	</ul>
 </section>
