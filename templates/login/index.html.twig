@@ -11,7 +11,6 @@
 				<div class="col-md-8 col-lg-6 col-xl-11">
 					<div class="card text-center">
 						<div class="card-body text-black">
-
 							<div class="mb-md-1 mt-md-4 pb-5">
 								{% if error %}
 									<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -46,7 +45,7 @@
 									<p class="mb-0 text-light">Pas encore de compte?</p>
 								</div>
 								<div>
-									<a href="#!" class="text-light-50 fw-bold text-decoration-none">Créez un !</a>
+									<a href="{{ path('app_register') }}" class="text-light-50 fw-bold text-decoration-none">Créez-en un !</a>
 								</p>
 							</div>
 						</form>
