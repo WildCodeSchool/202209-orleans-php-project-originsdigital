@@ -17,9 +17,6 @@ class Video
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $category = null;
-
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
@@ -31,6 +28,10 @@ class Video
 
     #[ORM\Column(length: 255)]
     private ?string $videoFileName = null;
+
+    #[ORM\ManyToOne(inversedBy: 'video')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Category $category = null;
 
     public function getId(): ?int
     {
@@ -45,18 +46,6 @@ class Video
     public function setName(string $name): self
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    public function getCategory(): ?string
-    {
-        return $this->category;
-    }
-
-    public function setCategory(string $category): self
-    {
-        $this->category = $category;
 
         return $this;
     }
@@ -105,6 +94,18 @@ class Video
     public function setvideoFileName(string $videoFileName): self
     {
         $this->videoFileName = $videoFileName;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }

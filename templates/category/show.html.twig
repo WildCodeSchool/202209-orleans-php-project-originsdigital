@@ -3,23 +3,24 @@
 {% block stylesheets %}
 	{{parent()}}
 	{{ encore_entry_link_tags('showVideo') }}
+    {{ encore_entry_link_tags ('showCategories') }}
 {% endblock %}
 
 {% block title %}
-	{{parent()}}
-	| Accueil
+	{{ category.name }}
 {% endblock %}
 
 {% block body %}
-	<section class="section-home">
+	<section class="video-list">
 		<div class="container">
-			<h1 class="text-center">Ze-sport</h1>
+			<h1 class="category-title m-5 text-center">{{ category.name }}</h1>
+
 			<div class="bloc-video">
 				<div class="row justify-content-center">
 					{% for video in videos %}
 						<div class="col-10 col-md-4 my-4">
 							<a href="{{path('app_video_show', {'video': video.id})}}" class="link-card">
-								<div class="link-home ratio ratio-16x9 d-flex justify-content-center">
+								<div class="ratio ratio-16x9 d-flex justify-content-center">
 									<video class="video-col" controls>
 										<source src="{{video.videoFileName}}" type="video/mp4">
 									</video>
