@@ -1,13 +1,19 @@
 {% extends 'layoutUser.html.twig' %}
 
+{% block stylesheets %}
+	{{parent()}}
+	{{ encore_entry_link_tags('showVideo') }}
+    {{ encore_entry_link_tags ('showCategories') }}
+{% endblock %}
+
 {% block title %}
 	{{ category.name }}
 {% endblock %}
 
 {% block body %}
-	<section class="category-list text-center">
+	<section class="video-list">
 		<div class="container">
-			<h1 class="category-title m-5">{{ category.name }}</h1>
+			<h1 class="category-title m-5 text-center">{{ category.name }}</h1>
 
 			<div class="bloc-video">
 				<div class="row justify-content-center">

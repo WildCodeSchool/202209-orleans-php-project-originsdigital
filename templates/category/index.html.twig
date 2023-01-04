@@ -1,5 +1,10 @@
 {% extends 'layoutUser.html.twig' %}
 
+{% block stylesheets %}
+	{{parent()}}
+	{{ encore_entry_link_tags('categories') }}
+{% endblock %}
+
 {% block title %}Catégories
 {% endblock %}
 
