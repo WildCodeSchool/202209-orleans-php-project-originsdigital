@@ -34,6 +34,7 @@ Encore
     .addEntry('app', './assets/app.js')
     .addStyleEntry('categories', './assets/styles/categories.scss')
     .addStyleEntry('showVideo', './assets/styles/showVideo.scss')
+    .addStyleEntry('showCategories', './assets/styles/showCategories.scss')
     .addStyleEntry('login', './assets/styles/login.scss')
     .addStyleEntry('registration', './assets/styles/registration.scss')
 

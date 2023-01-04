@@ -1,7 +1,29 @@
 //start coding by removing this file and adding yours ;)
 @import "root";
+
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    font-family: $font-family-body;
+    min-height: 100vh;
+    background: url("/assets/images/illusion.png"),
+        linear-gradient(
+            0deg,
+            rgba($black, 1) 0%,
+            rgba($gray, 1) 50%,
+            rgba($black, 1) 100%
+        );
+    color: $light;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: $font-family-title;
+    font-weight: $font-weight-title;
+}
+
 @import "navbar";
 @import "footer";
 @import "home";
 @import "sponsor";
 @import "flash_messages";
+
