@@ -14,11 +14,14 @@ class VideoFixtures extends Fixture implements DependentFixtureInterface
 {
     public const NBR_VIDEOS = 10;
 
+    /**
+     * @SuppressWarnings(PHPMD.UnusedLocalVariable)
+     */
     public function load(ObjectManager $manager): void
     {
         $faker = Factory::create();
 
-        foreach (CategoryFixtures::CATEGORIES as $key) {
+        foreach (CategoryFixtures::CATEGORIES as $key => $categoryName) {
             for ($j = 1; $j <= self::NBR_VIDEOS; $j++) {
                 $video = new Video();
                 $video->setName($faker->sentence(2, true));
