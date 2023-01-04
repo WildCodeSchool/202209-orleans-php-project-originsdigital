@@ -6,6 +6,6 @@ vich_uploader:
 
     mappings:
         avatars:
-            uri_prefix: uploads/avatars
+            uri_prefix: /uploads/avatars
             upload_destination: "%kernel.project_dir%/public/uploads/avatars"
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

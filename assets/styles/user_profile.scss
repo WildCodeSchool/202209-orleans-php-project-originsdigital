@@ -1,9 +1,11 @@
 @import 'root';
 
-.container-profile{
+.container{
     margin-block: 7rem;
 }
 
-.form-control{
-    width: 50%;
+.profile-photo img{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
 }

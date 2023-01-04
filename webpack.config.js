@@ -35,6 +35,7 @@ Encore
     .addStyleEntry('categories', './assets/styles/categories.scss')
     .addStyleEntry('showVideo', './assets/styles/showVideo.scss')
     .addStyleEntry('login', './assets/styles/login.scss')
+    .addStyleEntry('user_profile', './assets/styles/user_profile.scss')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')

@@ -1,19 +1,21 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutUser.html.twig' %}
 {% form_theme form 'bootstrap_5_horizontal_layout.html.twig' %}
 
 {% block title %}Profil
 {% endblock %}
 
 {% block body %}
-	<section class="profile-card text-center">
+	<section class="text-center">
 		<div class="container">
 			<div class="row d-flex justify-content-center align-items-center">
 				<div class="card-body text-black row">
-					<div class="mb-md-1 mt-md-4 pb-5">
+					<div class="user-profile mb-md-1 mt-md-4 pb-5">
 						<h1 class="fw-bold text-light mb-2">Bonjour
 							{{ app.user.firstName }}
 						</h1>
-						<img src="{{ asset('build/images/Ellipse2.png') }}" alt="" class="user-avatar ratio-1x1">
+						<div class="profile-photo">
+							<img class="rounded-circle" src="{{ vich_uploader_asset(user) }}" class="profile-image border border-primary rounded-circle alt="Profil">
+						</div>
 						<div class="row mb-2 text-light width-50">
 							{{ form_start(form) }}
 							<div class="d-flex p-3 flex-column gap-4">
