@@ -1,8 +1,14 @@
 {% extends 'layoutUser.html.twig' %}
 
+{% block stylesheets %}
+	{{parent()}}
+	{{ encore_entry_link_tags('showVideo') }}
+{% endblock %}
+
 {% block title %}
 	{{parent()}}
-	| {{video.name}}
+	|
+	{{video.name}}
 {% endblock %}
 
 {% block body %}
