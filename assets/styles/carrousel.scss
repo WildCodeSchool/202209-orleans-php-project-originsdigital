@@ -1,19 +1,54 @@
 @import "root";
 
-.container{
-    width: 100%;
+.bloc-carrousel{
+    display: flex;
+    justify-content: center;
 }
 
 .slider{
     display: flex;
-    width: 100%;
-    transform: translate(-160%);
+    flex-grow: 1;
+    transform: translate(-00%);
 }
 
 .slider > img{
-    flex: 0 0 33%;
-    max-width: 33%;
-    width: 33%;
+    flex: 0 0 25%;
+    max-width: 25%;
+    width: 25%;
     aspect-ratio: 16 / 9;
-    padding: .75rem;
+    padding: .25rem;
+    border-radius: 1rem;
+}
+
+.handle{
+    border: none;
+    border-radius: 1rem;
+    flex-grow: 0;
+    width: calc(5rem - .25rem);
+    background-color: rgba($dark, .25);
+    z-index: 10;
+    margin: .25rem 0;
+    cursor: pointer;
+}
+
+.left-handle{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.right-handle{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.handle:hover{
+    background-color: rgba($dark, .5);
+}
+
+.left-handle:hover::after {
+    content: \203A;
+}
+
+.right-handle:hover::after {
+    content: \2039;
 }
