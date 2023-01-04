@@ -17,12 +17,12 @@ class VideoFixtures extends Fixture implements DependentFixtureInterface
     {
         $faker = Factory::create();
 
-        foreach (CategoryFixtures::CATEGORIES as $categoryName) {
+        foreach (CategoryFixtures::CATEGORIES as $key) {
             for ($j = 1; $j <= self::NBR_VIDEOS; $j++) {
                 $video = new Video();
                 $video->setName($faker->sentence(2, true));
                 $video->setDescription($faker->paragraph(2));
-                $video->setCategory($this->getReference('category_' . $categoryName));
+                $video->setCategory($this->getReference('category_' . $key));
                 $video->setView($faker->numberBetween(1, 200));
                 $video->setDuration($faker->numberBetween(2, 5));
                 $video->setVideoFileName($faker->imageUrl(640, 480, 'animals', true));
