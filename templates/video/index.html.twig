@@ -2,7 +2,8 @@
 
 {% block title %}
 	{{parent()}}
-	| {{video.name}}
+	|
+	{{video.name}}
 {% endblock %}
 
 {% block body %}
@@ -44,5 +45,15 @@
 				</div>
 			</div>
 		</div>
-	</section>
-{% endblock %}
+		<div class="container-fluid p-0 mt-5">
+			<div class="bloc-ads mb-4">
+				<div class="string-ad bg-light">
+					<p class="text-center text-dark mb-0">Publicité</p>
+				</div>
+				<a href="{{ ads.linkTo }}" target="_blank">
+					<img src="{{ ads.poster }}" class="img-ads" alt="Image de pub">
+				</a>
+			</div>
+		</div>
+	</div>
+</section>{% endblock %}
