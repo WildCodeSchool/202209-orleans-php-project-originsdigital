@@ -1,0 +1,19 @@
+@import "root";
+
+.container{
+    width: 100%;
+}
+
+.slider{
+    display: flex;
+    width: 100%;
+    transform: translate(-160%);
+}
+
+.slider > img{
+    flex: 0 0 33%;
+    max-width: 33%;
+    width: 33%;
+    aspect-ratio: 16 / 9;
+    padding: .75rem;
+}
