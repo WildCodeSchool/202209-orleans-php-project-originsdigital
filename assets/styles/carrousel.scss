@@ -1,54 +1,62 @@
 @import "root";
 
-.bloc-carrousel{
+.bloc-carrousel {
     display: flex;
     justify-content: center;
 }
 
-.slider{
+.slider {
     display: flex;
     flex-grow: 1;
     transform: translate(-00%);
 }
 
-.slider > img{
+.slider > img {
     flex: 0 0 25%;
     max-width: 25%;
     width: 25%;
     aspect-ratio: 16 / 9;
-    padding: .25rem;
+    padding: 0.25rem;
     border-radius: 1rem;
 }
 
-.handle{
+.handle {
     border: none;
     border-radius: 1rem;
     flex-grow: 0;
-    width: calc(5rem - .25rem);
-    background-color: rgba($dark, .25);
+    width: calc(5rem - 0.25rem);
+    background-color: rgba($dark, 0.25);
     z-index: 10;
-    margin: .25rem 0;
+    margin: 0.25rem 0;
     cursor: pointer;
 }
 
-.left-handle{
+.left-handle {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
 
-.right-handle{
+.right-handle {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-.handle:hover{
-    background-color: rgba($dark, .5);
+.handle:hover {
+    background-color: rgba($dark, 0.5);
 }
 
-.left-handle:hover::after {
-    content: \203A;
+.handle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 150ms ease-in-out;
 }
 
-.right-handle:hover::after {
-    content: \2039;
+.arrow{
+    font-size: 5rem;
+    color: $light;
+}
+
+.handle:hover {
+transform: scale(1.1);
 }
