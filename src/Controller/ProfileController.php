@@ -37,7 +37,7 @@ class ProfileController extends AbstractController
             $userRepository->save($user, true);
 
             $this->addFlash(
-                'succes',
+                'success',
                 'Le profil a été mis à jour.'
             );
 
