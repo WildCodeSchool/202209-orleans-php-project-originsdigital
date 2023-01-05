@@ -1,11 +1,13 @@
 @import 'root';
 
-.container{
-    margin-block: 7rem;
+.bloc-profile{
+    margin-bottom: 3rem;
+
 }
 
 .profile-photo img{
     height: 200px;
     width: 200px;
     object-fit: cover;
+    margin-block: 2rem;
 }
