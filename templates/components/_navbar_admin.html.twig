@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+	<div class="container-fluid align-items-center">
+		<div class="d-flex align-items-center">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<a class="navbar-brand me-2 pe-2 d-flex align-items-center" href="/">
+				<img src="{{ asset('build/images/logoZeSport.png') }}" alt="logo" class="mx-2 d-inline-block align-text-top">
+				Ze-Sport | Admin
+			</a>
+		</div>
+
+		<div class="dropdown text-center">
+			<a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				<img class="rounded-circle" src="{{ asset('build/images/Ellipse2.png') }}" alt="avatar">
+			</a>
+			<ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+				<li>
+					<a class="dropdown-item" href="#">Paramètres</a>
+				</li>
+				<li>
+					<a class="dropdown-item" href="{{ path('app_logout') }}">Déconnexion</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="collapse navbar-collapse" id="navbarToggler">
+		<ul class="navbar-nav me-auto m-2 mb-2">
+			<li class="nav-item">
+				<a class="nav-link" aria-current="page" href="/">Accueil</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Catégories</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Vidéos</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Tags</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Publicités</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Bannières</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Sponsors</a>
+			</li>
+		</ul>
+	</div>
+</div></nav>
