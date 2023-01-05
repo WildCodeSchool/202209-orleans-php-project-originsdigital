@@ -29,7 +29,11 @@ class UserType extends AbstractType
             ])
             ->add('imageFile', VichFileType::class, [
                 'required' => false,
-                'label' => 'Photo de profil'
+                'label' => 'Photo de profil',
+                'delete_label' => false,
+                'download_label' => false,
+                'allow_delete' => false,
+
             ]);
     }
 
