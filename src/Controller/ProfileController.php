@@ -16,13 +16,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ProfileController extends AbstractController
 {
     #[Route('/profil', name: 'app_profile')]
-    public function index(
-    ): Response
+    public function index(): Response
     {
         $user = $this->getUser();
 
         return $this->render('profile/index.html.twig', [
-            'user'=> $user
+            'user' => $user
         ]);
     }
 
