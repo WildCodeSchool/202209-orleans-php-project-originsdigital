@@ -1,0 +1,37 @@
+{% extends 'layoutUser.html.twig' %}
+{% form_theme form 'bootstrap_5_horizontal_layout.html.twig' %}
+
+{% block title %}Profil
+{% endblock %}
+
+{% block body %}
+	<section class="text-center">
+		<div class="container">
+			<div class="row d-flex justify-content-center align-items-center">
+				<div class="card-body text-black row">
+					<div class="user-profile mb-md-1 mt-md-4 pb-5">
+						<h1 class="fw-bold text-light mb-2">Bonjour
+							{{ app.user.firstName }}
+						</h1>
+						<div class="profile-photo">
+							<img class="rounded-circle" src="{{ vich_uploader_asset(user) }}" alt="avatar" class="profile-image border border-primary rounded-circle alt="Profil">
+						</div>
+						<div class="row mb-2 text-light width-50">
+							{{ form_start(form) }}
+							<div class="d-flex p-3 flex-column gap-4">
+								{{ form_row(form.imageFile) }}
+								{{ form_row(form.email) }}
+								{{ form_row(form.userName) }}
+								{{ form_row(form.firstName) }}
+								{{ form_row(form.lastName) }}
+							</div>
+							<button class="btn btn-outline-primary text-light btn-lg" type="submit">Mettre à jour</button>
+
+							{{ form_end(form) }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</section>{% endblock %}
