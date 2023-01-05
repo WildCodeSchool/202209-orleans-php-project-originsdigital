@@ -31,8 +31,7 @@ RUN apk add --no-cache \
 # silently install 'docker-php-ext-install' extensions
 RUN set -x
 
-RUN docker-php-ext-install pdo_mysql bcmath > /dev/null
-
+RUN docker-php-ext-install pdo_mysql bcmath intl > /dev/null
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
