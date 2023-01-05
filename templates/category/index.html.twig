@@ -1,5 +1,10 @@
 {% extends 'layoutUser.html.twig' %}
 
+{% block stylesheets %}
+	{{parent()}}
+	{{ encore_entry_link_tags('categories') }}
+{% endblock %}
+
 {% block title %}Catégories
 {% endblock %}
 
@@ -8,7 +13,7 @@
 		<h1 class="category-title m-5">Catégories</h1>
 		{% for category in categories %}
 			<div class="d-grid gap-2 col-10 col-lg-7 py-1 mx-auto">
-				<a class="category-link btn btn-outline-primary m-2 p-4" href="#" role="button">
+				<a class="category-link btn btn-outline-primary m-2 p-4" href="{{path("category_show", { slug: category.slug|lower }) }}" role="button">
 					<h2 class="category-name">{{ category.name }}</h2>
 				</a>
 			</div>
