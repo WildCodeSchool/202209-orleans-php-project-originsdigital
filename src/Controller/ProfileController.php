@@ -45,11 +45,6 @@ class ProfileController extends AbstractController
             );
 
             return $this->redirectToRoute('app_profile');
-        } else {
-            $this->addFlash(
-                'warning',
-                'Les informations saisies sont incorrectes.'
-            );
         }
 
         return $this->renderForm('profile/edit.html.twig', [
