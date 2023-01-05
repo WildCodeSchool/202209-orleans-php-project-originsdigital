@@ -13,6 +13,7 @@ body {
             rgba($gray, 1) 50%,
             rgba($black, 1) 100%
         );
+    background-attachment: fixed;
     color: $light;
 }
 
