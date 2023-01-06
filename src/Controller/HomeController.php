@@ -16,4 +16,10 @@ class HomeController extends AbstractController
             'videos' => $videoRepository->findAll(),
         ]);
     }
+
+    #[Route('/legalnotices', name: 'app_legal')]
+    public function legal(): Response
+    {
+        return $this->render('LegalNotices/index.html.twig');
+    }
 }
