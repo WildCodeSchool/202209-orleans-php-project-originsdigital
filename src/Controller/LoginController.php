@@ -25,7 +25,6 @@ class LoginController extends AbstractController
     public function redirection(): Response
     {
         $roles = ($this->getUser()->getRoles());
-        
         if ($roles[0] === ('ROLE_ADMIN')) {
             return $this->render('admin/index.html.twig', []);
         } else {
