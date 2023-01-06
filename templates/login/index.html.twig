@@ -29,6 +29,8 @@
 										<label for="password" class="form-label form-label-lg">Mot de passe :</label>
 										<input type="password" id="password" class="input-form form-control form-control-lg" name="_password">
 
+                                        
+                                        <input type="hidden" name="_target_path" value="{{ path('app_redirect_admin') }}">
 										<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
 									</div>

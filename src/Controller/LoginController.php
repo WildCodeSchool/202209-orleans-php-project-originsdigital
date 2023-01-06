@@ -20,4 +20,16 @@ class LoginController extends AbstractController
             'error' => $error,
         ]);
     }
+
+    #[Route('/redirect_admin', name: 'app_redirect_admin')]
+    public function redirection(): Response
+    {
+        $roles = ($this->getUser()->getRoles());
+        
+        if ($roles[0] === ('ROLE_ADMIN')) {
+            return $this->render('admin/index.html.twig', []);
+        } else {
+            return $this->redirectToRoute('app_home');
+        }
+    }
 }
