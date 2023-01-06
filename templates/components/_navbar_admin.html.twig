@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+	<div class="container-fluid align-items-center">
+		<div class="d-flex align-items-center">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<a class="navbar-brand me-2 pe-2 d-flex align-items-center" href="/">
+				<img src="{{ asset('build/images/logoZeSport.png') }}" alt="logo" class="mx-2 d-inline-block align-text-top">
+				Ze-Sport | Admin
+			</a>
+		</div>
+
+		<div class="d-flex order-md-2 align-items-center">
+			<div class="search me-2 pe-2">
+				<a class="nav-link" href="#">
+					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search" viewbox="0 0 16 16">
+						<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+					</svg>
+				</a>
+			</div>
+
+			<div class="dropdown text-center">
+				<a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					<img class="rounded-circle" src="{{ asset('build/images/Ellipse2.png') }}" alt="avatar">
+				</a>
+				<ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+					<li>
+						<a class="dropdown-item" href="{{ path('app_profile') }}">Profil</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="{{ path('app_logout') }}">Déconnexion</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="collapse navbar-collapse" id="navbarToggler">
+			<ul class="navbar-nav me-auto m-2 mb-2">
+				<li class="nav-item">
+					<a class="nav-link" href="#">Catégories</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Vidéos</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Tags</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Publicités</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Bannières</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Sponsors</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
