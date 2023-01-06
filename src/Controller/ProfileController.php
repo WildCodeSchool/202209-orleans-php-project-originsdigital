@@ -35,16 +35,24 @@ class ProfileController extends AbstractController
         $user = $this->getUser();
         $form = $this->createForm(UserType::class, $user);
 
+
         $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            $userRepository->save($user, true);
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+                $userRepository->save($user, true);
 
-            $this->addFlash(
-                'success',
-                'Le profil a été mis à jour.'
-            );
+                $this->addFlash(
+                    'success',
+                    'Le profil a été mis à jour.'
+                );
 
-            return $this->redirectToRoute('app_profile');
+                return $this->redirectToRoute('app_profile');
+            } else {
+                $this->addFlash(
+                    'warning',
+                    'Les informations saisies sont incorrectes.'
+                );
+            }
         }
 
         return $this->renderForm('profile/edit.html.twig', [
