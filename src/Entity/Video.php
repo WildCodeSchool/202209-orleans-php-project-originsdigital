@@ -2,6 +2,10 @@
 
 namespace App\Entity;
 
+/*
+Format de vidéos possibles: MP4 / MPEG / MKV / AVI
+ */
+
 use App\Repository\VideoRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;

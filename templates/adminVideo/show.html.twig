@@ -4,38 +4,42 @@
 {% endblock %}
 
 {% block body %}
-<div class="video-show container-fluid p-3">
-	<h1 class="text-center m-3">{{ "afficher une vidéo"|upper }}</h1>
+	<div class="video-show container-fluid p-3">
+		<h1 class="text-center m-3">{{ "afficher une vidéo"|upper }}</h1>
 
-<a class="btn btn-light mt-3" href={{ path('app_admin_video_delete', {'id': video.id}) }}>Supprimer</a>
+		<a class="btn btn-light mt-3" href={{ path('app_admin_video_delete', {'id': video.id} ) }}>Supprimer</a>
 
-	<table class="table flex-wrap text-light my-3">
-		<tbody>
-			<tr>
-				<th>Titre</th>
-				<td>{{ video.name }}</td>
-			</tr>
-			<tr>
-				<th>Description</th>
-				<td>{{ video.description }}</td>
-			</tr>
-			<tr>
-				<th>Durée</th>
-				<td>{{ video.duration }}</td>
-			</tr>
-			<tr>
-				<th>Vues</th>
-				<td>{{ video.view }}</td>
-			</tr>
-			<tr>
-				<th>Lien de la vidéo</th>
-				<td>{{ video.videoFileName }}</td>
-			</tr>
-		</tbody>
-	</table>
-    <div class="buttons my-5 pb-3">
-	<a class="btn btn-primary me-3" href="{{ path('app_admin_video_edit', {'id': video.id}) }}">Modifier</a>
-	<a class="btn btn-secondary" href="{{ path('app_admin_video_index') }}">Retour à la liste</a>
-</div>
-</div>
+		<table class="table flex-wrap text-light my-3">
+			<tbody>
+				<tr>
+					<th>Titre</th>
+					<td>{{ video.name }}</td>
+				</tr>
+				<tr>
+					<th>Catégorie</th>
+					<td>{{ video.category.name }}</td>
+				</tr>
+				<tr>
+					<th>Description</th>
+					<td>{{ video.description }}</td>
+				</tr>
+				<tr>
+					<th>Durée</th>
+					<td>{{ video.duration }}</td>
+				</tr>
+				<tr>
+					<th>Vues</th>
+					<td>{{ video.view }}</td>
+				</tr>
+				<tr>
+					<th>Lien de la vidéo</th>
+					<td>{{ video.videoFileName }}</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="buttons my-5 pb-3">
+			<a class="btn btn-primary me-3" href="{{ path('app_admin_video_edit', {'id': video.id}) }}">Modifier</a>
+			<a class="btn btn-secondary" href="{{ path('app_admin_video_index') }}">Retour à la liste</a>
+		</div>
+	</div>
 {% endblock %}
