@@ -1,0 +1,43 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}Admin | Sponsor index
+{% endblock %}
+
+{% block body %}
+	<div class="admin-list container-fluid mb-4">
+		<div class="row d-flex justify-content-center">
+			<h1 class="sponsor-index-title text-center">{{ "Index des sponsors"|upper }}</h1>
+			<section class="sponsor-summary flex-wrap ps-4 m-2">
+				<a class="sponsor-new btn btn-outline-primary my-4" href={{ path('app_admin_sponsor_new') }}>Ajouter un sponsor</a>
+
+				<table class="table table-borderless text-white text-center">
+					<thead class="sponsor-field pt-2">
+						<tr>
+							<th>Nom</th>
+							<th>Logo</th>
+							<th>Lien</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody class="p-2">
+						{% for sponsor in sponsors %}
+							<tr>
+								<td class="index-title">{{ sponsor.name }}</td>
+								<td class="index-title">{{ sponsor.logo }}</td>
+								<td class="index-title">{{ sponsor.link }}</td>
+								<td>
+									<a class="btn btn-primary mt-2 me-2" href="{{ path('app_admin_sponsor_show', {'id': sponsor.id}) }}">Afficher</a>
+									<a class="btn btn-secondary mt-2" href="{{ path('app_admin_sponsor_edit', {'id': sponsor.id}) }}">Modifier</a>
+								</td>
+							</tr>
+						{% else %}
+							<tr>
+								<td colspan="7">no records found</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</section>
+		</div>
+	</div>
+{% endblock %}
