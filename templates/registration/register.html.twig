@@ -10,36 +10,37 @@
 		<div class="container">
 			<div class="row d-flex justify-content-center align-items-center">
 				<div class="col-md-8 col-lg-6 col-xl-11">
-					<div class="card text-center">
+					<div class="card">
 						<div class="card-body text-black">
 							<div class="mb-md-1 mt-md-4 pb-5 list-style-none">
 								{% for flash_error in app.flashes('verify_email_error') %}
 									<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
 								{% endfor %}
-								<img src="{{ asset('build/images/Ellipse2.png') }}" alt="avatarImage" class="img-fluid">
-								<h1 class="fw-bold text-light mb-2 text-uppercase">Inscription</h1>
+								<div class="d-flex justify-content-center">
+									<img src="{{ asset('build/images/Ellipse2.png') }}" alt="avatarImage" class="img-fluid">
+								</div>
+								<h1 class="fw-bold text-light mb-2 text-uppercase text-center">Inscription</h1>
 								{{ form_start(registrationForm) }}
-								<div class="form-group mb-2 text-light ">
+								<div class="form-group mb-2 text-light px-5">
 									{{ form_row(registrationForm.email) }}
 									{{ form_row(registrationForm.userName) }}
 									{{ form_row(registrationForm.firstName) }}
 									{{ form_row(registrationForm.lastName) }}
 									{{ form_row(registrationForm.plainPassword, {
-            label: 'Mot de passe'
+            label: 'Mot de passe', class: "align-items-left"
         }) }}
 								</div>
+								<div class="text-center">
 								<button class="btn btn-outline-primary text-light btn-lg" type="submit">S'inscrire !</button>
+								</div>
 								{{ form_end(registrationForm) }}
 							</div>
 						</div>
-						<div>
-									<a href="/" class="text-light-50 fw-bold text-decoration-none">Retour à l'accueil</a>
-								</p>
-							</div>
+						<div class="text-center pb-4">
+							<a href="/" class="text-light-50 fw-bold text-decoration-none">Retour à l'accueil</a>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
-
-{% endblock %}
+	</div>
+</section>{% endblock %}
