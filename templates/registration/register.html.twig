@@ -16,10 +16,11 @@
 								{% for flash_error in app.flashes('verify_email_error') %}
 									<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
 								{% endfor %}
-								<img src="{{ asset('build/images/Ellipse2.png') }}" alt="avatarImage" class="img-fluid">
+								<img src="{{ asset('build/images/logoZeSport.png') }}" alt="avatarImage" class="img-fluid">
 								<h1 class="fw-bold text-light mb-2 text-uppercase">Inscription</h1>
 								{{ form_start(registrationForm) }}
 								<div class="form-group mb-2 text-light ">
+									{{ form_row(registrationForm.imageFile) }}
 									{{ form_row(registrationForm.email) }}
 									{{ form_row(registrationForm.userName) }}
 									{{ form_row(registrationForm.firstName) }}
@@ -33,13 +34,11 @@
 							</div>
 						</div>
 						<div>
-									<a href="/" class="text-light-50 fw-bold text-decoration-none">Retour à l'accueil</a>
-								</p>
-							</div>
+							<a href="/" class="text-light-50 fw-bold text-decoration-none">Retour à l'accueil</a>
+						</p>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
-
-{% endblock %}
+	</div>
+</section>{% endblock %}
