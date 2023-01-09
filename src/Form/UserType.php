@@ -33,7 +33,6 @@ class UserType extends AbstractType
                 'delete_label' => false,
                 'download_label' => false,
                 'allow_delete' => false,
-
             ]);
     }
 
