@@ -1,0 +1,62 @@
+{% extends 'layoutUser.html.twig' %}
+
+{% block title %}
+	{{parent()}}
+	| Profil
+{% endblock %}
+
+{% block body %}
+
+	<section class="text-center">
+		<div class="bloc-profile container">
+			<div class="row d-flex justify-content-center align-items-center">
+				<div class="card-body text-black row">
+					<div class="user-profile mb-md-1 mt-md-4 pb-5">
+						<h1 class="fw-bold text-light mb-2">Bonjour
+							{{ app.user.firstName }}
+						</h1>
+						<div class="profile-photo">
+
+							{% if user.userPicture %}
+
+								<img class="rounded-circle profile-image border-primary" src="{{ vich_uploader_asset(user) }}" alt="avatar">
+
+							{% else %}
+
+								<img src="{{ asset('build/images/Ellipse2.png') }}" alt="avatarImage" class="img-fluid profile-photo">
+
+							{% endif %}
+						</div>
+						<div>
+							<p class="text-light mb-2 font-13">
+								<strong>Adresse email :</strong>
+								<span class="ml-2">{{ app.user.email }}</span>
+							</p>
+						</div>
+						<div>
+							<p class="text-light mb-2 font-13">
+								<strong>Nom d'utilisateur :</strong>
+								<span class="ml-2">{{ app.user.userName }}</span>
+							</p>
+						</div>
+						<div>
+							<p class="text-light mb-2 font-13">
+								<strong>Prénom:</strong>
+								<span class="ml-2">{{ app.user.firstName }}</span>
+							</p>
+						</div>
+						<div>
+                        <p class="text-light mb-2 font-13">
+								<strong>Nom :</strong>
+								<span class="ml-2">{{ app.user.lastName }}</span>
+							</p>
+						</div>
+
+						<a class="btn btn-outline-primary text-light btn-lg" href="{{ path('user_edit') }}" role="button">Éditer</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>{% endblock %}
