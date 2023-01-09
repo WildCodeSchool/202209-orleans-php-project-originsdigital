@@ -69,7 +69,7 @@ class AdminVideoController extends AbstractController
     #[Route('/{id}', name: 'app_admin_video_delete', methods: ['POST'])]
     public function delete(Request $request, Video $video, VideoRepository $videoRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$video->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $video->getId(), $request->request->get('_token'))) {
             $videoRepository->remove($video, true);
         }
 
