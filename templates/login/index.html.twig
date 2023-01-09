@@ -16,14 +16,9 @@
 									<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 								{% endif %}
 								<form action="{{ path('app_login') }}" method="post">
-									<img src="{{ asset('build/images/Ellipse2.png') }}" alt="avatarImage" class="profile-photo mb-4">
-									<h1 class="fw-bold text-light mb-2 text-uppercase">Connexion</h1>
-									<p class="text-light mb-5">Entrez vos identifiants de connexion !</p>
-
 									<div class="mb-2 text-light">
-										<label for="username" class="form-label">Email:</label>
 									<div class="d-flex justify-content-center">
-										<img src="{{ asset('build/images/Ellipse2.png') }}" alt="avatarImage" class="img-fluid">
+									<img src="{{ asset('build/images/logoZeSport.png') }}" alt="avatarImage" class="profile-photo mb-4">
 									</div>
 									<h1 class="fw-bold text-light mb-2 text-uppercase text-center">Connexion</h1>
 									<p class="text-light mb-5 text-center">Entrez vos identifiants de connexion !</p>
@@ -41,7 +36,7 @@
 											<a class="text-light-50 text-decoration-none" href="#!">Mot de passe oublié ?</a>
 										</p>
 										<div class="text-center">
-											<button class="btn btn-outline-primary text-light btn-lg" type="submit">Se connecter</button>
+											<button class="btn btn-outline-primary text-light btn-lg mt-3 mb-3" type="submit">Se connecter</button>
 										</div>
 									</div>
 								</div>
