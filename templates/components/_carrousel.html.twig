@@ -1,6 +1,6 @@
 <div class="row-carrousel">
 	<div class="header">
-		<h3 class="title">Category Name</h3>
+		<h3 class="title p-3">{{category.name}}</h3>
 		<div class="progress-bar"></div>
 	</div>
 	<div class="bloc-carrousel">
@@ -10,17 +10,19 @@
 			</svg>
 		</button>
 		<div class="slider">
-			<img src="https://via.placeholder.com/210/00f0ff?text=1">
-			<img src="https://via.placeholder.com/220/00f0ff?text=2">
-			<img src="https://via.placeholder.com/230/00f0ff?text=3">
-			<img src="https://via.placeholder.com/240/00f0ff?text=4">
-			<img src="https://via.placeholder.com/250/00f0ff?text=5">
-			<img src="https://via.placeholder.com/260/00f0ff?text=6">
-			<img src="https://via.placeholder.com/270/00f0ff?text=7">
-			<img src="https://via.placeholder.com/280/00f0ff?text=8">
-			<img src="https://via.placeholder.com/250/00f0ff?text=9">
-			<img src="https://via.placeholder.com/260/00f0ff?text=10">
-			<img src="https://via.placeholder.com/270/00f0ff?text=11">
+			{% for video in videos %}
+				<div class="card-video d-flex flex-column">
+					<div class="link-img">
+						<a href="{{path('app_video_show', {'video': video.id})}}" class="link-card">
+							<img src="{{video.picture}}" alt="{{video.name}}" class="img-video">
+						</a>
+					</div>
+					<div class="title-view mt-2 d-flex justify-content-between align-items-start">
+						<h2 class="mx-2 mb-0">{{video.name}}</h2>
+						<p class="mx-2 mb-0">{{video.view ~ ' vues'}}</p>
+					</div>
+				</div>
+			{% endfor %}
 		</div>
 		<button class="handle right-handle">
 			<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="arrow bi bi-caret-right-fill" viewbox="0 0 16 16">
