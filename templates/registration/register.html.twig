@@ -16,6 +16,11 @@
 								{% for flash_error in app.flashes('verify_email_error') %}
 									<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
 								{% endfor %}
+								<img src="{{ asset('build/images/logoZeSport.png') }}" alt="avatarImage" class="img-fluid">
+								<h1 class="fw-bold text-light mb-2 text-uppercase">Inscription</h1>
+								{{ form_start(registrationForm) }}
+								<div class="form-group mb-2 text-light ">
+									{{ form_row(registrationForm.imageFile) }}
 								<div class="d-flex justify-content-center">
 									<img src="{{ asset('build/images/Ellipse2.png') }}" alt="avatarImage" class="img-fluid">
 								</div>
