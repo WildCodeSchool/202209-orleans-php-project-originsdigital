@@ -1,23 +1,31 @@
 @import "root";
 
+:root{
+    --space-title: 4rem;
+    --spacing-block: .25rem;
+}
+
 .bloc-carrousel {
     display: flex;
     justify-content: center;
+    overflow: hidden;
 }
 
 .slider {
+    --items-per-screen: 4;
     --slider-index: 0;
     display: flex;
     flex-grow: 1;
     transform: translateX(calc(var(--slider-index) * -100%));
+    transition: transform 250ms ease-in-out;
 }
 
 .slider > img {
-    flex: 0 0 25%;
-    max-width: 25%;
+    flex: 0 0 calc(100% / var(--items-per-screen));
+    max-width: calc(100% / var(--items-per-screen));
     width: 25%;
     aspect-ratio: 16 / 9;
-    padding: 0.25rem;
+    padding: var(--spacing-block);
     border-radius: 1rem;
 }
 
@@ -27,8 +35,8 @@
     flex-grow: 0;
     background-color: rgba($dark, 0.25);
     z-index: 10;
-    width: calc(5rem - 0.25rem);
-    margin: 0.25rem 0;
+    width: calc(5rem - var(--spacing-block));
+    margin: var(--spacing-block) 0;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -51,13 +59,61 @@
     background-color: rgba($dark, 0.5);
 }
 
-.arrow{
+.arrow {
     font-size: 5rem;
     color: $light;
     transition: transform 150ms ease-in-out;
 }
 
 .handle:hover .arrow,
-.handle:focus .arrow{
+.handle:focus .arrow {
     transform: scale(1.2);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem calc(var(--space-title) + var(--spacing-block)*2);
+    align-items: center;
+}
+
+.title {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.progress-bar {
+    display: flex;
+    flex-direction: row;
+    overflow: visible;
+    gap: .25rem;
+}
+
+.progress-item {
+    flex: 0 0 1.5rem;
+    min-width: 1.5rem;
+    height: .25rem;
+    background-color: rgba($light, .5);
+}
+
+.progress-item.active {
+    background-color: rgba($light, .9);
+}
+
+@media (max-width: 1000px) {
+    .slider {
+        --items-per-screen: 3;
+    }
+}
+
+@media (max-width: 768px) {
+    .slider {
+        --items-per-screen: 2;
+    }
+}
+
+@media (max-width: 574px) {
+    .slider {
+        --items-per-screen: 1;
+    }
 }
