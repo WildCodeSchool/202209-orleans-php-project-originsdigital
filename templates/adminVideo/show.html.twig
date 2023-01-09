@@ -1,42 +1,41 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}Video{% endblock %}
+{% block title %}Vidéo | Afficher
+{% endblock %}
 
 {% block body %}
-    <h1>Video</h1>
+<div class="video-show container-fluid p-3">
+	<h1 class="text-center m-3">{{ "afficher une vidéo"|upper }}</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ video.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ video.name }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ video.description }}</td>
-            </tr>
-            <tr>
-                <th>Duration</th>
-                <td>{{ video.duration }}</td>
-            </tr>
-            <tr>
-                <th>View</th>
-                <td>{{ video.view }}</td>
-            </tr>
-            <tr>
-                <th>VideoFileName</th>
-                <td>{{ video.videoFileName }}</td>
-            </tr>
-        </tbody>
-    </table>
+<a class="btn btn-light mt-3" href={{ path('app_admin_video_delete', {'id': video.id}) }}>Supprimer</a>
 
-    <a href="{{ path('app_admin_video_index') }}">back to list</a>
-
-    <a href="{{ path('app_admin_video_edit', {'id': video.id}) }}">edit</a>
-
-    {{ include('admin_video/_delete_form.html.twig') }}
+	<table class="table flex-wrap text-light my-3">
+		<tbody>
+			<tr>
+				<th>Titre</th>
+				<td>{{ video.name }}</td>
+			</tr>
+			<tr>
+				<th>Description</th>
+				<td>{{ video.description }}</td>
+			</tr>
+			<tr>
+				<th>Durée</th>
+				<td>{{ video.duration }}</td>
+			</tr>
+			<tr>
+				<th>Vues</th>
+				<td>{{ video.view }}</td>
+			</tr>
+			<tr>
+				<th>Lien de la vidéo</th>
+				<td>{{ video.videoFileName }}</td>
+			</tr>
+		</tbody>
+	</table>
+    <div class="buttons my-5 pb-3">
+	<a class="btn btn-primary me-3" href="{{ path('app_admin_video_edit', {'id': video.id}) }}">Modifier</a>
+	<a class="btn btn-secondary" href="{{ path('app_admin_video_index') }}">Retour à la liste</a>
+</div>
+</div>
 {% endblock %}
