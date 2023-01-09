@@ -2,7 +2,7 @@
 
 :root {
     --space-title: 4rem;
-    --spacing-block: 0.25rem;
+    --spacing-block: 0.5rem;
 }
 
 .bloc-carrousel {
@@ -16,81 +16,29 @@
     --slider-index: 0;
     display: flex;
     flex-grow: 1;
-    transform: translateX(calc(var(--slider-index) * -100%));
+    transform: translateX(calc(var(--slider-index) * calc(-100% / var(--items-per-screen))));
     transition: transform 250ms ease-in-out;
 }
 
 .slider .link-card {
-    position: relative;
     flex: 0 0 calc(100% / var(--items-per-screen));
     max-width: calc(100% / var(--items-per-screen));
     width: 25%;
-}
-
-.slider .link-card-lock {
-    position: relative;
-    flex: 0 0 calc(100% / var(--items-per-screen));
-    max-width: calc(100% / var(--items-per-screen));
-    width: 25%;
-}
-
-.link-card:hover,
-.link-card-lock:hover {
-    background-color: rgba($primary, 0.75);
-    border-radius: 1rem;
-}
-
-.link-card:hover img,
-.link-card-lock:hover img {
-    visibility: hidden;
-}
-
-.title-link {
-    position: absolute;
-    bottom: 0;
-    padding: 15px 0;
-    font-size: 25px;
-    font-weight: bold;
-    text-align: center;
-    color: $light;
-    width: 100%;
-    opacity: 0;
-    transition: 0.5s;
-}
-
-.lock-overlay{
-    position: absolute;
-    bottom: 0;
-    padding: 15px 0;
-    font-size: 25px;
-    font-weight: bold;
-    text-align: center;
-    color: $light;
-    width: 100%;
-    opacity: 0;
-    transition: 0.5s;
-}
-
-.link-card:hover .title-link,
-.link-card-lock:hover .lock-overlay{
-    opacity: 1;
 }
 
 .slider img {
     width: 100%;
     aspect-ratio: 16 / 9;
     padding: var(--spacing-block);
-    border-radius: 1rem;
 }
 
 .handle {
     border: none;
-    border-radius: 1rem;
     flex-grow: 0;
     background-color: rgba($dark, 0.25);
     z-index: 10;
     width: calc(5rem - var(--spacing-block));
-    margin: var(--spacing-block) 0;
+    margin: calc(var(--spacing-block)* 2) 0;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -114,7 +62,7 @@
 }
 
 .arrow {
-    font-size: 5rem;
+    font-size: 8rem;
     color: $light;
     transition: transform 150ms ease-in-out;
 }
@@ -134,24 +82,6 @@
 .title {
     font-size: 2rem;
     margin: 0;
-}
-
-.progress-bar {
-    display: flex;
-    flex-direction: row;
-    overflow: visible;
-    gap: 0.25rem;
-}
-
-.progress-item {
-    flex: 0 0 1.5rem;
-    min-width: 1.5rem;
-    height: 0.25rem;
-    background-color: rgba($light, 0.5);
-}
-
-.progress-item.active {
-    background-color: rgba($light, 0.9);
 }
 
 @media (max-width: 1000px) {
