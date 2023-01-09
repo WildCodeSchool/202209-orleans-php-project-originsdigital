@@ -11,8 +11,8 @@
 		<div class="bloc-profile container">
 			<div class="row d-flex justify-content-center align-items-center">
 				<div class="card-body text-black row">
-					<div class="user-profile mb-md-1 mt-md-4 pb-5">
-						<h1 class="fw-bold text-light mb-2">Bonjour
+					<div class="card user-profile mb-md-1 mt-md-5 pb-5">
+						<h1 class="fw-bold text-light mb-5 mt-4">Bonjour,
 							{{ app.user.firstName }}
 						</h1>
 						<div class="profile-photo">
@@ -23,12 +23,12 @@
 
 							{% else %}
 
-								<img src="{{ asset('build/images/Ellipse2.png') }}" alt="avatarImage" class="img-fluid profile-photo">
+								<img src="{{ asset('build/images/Ellipse2.png') }}" alt="avatarImage" class="profile-photo">
 
 							{% endif %}
 						</div>
 						<div>
-							<p class="text-light mb-2 font-13">
+							<p class="text-light mb-2 mt-4 font-13">
 								<strong>Adresse email :</strong>
 								<span class="ml-2">{{ app.user.email }}</span>
 							</p>
@@ -52,7 +52,7 @@
 							</p>
 						</div>
 
-						<a class="btn btn-outline-primary text-light btn-lg" href="{{ path('user_edit') }}" role="button">Éditer</a>
+						<a class="btn btn-outline-primary text-light btn-lg mt-4" href="{{ path('user_edit') }}" role="button">Éditer</a>
 
 					</div>
 				</div>
