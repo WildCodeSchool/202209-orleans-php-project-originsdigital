@@ -25,7 +25,6 @@ class AdminVideoController extends AbstractController
     public function new(Request $request, VideoRepository $videoRepository): Response
     {
         /**  @var \App\Entity\Video */
-        
         $video = new Video();
         $form = $this->createForm(VideoType::class, $video);
         $form->handleRequest($request);
