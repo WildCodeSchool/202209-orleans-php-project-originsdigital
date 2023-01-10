@@ -1,11 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAdmin.html.twig' %}
 
 {% block title %}New Sponsor{% endblock %}
 
 {% block body %}
-    <h1>Create new Sponsor</h1>
+<main class="container-fluid">
+    <h1>Ajouter un sponsor</h1>
 
     {{ include('admin_sponsor/_form.html.twig') }}
 
-    <a href="{{ path('app_admin_sponsor_index') }}">back to list</a>
+    <a href="{{ path('app_admin_sponsor_index') }}">Retour à la liste</a>
+    </main>
 {% endblock %}
