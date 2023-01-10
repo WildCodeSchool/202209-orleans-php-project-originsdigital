@@ -5,12 +5,16 @@ namespace App\Entity;
 /*
 Format de vidéos possibles: MP4 / MPEG / MKV / AVI
  */
-
+use DateTime;
+use DateTimeInterface;
 use App\Repository\VideoRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: VideoRepository::class)]
+#[Vich\Uploadable]
 class Video
 {
     #[ORM\Id]

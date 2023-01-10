@@ -33,8 +33,17 @@ class VideoType extends AbstractType
             ->add('duration', IntegerType::class, [
                 'label' => "Durée",
             ])
-            ->add('videoFileName', TextType::class, [
+            ->add('videoFileName', VichFileType::class, [
                 'label' => "Vidéo",
+                'required' => false,
+                'allow_delete' => false,
+                'constraints' => [
+                    'maxSize' =>'40Mo',
+                    'mimeTypes' => [
+                        'mp4', 'mpeg', 'mkv', 'avi',
+                    ],
+                    'mimeTypesMessage' => 'Veuillez entrer un format valide parmi: MP4 / MPEG / MKV / AVI',
+                ]
             ]);
     }
 
