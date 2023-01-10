@@ -69,7 +69,7 @@ class AdminSponsorController extends AbstractController
     #[Route('/{id}', name: 'app_admin_sponsor_delete', methods: ['POST'])]
     public function delete(Request $request, Sponsor $sponsor, SponsorRepository $sponsorRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$sponsor->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $sponsor->getId(), $request->request->get('_token'))) {
             $sponsorRepository->remove($sponsor, true);
         }
 
