@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Vich\UploaderBundle\Form\Type\VichFileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class SponsorType extends AbstractType
@@ -23,9 +24,10 @@ class SponsorType extends AbstractType
                 'delete_label' => false,
                 'download_label' => false,
             ])
-            ->add('link', TextType::class, [
+            ->add('link', UrlType::class, [
                 'required' => true,
                 'label' => 'Lien du sponsor',
+                'attr' => ['id' => 'partner'],
             ]);
     }
 
