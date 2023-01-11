@@ -3,7 +3,7 @@
 			{% for sponsor in sponsors %}
 		<li class="nav-item">
 				<a href={{ sponsor.link }} class="px-5 text-decoration-none">
-					<img src="{{ vich_uploader_asset(sponsor) }}" alt="{{ sponsor.logo }}" class="py-5">
+					<img src="{{ asset('build/images/placeHolder.png') }}" alt="{{ sponsor.logo }}" class="py-5">
 				</a>
 		</li>
 			{% endfor %}
