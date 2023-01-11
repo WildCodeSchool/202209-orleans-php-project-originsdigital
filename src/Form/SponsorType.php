@@ -27,7 +27,6 @@ class SponsorType extends AbstractType
             ->add('link', UrlType::class, [
                 'required' => true,
                 'label' => 'Lien du sponsor',
-                'attr' => ['id' => 'partner'],
             ]);
     }
 
