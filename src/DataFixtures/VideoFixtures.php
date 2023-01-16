@@ -30,6 +30,8 @@ class VideoFixtures extends Fixture implements DependentFixtureInterface
                 $video->setView($faker->numberBetween(1, 200));
                 $video->setDuration($faker->numberBetween(2, 5));
                 $video->setVideoFileName($faker->imageUrl(640, 480, 'animals', true));
+                $video->setPicture($faker->imageUrl(640, 480, 'animals', true));
+                $video->setPublic($faker->boolean());
                 $manager->persist($video);
             }
         }
