@@ -23,6 +23,7 @@ class SponsorType extends AbstractType
                 'label' => 'Logo',
                 'delete_label' => false,
                 'download_label' => false,
+                'empty_data' => ''
             ])
             ->add('link', UrlType::class, [
                 'required' => true,
