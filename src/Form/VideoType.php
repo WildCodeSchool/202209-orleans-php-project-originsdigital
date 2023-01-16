@@ -45,13 +45,13 @@ class VideoType extends AbstractType
                 'download_label' => false,
                 'constraints' => [
                     new File([
-                        'maxSize' => '40m',
+                        'maxSize' => '2m',
                         'mimeTypes' => [
-                            'video/avi',
+                            'video/flv',
                             'video/mp4',
                             'video/mkv',
                         ],
-                        'mimeTypesMessage' => 'Veuillez utiliser une vidéo au format: MP4 / AVI / MKV',
+                        'mimeTypesMessage' => 'Veuillez utiliser une vidéo au format: MP4 / FLV / MKV',
                     ])
                 ]
             ]);

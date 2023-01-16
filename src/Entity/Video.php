@@ -45,8 +45,8 @@ class Video
 
     #[Vich\UploadableField(mapping: 'videos', fileNameProperty: 'video')]
     #[Assert\File(
-        maxSize: '40M',
-        mimeTypes: ['video/avi', 'video/mp4', 'video/mkv'],
+        maxSize: '2M',
+        mimeTypes: ['video/flv', 'video/mp4', 'video/mkv'],
     )]
     private ?File $videoFile = null;
 
