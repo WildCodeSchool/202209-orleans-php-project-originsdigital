@@ -21,9 +21,9 @@ class SponsorType extends AbstractType
             ->add('imageFile', VichFileType::class, [
                 'required' => true,
                 'label' => 'Logo',
-                'delete_label' => false,
-                'download_label' => false,
-                'empty_data' => ''
+                'delete_label'=> false,
+                'download_label'=> false,
+                'allow_delete'=> false,
             ])
             ->add('link', UrlType::class, [
                 'required' => true,
