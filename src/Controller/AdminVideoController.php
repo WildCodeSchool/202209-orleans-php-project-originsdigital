@@ -32,6 +32,8 @@ class AdminVideoController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $videoRepository->save($video, true);
 
+            $this->addFlash('success', 'La vidéo a bien été ajoutée');
+
             return $this->redirectToRoute('app_admin_video_index', [], Response::HTTP_SEE_OTHER);
         }
 

@@ -6,8 +6,10 @@ use App\Entity\Video;
 use App\Entity\Category;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\File;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
@@ -28,21 +30,29 @@ class VideoType extends AbstractType
                 'expanded' => false,
             ])
             ->add('description', TextareaType::class, [
-                'label' => "Description",
+                'label' => 'Description',
             ])
             ->add('duration', IntegerType::class, [
-                'label' => "Durée",
+                'label' => 'Durée',
             ])
-            ->add('videoFileName', TextType::class, [
-                'label' => "Vidéo",
+            ->add('view', IntegerType::class, [
+                'label' => 'Nombre de vues',
+            ])
+            ->add('videoFile', VichFileType::class, [
+                'label' => 'Vidéo',
                 'required' => false,
-                'allow_delete' => false,
+                'delete_label' => false,
+                'download_label' => false,
                 'constraints' => [
-                    'maxSize' => '40Mo',
-                    'mimeTypes' => [
-                        'mp4', 'mpeg', 'mkv', 'avi',
-                    ],
-                    'mimeTypesMessage' => 'Veuillez entrer un format valide parmi: MP4 / MPEG / MKV / AVI',
+                    new File([
+                        'maxSize' => '40m',
+                        'mimeTypes' => [
+                            'video/avi',
+                            'video/mp4',
+                            'video/mkv',
+                        ],
+                        'mimeTypesMessage' => 'Veuillez utiliser une vidéo au format: MP4 / AVI / MKV',
+                    ])
                 ]
             ]);
     }
