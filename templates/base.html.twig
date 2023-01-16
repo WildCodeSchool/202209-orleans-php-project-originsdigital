@@ -5,14 +5,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="icon" type="image/png" href="{{ asset('build/images/favicon.png') }}"/>
 		<title>
-			{% block title %}{% endblock %}
+			{% block title %}Ze-Sport{% endblock %}
 		</title>
 		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
-			{{ encore_entry_link_tags('categories')}}
-			{{ encore_entry_link_tags('showVideo') }}
 			{{ encore_entry_link_tags('login') }}
+			{{ encore_entry_link_tags('user_profile') }}
+			{{ encore_entry_link_tags('registration') }}
 			{{ encore_entry_link_tags('carrousel') }}
 		{% endblock %}
 
@@ -23,6 +23,10 @@
 	</head>
 	<body>
 		{% block header %}{% endblock %}
+
+		{% block flash %}
+			{% include 'components/_flash_messages.html.twig' %}
+		{% endblock %}
 
 		{% block body %}{% endblock %}
 

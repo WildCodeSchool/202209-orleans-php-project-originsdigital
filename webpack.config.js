@@ -34,7 +34,10 @@ Encore
     .addEntry('app', './assets/app.js')
     .addStyleEntry('categories', './assets/styles/categories.scss')
     .addStyleEntry('showVideo', './assets/styles/showVideo.scss')
+    .addStyleEntry('showCategories', './assets/styles/showCategories.scss')
     .addStyleEntry('login', './assets/styles/login.scss')
+    .addStyleEntry('user_profile', './assets/styles/user_profile.scss')
+    .addStyleEntry('registration', './assets/styles/registration.scss')
     .addStyleEntry('carrousel', './assets/styles/carrousel.scss')
     .addEntry('carrouseljs', './assets/carrousel.js')
 

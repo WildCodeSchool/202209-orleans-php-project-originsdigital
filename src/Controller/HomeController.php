@@ -18,4 +18,10 @@ class HomeController extends AbstractController
             'categories' => $categoryRepository->findAll(),
         ]);
     }
+
+    #[Route('/mentions-legales', name: 'app_legal')]
+    public function legal(): Response
+    {
+        return $this->render('LegalNotices/index.html.twig');
+    }
 }
