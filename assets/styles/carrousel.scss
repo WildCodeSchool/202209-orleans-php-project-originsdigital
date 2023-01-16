@@ -1,11 +1,8 @@
 @import "root";
 
-:root {
+.bloc-carrousel {
     --space-title: 4rem;
     --spacing-block: 0.5rem;
-}
-
-.bloc-carrousel {
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -15,30 +12,36 @@
     --items-per-screen: 4;
     --slider-index: 0;
     display: flex;
-    flex-grow: 1;
-    transform: translateX(calc(var(--slider-index) * calc(-100% / var(--items-per-screen))));
+    transform: translateX(
+        calc(var(--slider-index) * calc(-100% / var(--items-per-screen)))
+    );
     transition: transform 250ms ease-in-out;
 }
 
 .slider .link-card {
     flex: 0 0 calc(100% / var(--items-per-screen));
-    max-width: calc(100% / var(--items-per-screen));
-    width: 25%;
 }
 
 .slider img {
     width: 100%;
     aspect-ratio: 16 / 9;
     padding: var(--spacing-block);
+    transition: all 150ms ease-in-out;
+}
+
+.slider img:hover {
+    filter: brightness(110%);
+    transform: scale(1.02);
 }
 
 .handle {
+    --handle-width: 40px;
     border: none;
     border-radius: 1rem;
-    flex-grow: 0;
     background-color: rgba($dark, 0.25);
     z-index: 10;
-    width: calc(10rem - var(--spacing-block));
+    min-width: var(--handle-width);
+    max-width: var(--handle-width);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -62,7 +65,6 @@
 }
 
 .arrow {
-    font-size: 8rem;
     color: $light;
     transition: transform 150ms ease-in-out;
 }
@@ -77,11 +79,6 @@
     justify-content: space-between;
     padding: 0.5rem calc(var(--space-title) + var(--spacing-block) * 2);
     align-items: center;
-}
-
-.title {
-    font-size: 2rem;
-    margin: 0;
 }
 
 @media (max-width: 1000px) {
