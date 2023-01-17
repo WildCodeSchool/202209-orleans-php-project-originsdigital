@@ -21,7 +21,7 @@ class SearchController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
             $videos = $videoRepository->searchVideo($data['search']);
-        }  else {
+        } else {
             $videos = null;
         }
 
