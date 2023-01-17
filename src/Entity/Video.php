@@ -46,9 +46,15 @@ class Video
     #[Vich\UploadableField(mapping: 'videos', fileNameProperty: 'video')]
     #[Assert\File(
         maxSize: '2M',
-        mimeTypes: ['video/flv', 'video/mp4', 'video/mkv'],
+        mimeTypes: ['video/mp4'],
     )]
     private ?File $videoFile = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $picture = null;
+
+    #[ORM\Column]
+    private ?bool $public = null;
 
     public function getId(): ?int
     {
@@ -140,6 +146,16 @@ class Video
         return $this;
     }
 
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+    public function setPicture(string $picture): self
+    {
+        $this->picture = $picture;
+        return $this;
+    }
+
     public function setVideoFile(?File $videoFile = null): void
     {
         $this->videoFile = $videoFile;
@@ -154,5 +170,16 @@ class Video
     public function getVideoFile(): ?File
     {
         return $this->videoFile;
+    }
+
+    public function isPublic(): ?bool
+    {
+        return $this->public;
+    }
+
+    public function setPublic(bool $public): self
+    {
+        $this->public = $public;
+        return $this;
     }
 }

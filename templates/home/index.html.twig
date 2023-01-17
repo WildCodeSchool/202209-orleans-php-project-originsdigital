@@ -12,27 +12,8 @@
 
 {% block body %}
 	<section class="section-home">
-		<div class="container">
-			<h1 class="text-center">Ze-sport</h1>
-			<div class="bloc-video">
-				<div class="row justify-content-center">
-					{% for video in videos %}
-						<div class="col-10 col-md-4 my-4">
-							<a href="{{path('app_video_show', {'video': video.id})}}" class="link-card">
-								<div class="link-home ratio ratio-16x9 d-flex justify-content-center">
-									<video class="video-col" controls>
-										<source src="/uploads/videos/{{video.video}}" type="video/mp4">
-									</video>
-								</div>
-								<div class="title-view mt-2 d-flex justify-content-between align-items-start">
-									<h2 class="mx-2 mb-0">{{video.name}}</h2>
-									<p class="mx-2 mb-0">{{video.view ~ ' vues'}}</p>
-								</div>
-							</a>
-						</div>
-					{% endfor %}
-				</div>
-			</div>
-		</div>
+		{% for category in categories %}
+			{% include "/components/_carrousel.html.twig" %}
+		{% endfor %}
 	</section>
 {% endblock %}

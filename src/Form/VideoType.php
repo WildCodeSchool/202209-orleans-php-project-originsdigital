@@ -48,7 +48,6 @@ class VideoType extends AbstractType
                         'maxSize' => '2m',
                         'mimeTypes' => [
                             'video/mp4',
-                            'video/mkv',
                         ],
                         'mimeTypesMessage' => 'Veuillez utiliser une vidéo au format: MP4',
                     ])
