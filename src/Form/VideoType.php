@@ -47,11 +47,10 @@ class VideoType extends AbstractType
                     new File([
                         'maxSize' => '2m',
                         'mimeTypes' => [
-                            'video/flv',
                             'video/mp4',
                             'video/mkv',
                         ],
-                        'mimeTypesMessage' => 'Veuillez utiliser une vidéo au format: MP4 / FLV / MKV',
+                        'mimeTypesMessage' => 'Veuillez utiliser une vidéo au format: MP4',
                     ])
                 ]
             ]);
