@@ -150,9 +150,11 @@ class Video
     {
         return $this->picture;
     }
+
     public function setPicture(string $picture): self
     {
         $this->picture = $picture;
+
         return $this;
     }
 
@@ -180,6 +182,7 @@ class Video
     public function setPublic(bool $public): self
     {
         $this->public = $public;
+
         return $this;
     }
 }
