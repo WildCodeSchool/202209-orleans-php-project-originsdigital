@@ -47,7 +47,7 @@ class VideoRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('v')
             ->andWhere('v.name LIKE :search')
-            ->setParameter('search', '%' .$search . '%')
+            ->setParameter('search', '%' . $search . '%')
             ->orderBy('v.name', 'ASC')
             ->getQuery()
             ->getResult();
