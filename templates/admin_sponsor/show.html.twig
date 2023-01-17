@@ -1,0 +1,38 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}Sponsor
+{% endblock %}
+
+{% block body %}
+	<div class="admin-list container-fluid mb-4">
+		<div class="row d-flex justify-content-center">
+			<h1 class="sponsor-index-title text-center">{{ "Index des sponsors"|upper }}</h1>
+			<section class="sponsor-summary flex-wrap ps-4 m-2">
+
+				<table class="table table-borderless text-white text-center">
+					<thead class="sponsor-field pt-2">
+						<tr>
+							<th>Nom</th>
+							<th>Logo</th>
+							<th>Lien</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody class="p-2">
+						<tr>
+							<td class="index-title">{{ sponsor.name }}</td>
+							<td class="index-title" ><img src="{{ vich_uploader_asset(sponsor) }}" alt=""</td>
+							<td class="index-title">{{ sponsor.link }}</td>
+							<td class="index-title">
+								<a class= "btn btn-primary mt-2 me-2 text-center" href="{{ path('app_admin_sponsor_edit', {'id': sponsor.id}) }}">Modifier</a> 
+								{{ include('admin_sponsor/_delete_form.html.twig') }}
+							</td>
+						</tr>
+						<tr></tr>
+					</tbody>
+				</table>
+
+			</section>
+		</div>
+	</div>
+{% endblock %}
