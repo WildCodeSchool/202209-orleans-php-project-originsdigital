@@ -9,11 +9,11 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Vich\UploaderBundle\Form\Type\VichFileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class VideoType extends AbstractType
 {
@@ -48,14 +48,9 @@ class VideoType extends AbstractType
                 'delete_label' => false,
                 'download_label' => false,
             ])
-            ->add('public', ChoiceType::class, [
+            ->add('public', CheckboxType::class, [
                 'label' => 'Voulez-vous rendre cette vidéo accessible à tous?',
-                'choices' => [
-                    'Oui' => true,
-                    'Non' => false,
-                ],
-                'multiple' => false,
-                'expanded' => false,
+                'required' => true,
             ]);
     }
 
