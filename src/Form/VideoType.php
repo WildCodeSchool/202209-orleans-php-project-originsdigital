@@ -40,7 +40,7 @@ class VideoType extends AbstractType
                 'label' => 'Nombre de vues',
             ])
             ->add('picture', TextType::class, [
-                'label' => 'Poster',
+                'label' => 'Vignette',
             ])
             ->add('videoFile', VichFileType::class, [
                 'label' => 'Vidéo',
