@@ -3,6 +3,7 @@
 {% block title %}{% endblock %}
 
 {% block body %}
+<main class="admin-list">
 	<h1 class="admin-title mb-5 text-center">Bonjour
 		{{ app.user.firstName }}</h1>
 	<section class="admin-text py-2 m-2">
@@ -13,4 +14,5 @@
 			</li>
 		</ul>
 	</section>
+	</main>
 </div>{% endblock %}
