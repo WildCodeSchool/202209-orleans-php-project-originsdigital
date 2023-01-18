@@ -4,8 +4,12 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="icon" type="image/png" href="{{ asset('build/images/favicon.png') }}"/>
+		<link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet"/>
+		<link href="https://unpkg.com/@videojs/themes@1/dist/forest/index.css" rel="stylesheet"/>
+		<script src="https://vjs.zencdn.net/7.20.3/video.min.js" defer></script>
 		<title>
-			{% block title %}Ze-Sport{% endblock %}
+			{% block title %}Ze-Sport
+			{% endblock %}
 		</title>
 		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 		{% block stylesheets %}
