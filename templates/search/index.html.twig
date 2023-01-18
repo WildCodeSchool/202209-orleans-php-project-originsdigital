@@ -1,0 +1,35 @@
+{% extends 'layoutUser.html.twig' %}
+
+{% block title %}
+	{{parent()}}
+	| Recherche
+{% endblock %}
+
+{% block body %}
+	<main class="container-fluid admin-list">
+		<div class="text-center">
+			<div class="mb-2text-lightpx-5">
+				<div class="d-flex justify-content-center">
+					{{ form_start(form) }}
+					{{ form_widget(form) }}
+					<button class="btn btn-primary">Rechercher</button>
+					{{ form_end(form) }}
+				</div>
+			</div>
+			{% for video in videos %}
+			<div class="section-showvideo">
+				<div class="container">
+					<div class="bg-video">
+						<h1 class="m-4 text-center title-show d-flex flex-wrap">{{video.name}}</h1>
+						<div class="link-video ratio ratio-16x9 d-flex justify-content-center">
+							<video controls>
+								<source src="{{video.videoFileName}}" type="video/mp4">
+							</video>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</main>
+{% endblock %}

@@ -2,11 +2,17 @@
 
 namespace App\Entity;
 
+use DateTime;
+use DateTimeInterface;
 use App\Repository\VideoRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: VideoRepository::class)]
+#[Vich\Uploadable]
 class Video
 {
     #[ORM\Id]
@@ -15,6 +21,8 @@ class Video
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Length(max: 255)]
+    #[Assert\NotBlank(message: 'Veuillez donner un nom à la vidéo')]
     private ?string $name = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
@@ -26,12 +34,21 @@ class Video
     #[ORM\Column]
     private ?int $view = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $videoFileName = null;
-
     #[ORM\ManyToOne(inversedBy: 'video')]
-    #[ORM\JoinColumn(nullable: false)]
     private ?Category $category = null;
+
+    #[ORM\Column(type: types::DATETIME_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $updatedAt = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $video = null;
+
+    #[Vich\UploadableField(mapping: 'videos', fileNameProperty: 'video')]
+    #[Assert\File(
+        maxSize: '2M',
+        mimeTypes: ['video/mp4'],
+    )]
+    private ?File $videoFile = null;
 
     #[ORM\Column(length: 255)]
     private ?string $picture = null;
@@ -92,17 +109,6 @@ class Video
         return $this;
     }
 
-    public function getvideoFileName(): ?string
-    {
-        return $this->videoFileName;
-    }
-
-    public function setvideoFileName(string $videoFileName): self
-    {
-        $this->videoFileName = $videoFileName;
-
-        return $this;
-    }
 
     public function getCategory(): ?Category
     {
@@ -112,6 +118,30 @@ class Video
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getVideo(): ?string
+    {
+        return $this->video;
+    }
+
+    public function setVideo(?string $video): self
+    {
+        $this->video = $video;
 
         return $this;
     }
@@ -126,6 +156,22 @@ class Video
         $this->picture = $picture;
 
         return $this;
+    }
+
+    public function setVideoFile(?File $videoFile = null): void
+    {
+        $this->videoFile = $videoFile;
+
+        if (null !== $videoFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new DateTime('now');
+        }
+    }
+
+    public function getVideoFile(): ?File
+    {
+        return $this->videoFile;
     }
 
     public function isPublic(): ?bool
