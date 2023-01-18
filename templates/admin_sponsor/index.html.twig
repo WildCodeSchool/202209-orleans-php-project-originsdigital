@@ -23,7 +23,7 @@
 						{% for sponsor in sponsors %}
 							<tr>
 								<td class="index-title">{{ sponsor.name }}</td>
-								<td class="index-title"><img src="{{ vich_uploader_asset(sponsor) }}" alt="{{ sponsor.logo }}"></td>
+								<td class="index-title"><img src="{{ vich_uploader_asset(sponsor) }}" alt=""></td>
 								<td class="index-title">{{ asset (sponsor.link) }}</td>
 								<td>
 									<a class="btn btn-primary mt-2 me-2" href="{{ path('app_admin_sponsor_show', {'id': sponsor.id}) }}">Afficher</a>
