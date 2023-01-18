@@ -13,6 +13,7 @@
 				<table>
 					<thead class="video-field pt-2">
 						<tr>
+							<th>Id</th>
 							<th>Nom</th>
 							<th>Description</th>
 							<th>Durée</th>
@@ -25,6 +26,7 @@
 					<tbody class="p-2">
 						{% for video in videos %}
 							<tr>
+								<td>{{ video.id }}</td>
 								<td class="index-title">{{ video.name }}</td>
 								<td class="video-description">{{ video.description }}</td>
 								<td class="">{{ video.duration }}</td>
