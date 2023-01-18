@@ -1,11 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}New Video{% endblock %}
+{% block title %}Admin | Ajout vidéo
+{% endblock %}
 
 {% block body %}
-    <h1>Create new Video</h1>
-
-    {{ include('admin_video/_form.html.twig') }}
-
-    <a href="{{ path('app_admin_video_index') }}">back to list</a>
+	<div class="video-show container-fluid p-3">
+		<h1 class="text-center m-3">{{ "ajouter une vidéo"|upper }}</h1>
+		<div class="d-grid gap-2 col-10 py-1 mx-auto pb-3">
+			{{ include('adminVideo/_form.html.twig') }}
+		</div>
+	</div>
 {% endblock %}

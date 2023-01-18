@@ -24,12 +24,15 @@ class AdminVideoController extends AbstractController
     #[Route('/new', name: 'app_admin_video_new', methods: ['GET', 'POST'])]
     public function new(Request $request, VideoRepository $videoRepository): Response
     {
+        /**  @var \App\Entity\Video */
         $video = new Video();
         $form = $this->createForm(VideoType::class, $video);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $videoRepository->save($video, true);
+
+            $this->addFlash('success', 'La vidéo a bien été ajoutée');
 
             return $this->redirectToRoute('app_admin_video_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -73,6 +76,6 @@ class AdminVideoController extends AbstractController
             $videoRepository->remove($video, true);
         }
 
-        return $this->redirectToRoute('app_adminVideo_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_admin_video_index', [], Response::HTTP_SEE_OTHER);
     }
 }
