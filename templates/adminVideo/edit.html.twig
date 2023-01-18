@@ -1,13 +1,16 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}Edit Video{% endblock %}
+{% block title %}Admin | Modification vidéo
+{% endblock %}
 
 {% block body %}
-    <h1>Edit Video</h1>
-
-    {{ include('admin_video/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('app_admin_video_index') }}">back to list</a>
-
-    {{ include('admin_video/_delete_form.html.twig') }}
+	<div class="video-show container-fluid p-3">
+		<h1 class="text-center m-3">{{ "Modifier une vidéo"|upper }}</h1>
+		<div class="delete-button mx-5 my-4 ps-5 ">
+			{{ include('adminVideo/_delete_form.html.twig') }}
+		</div>
+		<div class="d-grid gap-2 col-10 py-1 mx-auto pb-3">
+			{{ include('adminVideo/_form.html.twig', {'button_label': 'Modifier la vidéo'}) }}
+		</div>
+	</div>
 {% endblock %}

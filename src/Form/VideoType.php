@@ -46,11 +46,13 @@ class VideoType extends AbstractType
                 'label' => 'Vidéo',
                 'required' => false,
                 'delete_label' => false,
+                'allow_delete' => false,
                 'download_label' => false,
             ])
             ->add('public', CheckboxType::class, [
                 'label' => 'Voulez-vous rendre cette vidéo accessible à tous?',
                 'required' => true,
+
             ]);
     }
 
