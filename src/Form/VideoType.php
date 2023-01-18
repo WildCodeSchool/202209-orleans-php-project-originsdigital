@@ -43,15 +43,6 @@ class VideoType extends AbstractType
                 'required' => false,
                 'delete_label' => false,
                 'download_label' => false,
-                'constraints' => [
-                    new File([
-                        'maxSize' => '2m',
-                        'mimeTypes' => [
-                            'video/mp4',
-                        ],
-                        'mimeTypesMessage' => 'Veuillez utiliser une vidéo au format: MP4',
-                    ])
-                ]
             ]);
     }
 
