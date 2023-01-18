@@ -13,17 +13,15 @@
 				<table class="w-100">
 					<thead class="video-field pt-2">
 						<tr>
-							<th>Id</th>
-							<th>Name</th>
-							<th>Poster</th>
-							<th>LinkTo</th>
+							<th>Nom</th>
+							<th>Image</th>
+							<th>Lien</th>
 							<th>Actions</th>
 						</tr>
 					</thead>
 					<tbody class="p-2">
 						{% for advertisement in advertisements %}
 							<tr>
-								<td>{{ advertisement.id }}</td>
 								<td>{{ advertisement.name }}</td>
 								<td>{{ advertisement.poster }}</td>
 								<td>{{ advertisement.linkTo }}</td>
@@ -34,7 +32,7 @@
 							</tr>
 						{% else %}
 							<tr>
-								<td colspan="7">no records found</td>
+								<td colspan="7">Aucun résultat trouvé.</td>
 							</tr>
 						{% endfor %}
 					</tbody>

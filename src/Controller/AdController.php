@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/ad')]
+#[Route('/admin/ad')]
 class AdController extends AbstractController
 {
     #[Route('/', name: 'app_ad_index', methods: ['GET'])]
