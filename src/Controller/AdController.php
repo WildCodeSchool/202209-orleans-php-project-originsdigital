@@ -69,7 +69,7 @@ class AdController extends AbstractController
     #[Route('/{id}', name: 'app_ad_delete', methods: ['POST'])]
     public function delete(Request $request, Advertisement $advertisement, AdvertRepository $advertRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$advertisement->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $advertisement->getId(), $request->request->get('_token'))) {
             $advertRepository->remove($advertisement, true);
         }
 
