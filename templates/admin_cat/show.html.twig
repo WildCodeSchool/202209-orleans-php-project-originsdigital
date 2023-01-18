@@ -1,0 +1,32 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}Catégorie | Afficher
+{% endblock %}
+
+{% block body %}
+	<div class="video-show container-fluid p-3">
+		<h1 class="text-center m-3">{{ "afficher une catégorie"|upper }}</h1>
+
+		<a class="btn btn-light mt-3" href={{ path('app_admin_cat_delete', {'id': category.id} ) }}>Supprimer</a>
+
+		<table class="table flex-wrap text-light my-3">
+			<tbody>
+				<tr>
+					<th>Id</th>
+					<td>{{ category.id }}</td>
+				</tr>
+				<tr>
+					<th>Name</th>
+					<td>{{ category.name }}</td>
+				</tr>
+				<tr>
+					<th>Slug</th>
+					<td>{{ category.slug }}</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="buttons my-5 pb-3">
+			<a class="btn btn-primary me-3" href="{{ path('app_admin_cat_edit', {'id': category.id}) }}">Modifier</a>
+			<a class="btn btn-secondary" href="{{ path('app_admin_cat_index') }}">Retour à la liste</a>
+		</div>
+	{% endblock %}

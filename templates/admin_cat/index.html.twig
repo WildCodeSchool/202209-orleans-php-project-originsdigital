@@ -1,0 +1,37 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}Admin | Index catégories{% endblock %}
+
+{% block body %}
+	<div class="admin-list container-fluid mb-4">
+		<div class="row d-flex justify-content-center">
+			<h1 class="cat-index-title text-center">{{ "index des catégories"|upper }}</h1>
+			<section class="cat-summary flex-wrap ps-4 m-2">
+				<a class="cat-new btn btn-outline-primary my-4" href="{{ path('app_admin_cat_new') }}">Ajouter une catégorie</a>
+
+    <table class="table text-white text-center">
+        <thead class="video-field pt-2">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody class="p-2">
+        {% for category in categories %}
+            <tr>
+                <td class="index-title">{{ category.id }}</td>
+                <td class="index-title" >{{ category.name }}</td>
+                <td class="index-title">
+                    <a class="btn btn-primary mt-2 me-2" href="{{ path('app_admin_cat_show', {'id': category.id}) }}">Afficher</a>
+                    <a class="btn btn-secondary mt-2" href="{{ path('app_admin_cat_edit', {'id': category.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">Aucune entrée trouvée</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
