@@ -12,38 +12,36 @@
 
 				<table>
 					<thead class="video-field pt-2">
-						<tr>
-							<th>Nom</th>
-							<th>Description</th>
-							<th>Durée</th>
-							<th>Vues</th>
-							<th>Lien</th>
-                            <th>Catégorie</th>
-							<th>Actions</th>
-						</tr>
+						<th>Nom</th>
+						<th>Catégorie</th>
+						<th>Description</th>
+						<th>Durée</th>
+						<th>Vues</th>
+						<th>Lien</th>
+						<th>Actions</th>
 					</thead>
-					<tbody class="p-2">
-						{% for video in videos %}
-							<tr>
-								<td class="index-title">{{ video.name }}</td>
-								<td class="video-description">{{ video.description }}</td>
-								<td class="">{{ video.duration }}</td>
-								<td class="">{{ video.view }}</td>
-								<td>{{ video.videoFileName }}</td>
-                                <td>{{ video.category.name }}</td>
-								<td>
-									<a class="btn btn-primary mt-2 me-2" href="{{ path('app_admin_video_show', {'id': video.id}) }}">Afficher</a>
-									<a class="btn btn-secondary mt-2" href="{{ path('app_admin_video_edit', {'id': video.id}) }}">Modifier</a>
-								</td>
-							</tr>
-						{% else %}
-							<tr>
-								<td colspan="7">no records found</td>
-							</tr>
-						{% endfor %}
-					</tbody>
-				</table>
-			</section>
-		</div>
-	</div>
-{% endblock %}
+				</tr>
+			</thead>
+			<tbody class="p-2">
+				{% for video in videos %}
+					<tr>
+						<td class="index-title">{{ video.name }}</td>
+						<td>{{ video.category.name }}</td>
+						<td class="video-description">{{ video.description }}</td>
+						<td class="">{{ video.duration }}</td>
+						<td class="">{{ video.view }}</td>
+						<td>{{ video.video }}</td>
+						<td>
+							<a class="btn btn-primary mt-2 me-2" href="{{ path('app_admin_video_show', {'id': video.id}) }}">Afficher</a>
+							<a class="btn btn-secondary mt-2" href="{{ path('app_admin_video_edit', {'id': video.id}) }}">Modifier</a>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="7">Aucun résultat trouvé.</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</section>
+</div></div>{% endblock %}
