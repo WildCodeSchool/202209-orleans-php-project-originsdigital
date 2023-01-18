@@ -39,28 +39,26 @@ class VideoRepository extends ServiceEntityRepository
         }
     }
 
-//    /**
-//     * @return Video[] Returns an array of Video objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('v')
-//            ->andWhere('v.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('v.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    //    /**
+    //     * @return Video[] Returns an array of Video objects
+    //     */
 
-//    public function findOneBySomeField($value): ?Video
-//    {
-//        return $this->createQueryBuilder('v')
-//            ->andWhere('v.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    public function searchVideo(string $search): array
+    {
+        return $this->createQueryBuilder('v')
+            ->andWhere('v.name LIKE :search')
+            ->setParameter('search', '%' . $search . '%')
+            ->orderBy('v.name', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function findOneBySomeField(string $value): ?Video
+    {
+        return $this->createQueryBuilder('v')
+            ->andWhere('v.exampleField = :val')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
 }

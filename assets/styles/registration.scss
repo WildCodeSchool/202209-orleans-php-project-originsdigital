@@ -1,10 +1,47 @@
 @import 'root';
 
 .card {
-    background-color: rgba($primary, 0.25);
-    margin-block: 3rem;
-    box-shadow: 0px 4px 4px rgba($dark, 0.3);
-}
+    background: $primary 0.30;
+    place-content: center;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 8px 8px 30px $intermediate,
+        -8px -8px 30px $intermediate;
+  }
+  
+  .card div, a, h1 {
+    z-index: 1;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    background-image: linear-gradient(180deg, $primary, $primary);
+    height: 280%;
+    animation: rotBGimg 4s linear infinite;
+    transition: all 0.2s linear;
+    z-index:-1;
+  }
+  
+  @keyframes rotBGimg {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .card::after {
+    content: '';
+    position: absolute;
+    background: $intermediate;
+    inset: 5px;
+    border-radius: 15px;
+  }  
 
 .btn {
     box-shadow: 0px 4px 4px rgba($dark, 0.25);
