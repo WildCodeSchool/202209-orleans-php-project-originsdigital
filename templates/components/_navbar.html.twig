@@ -52,9 +52,11 @@
 				<li class="nav-item">
 					<a class="nav-link" href="/category">Catégories</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Favoris</a>
-				</li>
+				{% if app.user %}
+					<li class="nav-item">
+						<a class="nav-link" href="#">Favoris</a>
+					</li>
+				{% endif %}
 			</ul>
 		</div>
 	</div>
