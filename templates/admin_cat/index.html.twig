@@ -13,19 +13,17 @@
 				<table class="table text-white text-center">
 					<thead class="video-field pt-2">
 						<tr>
-							<th>Id</th>
-							<th>Name</th>
+							<th>Nom</th>
 							<th>Actions</th>
 						</tr>
 					</thead>
 					<tbody class="p-2">
 						{% for category in categories %}
 							<tr>
-								<td class="index-title">{{ category.id }}</td>
 								<td class="index-title">{{ category.name }}</td>
-								<td class="index-title">
-									<a class="btn btn-primary mt-2 me-2" href="{{ path('app_admin_cat_show', {'id': category.id}) }}">Afficher</a>
-									<a class="btn btn-secondary mt-2" href="{{ path('app_admin_cat_edit', {'id': category.id}) }}">Modifier</a>
+								<td class="index-title flex-row justify-content-between">
+									<a class="btn btn-primary mt-2 me-2" href="{{ path('app_admin_cat_edit', {'id': category.id}) }}">Modifier</a>
+									<a class="btn-secondary" {{ include('admin_cat/_delete_form.html.twig') }}
 								</td>
 							</tr>
 						{% else %}
