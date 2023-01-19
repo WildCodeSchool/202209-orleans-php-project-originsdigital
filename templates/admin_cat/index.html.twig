@@ -21,9 +21,9 @@
 						{% for category in categories %}
 							<tr>
 								<td class="index-title">{{ category.name }}</td>
-								<td class="index-title flex-row justify-content-between">
-									<a class="btn btn-primary mt-2 me-2" href="{{ path('app_admin_cat_edit', {'id': category.id}) }}">Modifier</a>
-									<a class="btn-secondary" {{ include('admin_cat/_delete_form.html.twig') }}
+								<td class="index-title d-flex flex-row justify-content-center align-items-center">
+									<a class="btn btn-primary me-2" href="{{ path('app_admin_cat_edit', {'id': category.id}) }}">Modifier</a>
+									{{ include('admin_cat/_delete_form.html.twig') }}
 								</td>
 							</tr>
 						{% else %}
