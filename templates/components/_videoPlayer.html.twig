@@ -1,3 +1,3 @@
 <video id="my-video" class="video-js vjs-theme-forest" controls preload="auto" width="1280" height="720" poster="{{video.picture}}" data-setup="{}">
-	<source src="{{video.video}}" type="video/mp4">
+	<source src="{{ vich_uploader_asset(video, 'videoFile') }}" alt="{{video.video}}" type="video/mp4">
 </video>
