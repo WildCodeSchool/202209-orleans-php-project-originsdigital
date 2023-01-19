@@ -1,11 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}New Category{% endblock %}
+{% block title %}Admin | Ajout catégorie
+{% endblock %}
 
 {% block body %}
-    <h1>Create new Category</h1>
-
-    {{ include('admin_cat/_form.html.twig') }}
-
-    <a href="{{ path('app_admin_cat_index') }}">back to list</a>
+	<main class="container-fluid admin-list p-3">
+		<h1 class="text-center m-3">{{ "ajouter une catégorie"|upper }}</h1>
+		<div class="d-grid gap-2 col-10 py-1 mx-auto pb-3">
+			{{ include('admin_cat/_form.html.twig') }}
+		</div>
+	</main>
 {% endblock %}
