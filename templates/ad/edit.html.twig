@@ -1,13 +1,16 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}Edit Advertisement{% endblock %}
+{% block title %}Admin | Modifier publicité
+{% endblock %}
 
 {% block body %}
-    <h1>Edit Advertisement</h1>
-
-    {{ include('ad/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('app_ad_index') }}">back to list</a>
-
-    {{ include('ad/_delete_form.html.twig') }}
+	<div class="video-show container-fluid p-3">
+		<h1 class="text-center m-3">{{ "Modifier une publicité"|upper }}</h1>
+		<div class="delete-button mx-5 my-4 ps-5 ">
+			{{ include('ad/_delete_form.html.twig') }}
+		</div>
+		<div class="d-grid gap-2 col-10 py-1 mx-auto pb-3">
+			{{ include('ad/_form.html.twig', {'button_label': 'Modifier la publicité'}) }}
+		</div>
+	</div>
 {% endblock %}
