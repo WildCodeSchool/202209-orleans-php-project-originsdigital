@@ -9,6 +9,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Vich\UploaderBundle\Form\Type\VichFileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -38,11 +39,20 @@ class VideoType extends AbstractType
             ->add('view', IntegerType::class, [
                 'label' => 'Nombre de vues',
             ])
+            ->add('picture', TextType::class, [
+                'label' => 'Vignette',
+            ])
             ->add('videoFile', VichFileType::class, [
                 'label' => 'Vidéo',
                 'required' => false,
                 'delete_label' => false,
+                'allow_delete' => false,
                 'download_label' => false,
+            ])
+            ->add('public', CheckboxType::class, [
+                'label' => 'Voulez-vous rendre cette vidéo accessible à tous?',
+                'required' => true,
+
             ]);
     }
 

@@ -1,0 +1,9 @@
+.vjs-theme-forest {
+    --vjs-theme-forest--primary: hsl(184, 100%, 50%);
+    --vjs-theme-forest--secondary: #fff;
+}
+
+.vjs-theme-forest:hover .vjs-big-play-button {
+    background-color: transparent;
+    filter: hue-rotate(108deg) brightness(1.5) saturate(2.5);
+}
