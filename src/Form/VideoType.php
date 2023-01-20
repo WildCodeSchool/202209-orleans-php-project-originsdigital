@@ -51,7 +51,7 @@ class VideoType extends AbstractType
             ])
             ->add('public', CheckboxType::class, [
                 'label' => 'Voulez-vous rendre cette vidéo accessible à tous?',
-                'required' => true,
+                'required' => false,
 
             ]);
     }
