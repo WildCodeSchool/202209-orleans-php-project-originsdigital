@@ -10,8 +10,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
-#[Route('/admin/cat')]
+#[Route('/admin/category')]
 class AdminCatController extends AbstractController
 {
     #[Route('/', name: 'app_admin_cat_index', methods: ['GET'])]
@@ -22,7 +23,7 @@ class AdminCatController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_admin_cat_new', methods: ['GET', 'POST'])]
+    #[Route('/ajouter', name: 'app_admin_cat_new', methods: ['GET', 'POST'])]
     public function new(Request $request, CategoryRepository $categoryRepository, SluggerInterface $slugger): Response
     {
         $category = new Category();
@@ -52,13 +53,20 @@ class AdminCatController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_admin_cat_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Category $category, CategoryRepository $categoryRepository): Response
-    {
+    #[Route('/{id}/modifier', name: 'app_admin_cat_edit', methods: ['GET', 'POST'])]
+    public function edit(
+        Request $request,
+        Category $category,
+        CategoryRepository $categoryRepository,
+        SluggerInterface $slugger
+    ): Response {
         $form = $this->createForm(CategoryType::class, $category);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $slug = $slugger->slug($category->getName());
+            $category->setSlug($slug);
+
             $categoryRepository->save($category, true);
 
             return $this->redirectToRoute('app_admin_cat_index', [], Response::HTTP_SEE_OTHER);
