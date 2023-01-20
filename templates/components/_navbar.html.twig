@@ -26,9 +26,11 @@
 					{% endif %}
 				</a>
 				<ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
-					<li>
-						<a class="dropdown-item" href="{{ path('app_profile') }}">Profil</a>
-					</li>
+					{% if app.user %}
+						<li>
+							<a class="dropdown-item" href="{{ path('app_profile') }}">Profil</a>
+						</li>
+					{% endif %}
 					{% if is_granted('ROLE_ADMIN') %}
 						<li>
 							<a class="dropdown-item" href="{{ path('app_admin') }}">Administration</a>
