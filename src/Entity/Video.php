@@ -41,6 +41,7 @@ class Video
     private ?\DateTimeInterface $updatedAt = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Length(max: 255)]
     private ?string $video = null;
 
     #[Vich\UploadableField(mapping: 'videos', fileNameProperty: 'video')]
@@ -51,6 +52,7 @@ class Video
     private ?File $videoFile = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Veuillez ajouter une vignette')]
     private ?string $picture = null;
 
     #[ORM\Column]

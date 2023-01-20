@@ -17,6 +17,8 @@ class Category
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Length(max: 255)]
+    #[Assert\NotBlank(message: 'Veuillez donner un nom à votre catégorie')]
     private ?string $name = null;
 
     #[ORM\Column(length: 255)]

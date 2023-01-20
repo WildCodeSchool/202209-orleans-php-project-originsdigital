@@ -1,0 +1,13 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}Admin | Ajout catégorie
+{% endblock %}
+
+{% block body %}
+	<main class="container-fluid admin-list p-3">
+		<h1 class="text-center m-3">{{ "ajouter une catégorie"|upper }}</h1>
+		<div class="d-grid gap-2 col-10 py-1 mx-auto pb-3">
+			{{ include('admin_cat/_form.html.twig') }}
+		</div>
+	</main>
+{% endblock %}
