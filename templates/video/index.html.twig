@@ -38,11 +38,14 @@
 							</button>
 						</div>
 						{% if app.user %}
-						<div class="bloc-heart">
-							<a href="{{ path('app_video_favoris', {id: video.id})}}" class="btn btn-lg btn-love">
-								<i class="bi svg-img {{ app.user.isInFavorite(video) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
-							</a>
-						</div>
+							<div class="bloc-heart">
+								<form method="post" action="{{ path('app_video_favoris', {id: video.id})}}">
+									<input type="hidden" name="_token" value="{{ csrf_token('favorite' ~ video.id) }}">
+									<button class="btn btn-lg btn-love">
+										<i class="bi svg-img {{ app.user.isInFavorite(video) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
+									</button>
+								</form>
+							</div>
 						{% endif %}
 					</div>
 				</div>

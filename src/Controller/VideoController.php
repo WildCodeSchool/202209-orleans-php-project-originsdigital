@@ -2,11 +2,12 @@
 
 namespace App\Controller;
 
-use App\Entity\Video;
 use App\Entity\User;
+use App\Entity\Video;
 use App\Repository\UserRepository;
 use App\Repository\VideoRepository;
 use App\Repository\AdvertRepository;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -34,8 +35,8 @@ class VideoController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/favoris', methods: ['GET','POST'], name: 'app_video_favoris')]
-    public function addToFavorite(Video $video, UserRepository $userRepository): Response
+    #[Route('/{id}/favoris', methods: ['POST'], name: 'app_video_favoris')]
+    public function addToFavorite(Video $video, UserRepository $userRepository, Request $request): Response
     {
 
         /** @var \App\Entity\User */
@@ -47,7 +48,9 @@ class VideoController extends AbstractController
             $user->addFavorite($video);
         }
 
-        $userRepository->save($user, true);
+        if ($this->isCsrfTokenValid('favorite' . $video->getId(), $request->request->get('_token'))) {
+            $userRepository->save($user, true);
+        }
 
         return $this->redirectToRoute('app_video_show', ['video' => $video->getId()], Response::HTTP_SEE_OTHER);
     }
