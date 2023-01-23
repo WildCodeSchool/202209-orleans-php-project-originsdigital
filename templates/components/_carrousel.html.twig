@@ -9,7 +9,7 @@
 			</svg>
 		</button>
 		<div class="slider">
-			{% for video in videos %}
+			{% for video in category.video %}
 				{% include "/components/_blocVideo.html.twig" %}
 			{% endfor %}
 		</div>
