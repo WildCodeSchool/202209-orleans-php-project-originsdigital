@@ -42,7 +42,9 @@ class VideoType extends AbstractType
             ])
             ->add('thumbnail', VichImageType::class, [
                 'label' => 'Vignette',
-
+                'required' => false,
+                'allow_delete' => true,
+                'download_label' => false,
             ])
             ->add('videoFile', VichFileType::class, [
                 'label' => 'Vidéo',
@@ -54,7 +56,6 @@ class VideoType extends AbstractType
             ->add('public', CheckboxType::class, [
                 'label' => 'Voulez-vous rendre cette vidéo accessible à tous?',
                 'required' => false,
-
             ]);
     }
 
