@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use DateTime;
 use DateTimeInterface;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
@@ -69,6 +71,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
     private ?DatetimeInterface $updatedAt = null;
+
+    #[ORM\ManyToMany(targetEntity: Video::class, mappedBy: 'favorite')]
+    private Collection $favorite;
+
+    public function __construct()
+    {
+        $this->favorite = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -221,5 +231,37 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             'email' => $this->email,
             'password' => $this->password,
         ];
+    }
+
+    /**
+     * @return Collection<int, Video>
+     */
+    public function getFavorite(): Collection
+    {
+        return $this->favorite;
+    }
+
+    public function addFavorite(Video $favorite): self
+    {
+        if (!$this->favorite->contains($favorite)) {
+            $this->favorite->add($favorite);
+            $favorite->addFavorite($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFavorite(Video $favorite): self
+    {
+        if ($this->favorite->removeElement($favorite)) {
+            $favorite->removeFavorite($this);
+        }
+
+        return $this;
+    }
+
+    public function isInFavorite(Video $video): bool
+    {
+        return $this->favorite->contains($video);
     }
 }

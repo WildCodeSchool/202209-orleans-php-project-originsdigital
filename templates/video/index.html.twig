@@ -37,13 +37,16 @@
 								</svg>
 							</button>
 						</div>
-						<div class="bloc-heart">
-							<button class="btn btn-lg btn-love">
-								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="svg-img bi bi-heart-fill" viewbox="0 0 16 16">
-									<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-								</svg>
-							</button>
-						</div>
+						{% if app.user %}
+							<div class="bloc-heart">
+								<form method="post" action="{{ path('app_video_favoris', {id: video.id})}}">
+									<input type="hidden" name="_token" value="{{ csrf_token('favorite' ~ video.id) }}">
+									<button class="btn btn-lg btn-love">
+										<i class="bi svg-img {{ app.user.isInFavorite(video) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
+									</button>
+								</form>
+							</div>
+						{% endif %}
 					</div>
 				</div>
 			</div>
