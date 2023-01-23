@@ -10,9 +10,7 @@
 		</button>
 		<div class="slider">
 			{% for video in videos %}
-				<a href="{{path('app_video_show', {'video': video.id})}}" class="link-card">
-					<img src="{{video.picture}}" alt="{{video.name}}" class="img-video">
-				</a>
+				{% include "/components/_blocVideo.html.twig" %}
 			{% endfor %}
 		</div>
 		<button class="handle right-handle">
