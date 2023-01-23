@@ -17,6 +17,8 @@
 						<img src="{{ vich_uploader_asset(video, 'thumbnail') }}" alt="{{video.name}}" class="img-video">
 					{% endif %}
 				</a>
+			{% for video in category.video %}
+				{% include "/components/_blocVideo.html.twig" %}
 			{% endfor %}
 		</div>
 		<button class="handle right-handle">
