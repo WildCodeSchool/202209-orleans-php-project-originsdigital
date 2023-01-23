@@ -54,4 +54,10 @@ class VideoController extends AbstractController
 
         return $this->redirectToRoute('app_video_show', ['video' => $video->getId()], Response::HTTP_SEE_OTHER);
     }
+
+    #[Route('/mes-favoris', name: 'app_favorite_video')]
+    public function showFavoriteVideo(): Response
+    {
+        return $this->render('profile/showFavoriteVideo.html.twig', []);
+    }
 }
