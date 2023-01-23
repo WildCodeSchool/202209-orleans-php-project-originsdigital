@@ -9,7 +9,7 @@
 			</svg>
 		</button>
 		<div class="slider">
-			{% for video in videos %}
+			{% for video in category.video %}
 				<a href="{{path('app_video_show', {'video': video.id})}}" class="link-card">
 					<img src="{{video.picture}}" alt="{{video.name}}" class="img-video">
 				</a>
