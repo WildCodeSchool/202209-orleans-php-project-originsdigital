@@ -18,6 +18,11 @@ class AdFixtures extends Fixture
 
     public function load(ObjectManager $manager): void
     {
+        $files = glob('/images/*');
+
+        foreach ($files as $file) {
+            copy($file, __DIR__ . '/../../public/uploads/images/ads/');
+        }
         foreach (self::ADS_IMG as $title => $pics) {
             $advert = new Advertisement();
             $advert->setName($title);
