@@ -17,3 +17,11 @@
 .admin-list {
     min-height: 100vh;
 }
+
+.vich-image, .th-thumb {
+    img {
+        height: 600px;
+        width: 800px;
+        object-fit: contain;
+    }
+}

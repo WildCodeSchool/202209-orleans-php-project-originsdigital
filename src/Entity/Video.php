@@ -53,9 +53,16 @@ class Video
     )]
     private ?File $videoFile = null;
 
-    #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message: 'Veuillez ajouter une vignette')]
+    #[ORM\Column(length: 255, nullable:true)]
+    #[Assert\Length(max: 255)]
     private ?string $picture = null;
+
+    #[Vich\UploadableField(mapping: 'vignettes', fileNameProperty: 'picture')]
+    #[Assert\File(
+        maxSize: '2M',
+        mimeTypes: ['image/jpeg', 'image/png', 'image/webp'],
+    )]
+    private ?File $thumbnail = null;
 
     #[ORM\Column]
     private ?bool $public = null;
@@ -146,6 +153,35 @@ class Video
         return $this;
     }
 
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(?string $picture): self
+    {
+        $this->picture = $picture;
+
+        return $this;
+    }
+
+    public function setThumbnail(?File $thumbnail = null): void
+    {
+        $this->thumbnail = $thumbnail;
+
+        if (null !== $thumbnail) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new DateTime('now');
+        }
+    }
+
+    public function getThumbnail(): ?File
+    {
+        return $this->thumbnail;
+    }
+
+
     public function getVideo(): ?string
     {
         return $this->video;
@@ -154,18 +190,6 @@ class Video
     public function setVideo(?string $video): self
     {
         $this->video = $video;
-
-        return $this;
-    }
-
-    public function getPicture(): ?string
-    {
-        return $this->picture;
-    }
-
-    public function setPicture(string $picture): self
-    {
-        $this->picture = $picture;
 
         return $this;
     }
