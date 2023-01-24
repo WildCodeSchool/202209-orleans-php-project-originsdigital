@@ -9,14 +9,6 @@
 			</svg>
 		</button>
 		<div class="slider">
-			{% for video in videos %}
-				<a href="{{path('app_video_show', {'video': video.id})}}" class="link-card">
-					{% if video.picture is null %}
-						<img src={{ asset('build/images/videoPlaceholder.jpeg') }} alt="{{video.name}}" class="img-video">
-					{% else %}
-						<img src="{{ vich_uploader_asset(video, 'thumbnail') }}" alt="{{video.name}}" class="img-video">
-					{% endif %}
-				</a>
 			{% for video in category.video %}
 				{% include "/components/_blocVideo.html.twig" %}
 			{% endfor %}
