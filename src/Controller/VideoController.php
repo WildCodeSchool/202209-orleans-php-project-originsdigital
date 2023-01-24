@@ -29,6 +29,10 @@ class VideoController extends AbstractController
         $ads = $advertRepository->findAll();
         $randAds = $ads[array_rand($ads, 1)];
 
+        $countViews = $video->getView() + 1;
+        $video->setView($countViews);
+        $videoRepository->save($video, true);
+
         return $this->render('video/index.html.twig', [
             'video' => $video,
             'ads' => $randAds,
