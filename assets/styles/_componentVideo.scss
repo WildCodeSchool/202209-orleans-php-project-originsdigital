@@ -1,0 +1,12 @@
+.bloc-category-show {
+    .card-show-cat {
+        box-shadow: inset 3px 3px 15px 0px $light;
+        .img-video,
+        .img-video-lock {
+            max-width: 490px;
+            min-width: 490px;
+            max-height: 279px;
+            object-fit: cover;
+        }
+    }
+}
