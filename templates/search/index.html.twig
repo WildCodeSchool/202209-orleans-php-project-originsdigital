@@ -8,28 +8,26 @@
 {% block body %}
 	<main class="container-fluid admin-list">
 		<div class="text-center">
-			<div class="mb-2text-lightpx-5">
-				<div class="d-flex justify-content-center">
+			<div class="text-light p-5">
+				<div class="d-flex justify-content-center mt-3 fs-1 fw-bold">
 					{{ form_start(form) }}
 					{{ form_widget(form) }}
-					<button class="btn btn-primary">Rechercher</button>
+					<button class="btn btnstyle btn-primary">Rechercher</button>
 					{{ form_end(form) }}
 				</div>
 			</div>
-			{% for video in videos %}
-			<div class="section-showvideo">
-				<div class="container">
-					<div class="bg-video">
-						<h1 class="m-4 text-center title-show d-flex flex-wrap">{{video.name}}</h1>
-						<div class="link-video ratio ratio-16x9 d-flex justify-content-center">
-							<video controls>
-								<source src="{{video.video}}" type="video/mp4">
-							</video>
+			<div class="bloc-category-show">
+				{% for video in videos %}
+					<div class="d-flex justify-content-around mb-5 overflow-auto card-show-cat">
+						{% include "/components/_blocVideo.html.twig" %}
+						<div class="title-view mt-2 d-flex flex-column justify-content-evenly align-items-start w-100">
+							<h2 class="mx-4 mb-0">{{video.name}}</h2>
+							<p class="mx-4 mb-0">{{video.view ~ ' vues'}}</p>
+							<p class="mx-4 mb-0">{{ video.description }}</p>
 						</div>
 					</div>
-				</div>
+				{% endfor %}
 			</div>
-			{% endfor %}
 		</div>
 	</main>
 {% endblock %}
