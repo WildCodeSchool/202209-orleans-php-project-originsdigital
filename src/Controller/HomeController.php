@@ -12,8 +12,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(VideoRepository $videoRepository, CategoryRepository $categoryRepository, ActualityRepository $actualityRepository): Response
-    {
+    public function index(
+        VideoRepository $videoRepository,
+        CategoryRepository $categoryRepository,
+        ActualityRepository $actualityRepository
+    ): Response {
         return $this->render('home/index.html.twig', [
             'videos' => $videoRepository->findAll(),
             'categories' => $categoryRepository->findAll(),
