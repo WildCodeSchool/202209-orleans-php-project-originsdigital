@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Advertisement;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Symfony\Component\Filesystem\Filesystem;
 use Doctrine\Persistence\ObjectManager;
 
 class AdFixtures extends Fixture
@@ -16,16 +17,19 @@ class AdFixtures extends Fixture
         'Warcraft' => 'warcraft.png'
     ];
 
+    public function __construct(private Filesystem $filesystem)
+    {
+    }
+
     public function load(ObjectManager $manager): void
     {
-        $files = glob('/images/*');
+        $this->filesystem->remove(__DIR__ . '/../../public/uploads/images/');
+        $this->filesystem->mkdir(__DIR__ . '/../../public/uploads/images/');
 
-        foreach ($files as $file) {
-            copy($file, __DIR__ . '/../../public/uploads/images/ads/');
-        }
         foreach (self::ADS_IMG as $title => $pics) {
             $advert = new Advertisement();
             $advert->setName($title);
+            copy('./src/DataFixtures/images/' . $pics, __DIR__ . '/../../public/uploads/images/' . $pics);
             $advert->setPoster($pics);
             $advert->setLinkTo('https://www.leagueoflegends.com/fr-fr/');
             $manager->persist($advert);
