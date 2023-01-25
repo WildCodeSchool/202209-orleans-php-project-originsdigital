@@ -3,8 +3,9 @@
 namespace App\DataFixtures;
 
 use App\Entity\Actuality;
-use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Doctrine\Bundle\FixturesBundle\Fixture;
+use Symfony\Component\Filesystem\Filesystem;
 
 class ActualityFixtures extends Fixture
 {
@@ -14,16 +15,19 @@ class ActualityFixtures extends Fixture
         'Xbox-game-pass' => 'xbox-game-pass-banniere.jpeg',
     ];
 
+    public function __construct(private Filesystem $filesystem)
+    {
+    }
+
     public function load(ObjectManager $manager): void
     {
-        $files = glob('/images/*');
+        $this->filesystem->remove(__DIR__ . '/../../public/uploads/images/');
+        $this->filesystem->mkdir(__DIR__ . '/../../public/uploads/images/');
 
-        foreach ($files as $file) {
-            copy($file, __DIR__ . '/../../public/uploads/images/actual/');
-        }
         foreach (self::ACTU_IMG as $name => $picture) {
             $actuality = new Actuality();
             $actuality->setName($name);
+            copy('./src/DataFixtures/images/' . $picture, __DIR__ . '/../../public/uploads/images/' . $picture);
             $actuality->setPicture($picture);
             $manager->persist($actuality);
         }
