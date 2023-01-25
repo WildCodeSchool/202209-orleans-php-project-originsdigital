@@ -15,17 +15,20 @@ class VideoFixtures extends Fixture implements DependentFixtureInterface
 {
     public const NBR_VIDEOS = 10;
 
+    public function __construct(private Filesystem $filesystem)
+    {
+    }
+
     /**
      * @SuppressWarnings(PHPMD.UnusedLocalVariable)
      */
     public function load(ObjectManager $manager): void
     {
         $faker = Factory::create();
-        $files = glob('/videos/*');
 
-        foreach ($files as $file) {
-            copy($file, __DIR__ . '/../../public/uploads/videos/');
-        }
+        $this->filesystem->remove(__DIR__ . '/../../public/uploads/videos/');
+        $this->filesystem->mkdir(__DIR__ . '/../../public/uploads/videos/');
+
         foreach (CategoryFixtures::CATEGORIES as $key => $categoryName) {
             for ($j = 1; $j <= self::NBR_VIDEOS; $j++) {
                 $video = new Video();
@@ -34,7 +37,9 @@ class VideoFixtures extends Fixture implements DependentFixtureInterface
                 $video->setCategory($this->getReference('category_' . $key));
                 $video->setView($faker->numberBetween(1, 200));
                 $video->setDuration($faker->numberBetween(2, 5));
-                $video->setVideo('video' . (rand(1, 3) . '.mp4'));
+                $videoName = 'video' . (rand(1, 3) . '.mp4');
+                copy('./src/DataFixtures/videos/' . $videoName, __DIR__ . '/../../public/uploads/videos/' . $videoName);
+                $video->setVideo($videoName);
                 $video->setPublic($faker->boolean());
                 $manager->persist($video);
             }
