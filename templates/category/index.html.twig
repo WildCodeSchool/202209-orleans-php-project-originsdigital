@@ -12,9 +12,10 @@
 	<section class="category-list text-center">
 		<h1 class="category-title m-5">Catégories</h1>
 		{% for category in categories %}
-			<div class="d-grid gap-2 col-10 col-lg-7 py-1 mx-auto">
-				<a class="category-link btn btn-outline-primary m-2 p-4" href="{{path("category_show", { slug: category.slug|lower }) }}" role="button">
-					<h2 class="category-name">{{ category.name }}</h2>
+			<div class="col-10 col-lg-7 mx-auto">
+				<a class="category-link" href="{{path("category_show", { slug: category.slug|lower }) }}">
+						<h2 class="category-name">{{ category.name }}</h2>
+						<img class="category-background" src="{{ vich_uploader_asset(category, 'backgroundPicture') }}" alt="{{ category.background }}">
 				</a>
 			</div>
 		{% else %}
