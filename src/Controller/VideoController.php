@@ -70,9 +70,9 @@ class VideoController extends AbstractController
     #[Route('/like/video/{id}', name: 'app_video_like')]
     public function likeVideo(Video $video, UserRepository $userRepository, Request $request): Response
     {
+        /** @var \App\Entity\User */
         $user = $this->getUser();
 
-        /** @var \App\Entity\User */
         if ($video->isLikedByUser($user)) {
             $video->removeLike($user);
         } else {
