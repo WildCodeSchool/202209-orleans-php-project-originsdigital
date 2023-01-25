@@ -69,10 +69,11 @@ class Video
     private ?bool $public = null;
 
     #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'favorite')]
+    #[JoinTable(name: 'user_video_favorite')]
     private Collection $favorite;
 
     #[ORM\ManyToMany(targetEntity: User::class)]
-    #[JoinTable(name: 'user_video_likes')]
+    #[JoinTable(name: 'user_video_like')]
     private Collection $likes;
 
 
