@@ -7,13 +7,13 @@
 	<main class="admin-list">
 		<h1 class="admin-title mb-5 text-center">Bonjour
 			{{ app.user.firstName }}</h1>
-		<section class="admin-text py-2 m-2">
+		<section class="admin-text py-2 m-2 text-center">
 			Bienvenue sur la partie administrateur
-			<ul>
-				<li>Pour vérifier que tout fonctionne,
+			<span>
+				<p>Pour vérifier que tout fonctionne,
 					<a href="{{path("app_home")|nl2br}}">revenir à l'accueil</a>.
-				</li>
-			</ul>
+				</p>
+			</span>
 		</section>
 	</main>
 {% endblock %}
