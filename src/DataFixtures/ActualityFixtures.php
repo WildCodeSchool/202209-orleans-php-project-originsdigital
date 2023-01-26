@@ -21,13 +21,16 @@ class ActualityFixtures extends Fixture
 
     public function load(ObjectManager $manager): void
     {
-        $this->filesystem->remove(__DIR__ . '/../../public/uploads/images/');
-        $this->filesystem->mkdir(__DIR__ . '/../../public/uploads/images/');
+        $this->filesystem->remove(__DIR__ . '/../../public/uploads/images/actualities/');
+        $this->filesystem->mkdir(__DIR__ . '/../../public/uploads/images/actualities/');
 
         foreach (self::ACTU_IMG as $name => $picture) {
             $actuality = new Actuality();
             $actuality->setName($name);
-            copy('./src/DataFixtures/images/' . $picture, __DIR__ . '/../../public/uploads/images/' . $picture);
+            copy(
+                './src/DataFixtures/images/actualities/' . $picture,
+                __DIR__ . '/../../public/uploads/images/actualities/' . $picture
+            );
             $actuality->setPicture($picture);
             $manager->persist($actuality);
         }
