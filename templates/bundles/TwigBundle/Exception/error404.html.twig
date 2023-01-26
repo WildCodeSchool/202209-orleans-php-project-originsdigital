@@ -1,0 +1,22 @@
+{# templates/bundles/TwigBundle/Exception/error404.html.twig #}
+{% extends 'layoutUser.html.twig' %}
+
+{% block title %}404 - Non trouvée
+{% endblock %}
+
+{% block body %}
+	<main class="error-list d-flex flex-column justify-content-center text-center vh-100">
+		<h1 class="error-title mb-5 text-center">Erreur 404: Cette page n'existe pas</h1>
+		<section class="error-text text-center py-2 m-5">
+			<div class="d-flex flex-row justify-content-evenly align-items-center m-auto">
+				<img src="https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/3b25b3960cda4b4.png" alt="no-entry">
+				<div class="text-decoration-none p-4">
+					<h2 class="align-items-center justify-content-start">La page recherchée n'a pas pu être localisée.</h2>
+					<h3 class="text-decoration-none m-2">Vérifiez l'URL ou
+						<a href="{{path("app_home")|nl2br}}">retournez à l'accueil</a>.
+					</h3>
+				</div>
+			</div>
+		</section>
+	</main>
+{% endblock %}
