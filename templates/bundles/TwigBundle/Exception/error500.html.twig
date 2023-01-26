@@ -1,0 +1,22 @@
+{% extends 'layoutUser.html.twig' %}
+
+{% block title %}500 - Erreur
+{% endblock %}
+
+{% block body %}
+	<main class="error-list d-flex flex-column justify-content-center text-center vh-100">
+		<h1 class="error-title mb-5 text-center">Erreur 500: Problème de serveur interne</h1>
+		<section class="error-text text-center py-2 m-3">
+			<div class="d-flex flex-row justify-content-evenly align-items-center m-auto">
+				<img src="https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/02f2f54fb47dced.png" alt="no-entry">
+				<div class="text-decoration-none p-4">
+					<h2 class="align-items-center justify-content-start">Le serveur a envoyé une mauvaise requête.</h2>
+					<h3 class="text-decoration-none m-2">
+						<a href="{{path("app_home")|nl2br}}">Retournez à l'accueil</a>
+                        ou réessayez plus tard.
+					</h3>
+				</div>
+			</div>
+		</section>
+	</main>
+{% endblock %}
