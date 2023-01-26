@@ -30,7 +30,7 @@
 								<form method="post" action="{{ path('app_video_like', {id: video.id})}}">
 									<input type="hidden" name="_token" value="{{ csrf_token('likes' ~ video.id) }}">
 									<button class="btn btn-lg btn-left">
-										<i class="bi bi-hand-thumbs-up {{app.user in video.likes ? 'bi-hand-thumbs-up-fill' : 'bi-hand-thumbs-up' }}"></i>
+										<i class="bi {{app.user in video.likes ? 'bi-hand-thumbs-up-fill' : 'bi-hand-thumbs-up' }}"></i>
 									</button>
 								</form>
 							</div>
