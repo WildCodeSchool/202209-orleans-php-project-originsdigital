@@ -8,6 +8,10 @@
     overflow: hidden;
 }
 
+.title-carrousel {
+    border-bottom: 2px solid $primary;
+}
+
 .slider {
     --items-per-screen: 4;
     --slider-index: 0;

@@ -15,7 +15,6 @@ class SponsorFixtures extends Fixture
         for ($i = 0; $i < self::NB_SPONSOR; $i++) {
             $sponsor = new Sponsor();
             $sponsor->setName('sponsor' . $i);
-            $sponsor->setLogo('placeHolder.png');
             $sponsor->setLink('http://redbull.com');
             $manager->persist($sponsor);
         }

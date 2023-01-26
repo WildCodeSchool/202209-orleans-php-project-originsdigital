@@ -40,6 +40,7 @@
 						{% if app.user %}
 							<a class="dropdown-item" href="{{ path('app_logout') }}">Déconnexion</a>
 						{% else %}
+							<a class="dropdown-item" href="{{ path('app_register') }}">Inscription</a>
 							<a class="dropdown-item" href="{{ path('app_login') }}">Connexion</a>
 						{% endif %}
 					</li>
@@ -56,7 +57,7 @@
 				</li>
 				{% if app.user %}
 					<li class="nav-item">
-						<a class="nav-link text-white" href="#">Favoris</a>
+						<a class="nav-link text-white" href="{{ path('app_favorite_video') }}">Favoris</a>
 					</li>
 				{% endif %}
 			</ul>

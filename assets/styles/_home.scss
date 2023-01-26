@@ -1,7 +1,11 @@
 .section-home {
-    margin-top: 3rem;
     a {
         text-decoration: none;
         color: $light;
+    }
+    .image-actuality {
+        max-height: 500px;
+        min-height: 400px;
+        object-fit: cover;
     }
 }

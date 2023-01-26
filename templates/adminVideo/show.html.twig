@@ -31,6 +31,10 @@
 					<th>Vues</th>
 					<td>{{ video.view }}</td>
 				</tr>
+                <tr class="th-thumb">
+					<th>Vignette</th>
+					<td><img src={{ vich_uploader_asset(video, 'thumbnail') }}></td>
+				</tr>
 				<tr>
 					<th>Lien de la vidéo</th>
 					<td>{{ video.video }}</td>
