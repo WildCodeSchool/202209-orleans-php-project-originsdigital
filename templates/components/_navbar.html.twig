@@ -40,6 +40,7 @@
 						{% if app.user %}
 							<a class="dropdown-item" href="{{ path('app_logout') }}">Déconnexion</a>
 						{% else %}
+							<a class="dropdown-item" href="{{ path('app_register') }}">Inscription</a>
 							<a class="dropdown-item" href="{{ path('app_login') }}">Connexion</a>
 						{% endif %}
 					</li>

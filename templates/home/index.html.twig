@@ -12,6 +12,7 @@
 
 {% block body %}
 	<section class="section-home">
+		{% include "/components/_carrouselBanniere.html.twig" %}
 		{% for category in categories %}
 			{% include "/components/_carrousel.html.twig" %}
 		{% endfor %}

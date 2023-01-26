@@ -7,6 +7,8 @@ use App\Entity\Video;
 use App\Repository\UserRepository;
 use App\Repository\VideoRepository;
 use App\Repository\AdvertRepository;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -63,5 +65,24 @@ class VideoController extends AbstractController
     public function showFavoriteVideo(): Response
     {
         return $this->render('profile/showFavoriteVideo.html.twig', []);
+    }
+
+    #[Route('/like/video/{id}', name: 'app_video_like')]
+    public function likeVideo(Video $video, UserRepository $userRepository, Request $request): Response
+    {
+        /** @var \App\Entity\User */
+        $user = $this->getUser();
+
+        if ($video->isLikedByUser($user)) {
+            $video->removeLike($user);
+        } else {
+            $video->addLike($user);
+        }
+
+        if ($this->isCsrfTokenValid('likes' . $video->getId(), $request->request->get('_token'))) {
+            $userRepository->save($user, true);
+        }
+
+        return $this->redirectToRoute('app_video_show', ['video' => $video->getId()], Response::HTTP_SEE_OTHER);
     }
 }
