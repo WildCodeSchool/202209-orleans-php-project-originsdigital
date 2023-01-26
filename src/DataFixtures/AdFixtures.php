@@ -23,13 +23,13 @@ class AdFixtures extends Fixture
 
     public function load(ObjectManager $manager): void
     {
-        $this->filesystem->remove(__DIR__ . '/../../public/uploads/images/');
-        $this->filesystem->mkdir(__DIR__ . '/../../public/uploads/images/');
+        $this->filesystem->remove(__DIR__ . '/../../public/uploads/images/ads/');
+        $this->filesystem->mkdir(__DIR__ . '/../../public/uploads/images/ads/');
 
         foreach (self::ADS_IMG as $title => $pics) {
             $advert = new Advertisement();
             $advert->setName($title);
-            copy('./src/DataFixtures/images/' . $pics, __DIR__ . '/../../public/uploads/images/' . $pics);
+            copy('./src/DataFixtures/images/ads/' . $pics, __DIR__ . '/../../public/uploads/images/ads/' . $pics);
             $advert->setPoster($pics);
             $advert->setLinkTo('https://www.leagueoflegends.com/fr-fr/');
             $manager->persist($advert);
