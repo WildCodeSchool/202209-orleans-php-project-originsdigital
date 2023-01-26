@@ -15,21 +15,24 @@
 	<section class="section-showvideo">
 		<div class="container">
 			<div class="bg-video">
-				<h1 class="m-4 text-center title-show d-flex flex-wrap">{{video.name}}</h1>
 				<div class="link-video ratio ratio-16x9 d-flex justify-content-center">
 					{% include "/components/_videoPlayer.html.twig" %}
 				</div>
 				<div class="bloc-description mt-4 d-flex justify-content-between">
-					<div class="title-view">
-						<h3>{{video.name}}</h3>
-						<p class="mx-2">{{video.view ~ ' vues'}}</p>
+					<div class="title-view mb-3">
+						<h1 class="m-2 text-center title-show d-flex flex-wrap">{{video.name}}</h1>
+						<div class="d-flex">
+							<p class="mx-2">{{video.view ~ ' vues'}}</p>
+							<p class="mx-3">{{video.duration ~ ' min'}}</p>
+						</div>
+						<p class="mx-2">{{video.description}}</p>
 					</div>
-					<div class="bloc-like d-flex flex-wrap justify-content-center align-items-center">
+					<div class="bloc-like d-flex flex-wrap justify-content-center align-items-start m-2">
 						{% if app.user %}
 							<div class="bloc-thumb">
 								<form method="post" action="{{ path('app_video_like', {id: video.id})}}">
 									<input type="hidden" name="_token" value="{{ csrf_token('likes' ~ video.id) }}">
-									<button class="btn btn-lg btn-left">
+									<button class="btn btn-lg btn-left me-2">
 										<i class="bi {{app.user in video.likes ? 'bi-hand-thumbs-up-fill' : 'bi-hand-thumbs-up' }}"></i>
 									</button>
 								</form>
