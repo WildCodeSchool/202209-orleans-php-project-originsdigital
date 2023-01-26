@@ -20,7 +20,11 @@
 			<div class="dropdown text-center">
 				<a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 					{% if app.user %}
-						<img class="rounded-circle" src="{{ vich_uploader_asset(app.user) }}" alt="avatar">
+						{% if app.user.userPicture is null %}
+							<img class="rounded-circle" src="{{ asset('build/images/Ellipse2.png') }}" alt="avatar">
+						{% else %}
+							<img class="rounded-circle" src="{{ vich_uploader_asset(app.user) }}" alt="avatar">
+						{% endif %}
 					{% else %}
 						<img class="rounded-circle" src="{{ asset('build/images/Ellipse2.png') }}" alt="avatar">
 					{% endif %}
