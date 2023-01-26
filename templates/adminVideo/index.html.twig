@@ -10,30 +10,35 @@
 			<section class="video-summary flex-wrap ps-4 m-2">
 				<a class="video-new btn btn-outline-primary my-4" href="{{ path('app_admin_video_new') }}">Ajouter une vidéo</a>
 
-				<table>
-					<thead class="video-field pt-2">
+				<table class="w-100">
+					<thead class="video-field pt-2 border-bottom">
 						<th>Nom</th>
 						<th>Catégorie</th>
-						<th>Description</th>
+						<th>Vignette</th>
 						<th>Durée</th>
 						<th>Vues</th>
-						<th>Lien</th>
 						<th>Actions</th>
 					</thead>
 				</tr>
 			</thead>
-			<tbody class="p-2">
+			<tbody class="p-4">
 				{% for video in videos %}
 					<tr>
-						<td class="index-title">{{ video.name }}</td>
+						<td>{{ video.name }}</td>
 						<td>{{ video.category.name }}</td>
-						<td class="video-description">{{ video.description }}</td>
+						<td>
+							{% if video.picture is null %}
+								<img src={{ asset('build/images/videoPlaceholder.jpeg') }} width="120" height="75" class="my-2" alt="{{video.picture}}">
+							{% else %}
+								<img src="{{asset('uploads/vignettes/' ~ video.picture)}}" width="120" height="75" class="my-2" alt="{{video.picture}}">
+							{% endif %}
+						</td>
 						<td class="">{{ video.duration }}</td>
 						<td class="">{{ video.view }}</td>
-						<td>{{ video.video }}</td>
-						<td>
-							<a class="btn btn-primary mt-2 me-2" href="{{ path('app_admin_video_show', {'id': video.id}) }}">Afficher</a>
-							<a class="btn btn-secondary mt-2" href="{{ path('app_admin_video_edit', {'id': video.id}) }}">Modifier</a>
+						<td class="d-flex flex-row">
+							<a class="btn btn-outline-warning mt-2 me-2" href="{{ path('app_admin_video_show', {'id': video.id}) }}">Afficher</a>
+							<a class="btn btn-success mt-2" href="{{ path('app_admin_video_edit', {'id': video.id}) }}">Modifier</a>
+                            {{ include('adminVideo/_delete_form.html.twig') }}
 						</td>
 					</tr>
 				{% else %}
