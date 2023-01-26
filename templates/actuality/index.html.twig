@@ -10,7 +10,7 @@
 			<section class="video-summary flex-wrap ps-4 m-2">
 				<a class="video-new btn btn-outline-primary my-4" href="{{ path('app_actuality_new') }}">Ajouter une bannière</a>
 
-				<table class="w-100">
+				<table class="table table-borderless text-white text-center">
 					<thead class="video-field pt-2 border-bottom">
 						<tr>
 							<th>Nom</th>
@@ -21,10 +21,10 @@
 					</thead>
 					<tbody class="p-2">
 						{% for actuality in actualities %}
-							<tr>
+							<tr class="align-middle">
 								<td>{{ actuality.name }}</td>
 								<td>
-									<img src="{{asset('uploads/images/actualities/' ~ actuality.picture)}}" width="120" height="75" alt="{{actuality.picture}}">
+									<img src="{{asset('uploads/images/actualities/' ~ actuality.picture)}}" width="300" height="100" alt="{{actuality.picture}}">
 								</td>
 								<td>{{ actuality.link}}</td>
 								<td>
