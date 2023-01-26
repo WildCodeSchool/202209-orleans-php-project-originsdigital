@@ -1,17 +1,17 @@
 {% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}Admin | Index sponsor
+{% block title %}Admin | Sponsor index
 {% endblock %}
 
 {% block body %}
 	<div class="admin-list container-fluid">
 		<div class="row d-flex justify-content-center">
-			<h1 class="video-index-title text-center">{{ "Index des sponsors"|upper }}</h1>
-			<section class="video-summary flex-wrap ps-4 m-2">
-				<a class="video-new btn btn-outline-primary my-4" href="{{ path('app_admin_sponsor_new') }}">Ajouter un sponsor</a>
+			<h1 class="sponsor-index-title text-center">{{ "Index des sponsors"|upper }}</h1>
+			<section class="sponsor-summary flex-wrap ps-4 m-2">
+				<a class="sponsor-new btn btn-outline-primary my-4" href={{ path('app_admin_sponsor_new') }}>Ajouter un sponsor</a>
 
 				<table class="table table-borderless text-white text-center">
-					<thead class="video-field pt-2 border-bottom">
+					<thead class="sponsor-field pt-2">
 						<tr>
 							<th>Nom</th>
 							<th>Logo</th>
@@ -21,16 +21,13 @@
 					</thead>
 					<tbody class="p-2">
 						{% for sponsor in sponsors %}
-							<tr class="align-middle">
-								<td>{{ sponsor.name }}</td>
-								<td><img src="{{ vich_uploader_asset(sponsor) }}" alt=""></td>
-								<td>{{ sponsor.link }}</td>
+							<tr>
+								<td class="index-title">{{ sponsor.name }}</td>
+								<td class="index-title"><img src="{{ vich_uploader_asset(sponsor) }}" alt=""></td>
+								<td class="index-title">{{ asset (sponsor.link) }}</td>
 								<td>
-									<div class="d-flex justify-content-center align-items-center m-2">
-										<a class="btn btn-outline-warning me-2" href="{{ path('app_admin_sponsor_show', {'id': sponsor.id}) }}">Afficher</a>
-										<a class="btn btn-success me-2" href="{{ path('app_admin_sponsor_edit', {'id': sponsor.id}) }}">Modifier</a>
-										{{ include('admin_sponsor/_delete_form.html.twig') }}
-									</div>
+									<a class="btn btn-primary mt-2 me-2" href="{{ path('app_admin_sponsor_show', {'id': sponsor.id}) }}">Afficher</a>
+									<a class="btn btn-secondary mt-2" href="{{ path('app_admin_sponsor_edit', {'id': sponsor.id}) }}">Modifier</a>
 								</td>
 							</tr>
 						{% else %}

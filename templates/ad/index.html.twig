@@ -4,14 +4,14 @@
 {% endblock %}
 
 {% block body %}
-	<div class="admin-list container-fluid">
+	<div class="admin-list container-fluid mb-4">
 		<div class="row d-flex justify-content-center">
 			<h1 class="video-index-title text-center">{{ "index des publicités"|upper }}</h1>
 			<section class="video-summary flex-wrap ps-4 m-2">
-				<a class="video-new btn btn-outline-primary my-4" href="{{path('app_ad_new')}}">Ajouter une publicités</a>
+				<a class="ads-new btn btn-outline-primary my-4" href="{{path('app_ad_new')}}">Ajouter une publicités</a>
 
-				<table class="table table-borderless text-white text-center">
-					<thead class="video-field pt-2 border-bottom">
+				<table class="w-100">
+					<thead class="video-field pt-2">
 						<tr>
 							<th>Nom</th>
 							<th>Image</th>
@@ -21,18 +21,13 @@
 					</thead>
 					<tbody class="p-2">
 						{% for advertisement in advertisements %}
-							<tr class="align-middle">
+							<tr>
 								<td>{{ advertisement.name }}</td>
-								<td>
-								<img src="{{asset('uploads/images/ads/' ~ advertisement.poster)}}" width="300" height="75" alt="{{advertisement.poster}}">
-								</td>
+								<td>{{ advertisement.poster }}</td>
 								<td>{{ advertisement.linkTo }}</td>
 								<td>
-									<div class="d-flex justify-content-center align-items-center m-2">
-										<a class="btn btn-outline-warning me-2" href="{{ path('app_ad_show', {'id': advertisement.id}) }}">Afficher</a>
-										<a class="btn btn-success me-2" href="{{ path('app_ad_edit', {'id': advertisement.id}) }}">Modifier</a>
-										{{ include('ad/_delete_form.html.twig') }}
-									</div>
+									<a class="btn btn-primary mt-2 me-2" href="{{ path('app_ad_show', {'id': advertisement.id}) }}">Afficher</a>
+									<a class="btn btn-secondary mt-2" href="{{ path('app_ad_edit', {'id': advertisement.id}) }}">Modifier</a>
 								</td>
 							</tr>
 						{% else %}
