@@ -11,10 +11,10 @@ use Symfony\Component\Filesystem\Filesystem;
 class CategoryFixtures extends Fixture
 {
     public const CATEGORIES_BACKGROUNDS = [
-        'League of Legends' => 'LoL.jpg',
-        'World of Warcraft' => 'world-warcraft-classic.Category.webp',
-        'Rocket League' => 'rocket-leagueCategory.webp',
-        'Overwatch 2' => 'overwatch-2Category.webp',
+        'League of Legends' => 'League-of-Legends.jpg',
+        'World of Warcraft' => 'world-warcraft.webp',
+        'Rocket League' => 'rocket-league.webp',
+        'Overwatch 2' => 'overwatch-2.webp',
     ];
 
     private SluggerInterface $slugger;
