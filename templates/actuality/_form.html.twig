@@ -1,4 +1,6 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_widget(form) }}
+{{ form_help(form) }}
+<button class="btn btn-lg btn-outline-primary mt-3 me-3">{{ button_label|default('Ajouter la bannière') }}</button>
+<a class="btn btn-lg btn-dark mt-3" href="{{ path('app_actuality_index') }}">Retour</a>
 {{ form_end(form) }}

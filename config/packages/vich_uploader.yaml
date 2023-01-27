@@ -25,3 +25,7 @@ vich_uploader:
             uri_prefix: /uploads/backgrounds
             upload_destination: "%kernel.project_dir%/public/uploads/backgrounds"
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+        actualities:
+            uri_prefix: /uploads/actualities
+            upload_destination: "%kernel.project_dir%/public/uploads/actualities"
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

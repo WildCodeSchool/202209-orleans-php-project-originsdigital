@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/actuality')]
+#[Route('/admin/actuality')]
 class ActualityController extends AbstractController
 {
     #[Route('/', name: 'app_actuality_index', methods: ['GET'])]
@@ -30,6 +30,7 @@ class ActualityController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $actualityRepository->save($actuality, true);
+            $this->addFlash('success', 'La bannière a bien été ajoutée');
 
             return $this->redirectToRoute('app_actuality_index', [], Response::HTTP_SEE_OTHER);
         }

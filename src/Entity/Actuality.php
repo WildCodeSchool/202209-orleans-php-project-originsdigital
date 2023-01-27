@@ -2,8 +2,9 @@
 
 namespace App\Entity;
 
-use App\Repository\ActualityRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ActualityRepository;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ActualityRepository::class)]
 class Actuality
@@ -14,12 +15,15 @@ class Actuality
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Length(max: 255)]
+    #[Assert\NotBlank(message: 'Veuillez donner un nom à la bannière')]
     private ?string $name = null;
 
     #[ORM\Column(length: 255)]
     private ?string $picture = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Length(max: 255)]
     private ?string $link = null;
 
     public function getId(): ?int
@@ -39,18 +43,6 @@ class Actuality
         return $this;
     }
 
-    public function getPicture(): ?string
-    {
-        return $this->picture;
-    }
-
-    public function setPicture(string $picture): self
-    {
-        $this->picture = $picture;
-
-        return $this;
-    }
-
     public function getLink(): ?string
     {
         return $this->link;
@@ -59,6 +51,18 @@ class Actuality
     public function setLink(?string $link): self
     {
         $this->link = $link;
+
+        return $this;
+    }
+
+    public function getPicture(): string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(string $picture): self
+    {
+        $this->picture = $picture;
 
         return $this;
     }
