@@ -10,7 +10,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class SponsorController extends AbstractController
 {
-    #[Route('/sponsor', name: 'app_sponsor')]
     public function index(SponsorRepository $sponsorRepository): Response
     {
         return $this->render('components/_sponsor.html.twig', [

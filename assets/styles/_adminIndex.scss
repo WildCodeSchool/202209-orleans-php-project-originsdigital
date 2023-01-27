@@ -14,7 +14,7 @@
     min-height: 100vh;
 }
 
-.admin-list {
+.admin-list, .video-show {
     --space-nav-admin: 280px;
     max-height: 100vh;
     max-width: calc(100% - var(--space-nav-admin));

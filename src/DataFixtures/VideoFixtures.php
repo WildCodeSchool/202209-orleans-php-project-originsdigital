@@ -29,7 +29,7 @@ class VideoFixtures extends Fixture implements DependentFixtureInterface
         $this->filesystem->remove(__DIR__ . '/../../public/uploads/videos/');
         $this->filesystem->mkdir(__DIR__ . '/../../public/uploads/videos/');
 
-        foreach (CategoryFixtures::CATEGORIES as $key => $categoryName) {
+        foreach (CategoryFixtures::CATEGORIES_BACKGROUNDS as $key => $categoryName) {
             for ($j = 1; $j <= self::NBR_VIDEOS; $j++) {
                 $video = new Video();
                 $video->setName($faker->sentence(2, true));
