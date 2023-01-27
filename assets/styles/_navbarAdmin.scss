@@ -2,3 +2,17 @@
     height: 100vh;
     position: absolute;
 }
+
+#navListAdmin {
+    
+    .nav-link {
+        color: $light;
+    }
+    .nav-link:hover {
+        color: $primary;
+    }
+    li:hover {
+        border: 1px solid $primary;
+        border-radius: 10px;
+    }
+}
