@@ -6,12 +6,12 @@
 {% block body %}
 	<div class="admin-list container-fluid">
 		<div class="row d-flex justify-content-center">
-			<h1 class="cat-index-title text-center">{{ "index des catégories"|upper }}</h1>
-			<section class="cat-summary flex-wrap ps-4 m-2">
-				<a class="cat-new btn btn-outline-primary my-4" href="{{ path('app_admin_cat_new') }}">Ajouter une catégorie</a>
+			<h1 class="video-index-title text-center">{{ "index des catégories"|upper }}</h1>
+			<section class="video-summary flex-wrap ps-4 m-2">
+				<a class="video-new btn btn-outline-primary my-4" href="{{ path('app_admin_cat_new') }}">Ajouter une catégorie</a>
 
-				<table class="table text-white text-center">
-					<thead class="video-field pt-2">
+				<table class="table table-borderless text-white text-center">
+					<thead class="video-field pt-2 border-bottom">
 						<tr>
 							<th>Nom</th>
 							<th>Actions</th>
@@ -20,9 +20,9 @@
 					<tbody class="p-2">
 						{% for category in categories %}
 							<tr>
-								<td class="index-title">{{ category.name }}</td>
-								<td class="index-title d-flex flex-row justify-content-center align-items-center">
-									<a class="btn btn-primary me-2" href="{{ path('app_admin_cat_edit', {'id': category.id}) }}">Modifier</a>
+								<td class="align-middle">{{ category.name }}</td>
+								<td class="d-flex justify-content-center align-items-center m-2">
+									<a class="btn btn-success me-2" href="{{ path('app_admin_cat_edit', {'id': category.id}) }}">Modifier</a>
 									{{ include('admin_cat/_delete_form.html.twig') }}
 								</td>
 							</tr>
