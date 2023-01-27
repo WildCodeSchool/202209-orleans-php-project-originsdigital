@@ -34,7 +34,7 @@ class Video
     #[ORM\Column]
     private ?int $duration = null;
 
-    #[ORM\Column]
+    #[ORM\Column(nullable: true)]
     private ?int $view = null;
 
     #[ORM\ManyToOne(inversedBy: 'video')]

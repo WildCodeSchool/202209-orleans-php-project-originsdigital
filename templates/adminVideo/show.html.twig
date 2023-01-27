@@ -27,10 +27,6 @@
 					<th>Durée</th>
 					<td>{{ video.duration }}</td>
 				</tr>
-				<tr>
-					<th>Vues</th>
-					<td>{{ video.view }}</td>
-				</tr>
                 <tr class="th-thumb">
 					<th>Vignette</th>
 					<td><img src={{ vich_uploader_asset(video, 'thumbnail') }}></td>
@@ -42,8 +38,8 @@
 			</tbody>
 		</table>
 		<div class="buttons my-5 pb-3">
-			<a class="btn btn-primary me-3" href="{{ path('app_admin_video_edit', {'id': video.id}) }}">Modifier</a>
-			<a class="btn btn-secondary" href="{{ path('app_admin_video_index') }}">Retour à la liste</a>
+			<a class="btn btn-success me-3" href="{{ path('app_admin_video_edit', {'id': video.id}) }}">Modifier</a>
+			<a class="btn btn-dark" href="{{ path('app_admin_video_index') }}">Retour à la liste</a>
 		</div>
 	</div>
 {% endblock %}

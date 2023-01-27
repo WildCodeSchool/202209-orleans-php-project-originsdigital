@@ -37,9 +37,6 @@ class VideoType extends AbstractType
             ->add('duration', IntegerType::class, [
                 'label' => 'Durée',
             ])
-            ->add('view', IntegerType::class, [
-                'label' => 'Nombre de vues',
-            ])
             ->add('thumbnail', VichImageType::class, [
                 'label' => 'Vignette',
                 'required' => false,
