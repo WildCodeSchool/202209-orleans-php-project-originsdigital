@@ -2,7 +2,7 @@ footer{
     background-color: $dark;
 
     .btn-network{
-        border-radius: 50%;
+        border-radius: 20%;
     }
 
     .btn-network:hover{
@@ -11,5 +11,6 @@ footer{
 
     .footer-nav-links a:hover{
         background-color: $primary;
+        border-radius: 2px 2px 2px 2px;
     }
 }

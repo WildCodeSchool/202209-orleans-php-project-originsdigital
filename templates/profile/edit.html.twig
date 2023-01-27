@@ -3,16 +3,20 @@
 {% block title %}Profil
 {% endblock %}
 {% block body %}
-    <section class="text-center">
+    <section class="section-profil text-center">
         <div class="bloc-profile container">
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="card-body text-black row">
                     <div class="user-profile mb-md-1 mt-md-4 pb-5">
-                        <h1 class="fw-bold text-light mb-2">Bonjour,
+                        <h1 class="fw-bold text-light mb-2">Bonjour
                             {{ app.user.firstName }}
                         </h1>
                         <div class="profile-photo m-auto">
-                            <img class="rounded-circle profile-photo border-primary" src="{{ vich_uploader_asset(user) }}" alt="avatar">
+                            {% if app.user.userPicture is null %}
+							<img class="rounded-circle" src="{{ asset('build/images/Ellipse2.png') }}" alt="avatar">
+						{% else %}
+							<img class="rounded-circle" src="{{ vich_uploader_asset(app.user) }}" alt="avatar">
+						{% endif %}
                         </div>
                         <div class="row mb-2 text-light width-50">
                             {{ form_start(form) }}

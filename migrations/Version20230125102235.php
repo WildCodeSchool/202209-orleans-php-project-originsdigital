@@ -21,13 +21,11 @@ final class Version20230125102235 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE TABLE actuality (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, picture VARCHAR(255) NOT NULL, link VARCHAR(255) DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
-        $this->addSql('ALTER TABLE video DROP video_link, CHANGE video video VARCHAR(255) DEFAULT NULL');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('DROP TABLE actuality');
-        $this->addSql('ALTER TABLE video ADD video_link VARCHAR(255) DEFAULT NULL, CHANGE video video VARCHAR(255) NOT NULL');
     }
 }

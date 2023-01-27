@@ -23,3 +23,18 @@
     height: fit-content;
     object-fit: contain;
 }
+
+.btn-left, .btn-love {
+    background-color: rgba($primary, .6);
+    i {
+        color: $secondary;
+    }
+}
+
+.btn-left:hover, .btn-love:hover {
+    background-color: $primary;
+}
+
+.container{
+    margin-top: 7rem;
+}

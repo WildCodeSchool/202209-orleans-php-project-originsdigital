@@ -1,0 +1,46 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}Admin | Index Bannières
+{% endblock %}
+
+{% block body %}
+	<div class="admin-list container-fluid">
+		<div class="row d-flex justify-content-center">
+			<h1 class="video-index-title text-center">{{ "index des bannières"|upper }}</h1>
+			<section class="video-summary flex-wrap ps-4 m-2">
+				<a class="video-new btn btn-outline-primary my-4" href="{{ path('app_actuality_new') }}">Ajouter une bannière</a>
+
+				<table class="w-100">
+					<thead class="video-field pt-2 border-bottom">
+						<tr>
+							<th>Nom</th>
+							<th>Image</th>
+							<th>Lien</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody class="p-2">
+						{% for actuality in actualities %}
+							<tr>
+								<td>{{ actuality.name }}</td>
+								<td>
+									<img src="{{asset('uploads/images/actualities/' ~ actuality.picture)}}" width="120" height="75" alt="{{actuality.picture}}">
+								</td>
+								<td>{{ actuality.link}}</td>
+								<td>
+									<a class="btn btn-outline-warning mt-2 me-2" href="{{ path('app_actuality_show', {'id': actuality.id}) }}">Afficher</a>
+									<a class="btn btn-success mt-2" href="{{ path('app_actuality_edit', {'id': actuality.id}) }}">Modifier</a>
+                                    {{ include('actuality/_delete_form.html.twig') }}
+								</td>
+							</tr>
+						{% else %}
+							<tr>
+								<td colspan="7">Aucun résultat trouvé.</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</section>
+		</div>
+	</div>
+{% endblock %}

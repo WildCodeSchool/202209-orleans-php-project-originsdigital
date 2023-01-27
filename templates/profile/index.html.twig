@@ -7,12 +7,12 @@
 
 {% block body %}
 
-	<section class="text-center">
+	<section class="section-profil text-center">
 		<div class="bloc-profile container">
 			<div class="row d-flex justify-content-center align-items-center">
 				<div class="card-body text-black row">
 					<div class="card user-profile mb-md-1 mt-md-5 pb-5">
-						<h1 class="fw-bold text-light mb-5 mt-4">Bonjour,
+						<h1 class="fw-bold text-light mb-3 mt-3">Bonjour
 							{{ app.user.firstName }}
 						</h1>
 						<div class="profile-photo">
@@ -29,25 +29,25 @@
 						</div>
 						<div>
 							<p class="text-light mb-2 mt-4 font-13">
-								<strong>Adresse email :</strong>
+								<strong>Adresse email</strong>
 								<span class="ml-2">{{ app.user.email }}</span>
 							</p>
 						</div>
 						<div>
 							<p class="text-light mb-2 font-13">
-								<strong>Nom d'utilisateur :</strong>
+								<strong>Nom d'utilisateur</strong>
 								<span class="ml-2">{{ app.user.userName }}</span>
 							</p>
 						</div>
 						<div>
 							<p class="text-light mb-2 font-13">
-								<strong>Prénom:</strong>
+								<strong>Prénom</strong>
 								<span class="ml-2">{{ app.user.firstName }}</span>
 							</p>
 						</div>
 						<div>
                         <p class="text-light mb-2 font-13">
-								<strong>Nom :</strong>
+								<strong>Nom</strong>
 								<span class="ml-2">{{ app.user.lastName }}</span>
 							</p>
 						</div>

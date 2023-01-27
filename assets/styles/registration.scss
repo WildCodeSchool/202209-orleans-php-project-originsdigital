@@ -1,5 +1,9 @@
 @import 'root';
 
+.section-login, .section-profil {
+  margin-top: 5rem;
+}
+
 .card {
     background: $primary 0.30;
     place-content: center;

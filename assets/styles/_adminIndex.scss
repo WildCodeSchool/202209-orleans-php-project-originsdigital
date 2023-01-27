@@ -15,7 +15,12 @@
 }
 
 .admin-list {
-    min-height: 100vh;
+    --space-nav-admin: 280px;
+    max-height: 100vh;
+    max-width: calc(100% - var(--space-nav-admin));
+    margin-left: var(--space-nav-admin);
+    padding-block: 2rem;
+    overflow: auto;
 }
 
 .vich-image, .th-thumb {
@@ -24,4 +29,16 @@
         width: 800px;
         object-fit: contain;
     }
+}
+
+.title-add {
+    margin-block: 3rem;
+}
+
+.form-add {
+    margin-top: 4rem;
+}
+
+.form-text {
+    color: $secondary;
 }
