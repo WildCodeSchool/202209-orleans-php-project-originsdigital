@@ -14,8 +14,12 @@
 		{% for category in categories %}
 			<div class="col-10 col-lg-7 mx-auto">
 				<a class="category-link" href="{{path("category_show", { slug: category.slug|lower }) }}">
-						<h2 class="category-name">{{ category.name }}</h2>
+					<h2 class="category-name">{{ category.name }}</h2>
+					{% if category.background is constant('App\\DataFixtures\\CategoryFixtures::CATEGORIES_BACKGROUNDS') %}
+						<img src={{ asset('uploads/images/backgrounds/'~category.background) }} alt="{{category.background}}" class="category-background">
+					{% else %}
 						<img class="category-background" src="{{ vich_uploader_asset(category, 'backgroundPicture') }}" alt="{{ category.background }}">
+					{% endif %}
 				</a>
 			</div>
 		{% else %}
