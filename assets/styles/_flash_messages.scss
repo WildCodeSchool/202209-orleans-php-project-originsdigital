@@ -1,4 +1,8 @@
 .flash-container {
     position: absolute;
+    z-index: 10;
     margin-top: 6rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
