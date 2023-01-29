@@ -1,0 +1,11 @@
+<a href="{{path('app_login')}}" class="link-card-lock">
+	{% if video.picture is null %}
+		<img src={{ asset('build/images/videoPlaceholder.jpeg') }} alt="{{video.name}}" class="img-video-lock">
+		<img src="{{asset('build/images/LOCK.png')}}" alt="Connexion obligatoire" class="img-lock">
+		<span class="premium-badge badge bg-warning m-3">PREMIUM</span>
+	{% else %}
+		<img src="{{ vich_uploader_asset(video, 'thumbnail') }}" alt="{{video.name}}" class="img-video-lock">
+		<img src="{{asset('build/images/LOCK.png')}}" alt="Connexion obligatoire" class="img-lock">
+		<span class="premium-badge badge bg-warning m-3">PREMIUM</span>
+	{% endif %}
+</a>

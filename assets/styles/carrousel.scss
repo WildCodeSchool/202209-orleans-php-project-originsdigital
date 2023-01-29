@@ -22,8 +22,33 @@
     transition: transform 250ms ease-in-out;
 }
 
-.slider .link-card {
+.slider .link-card,
+.link-card-lock {
     flex: 0 0 calc(100% / var(--items-per-screen));
+}
+
+.link-card-lock {
+    .premium-badge {
+        position: absolute;
+        z-index: 2;
+    }
+    .img-lock {
+        opacity: 0;
+        max-width: 437px;
+        max-height: 246px;
+        position: absolute;
+        z-index: 3;
+    }
+    .img-video-lock {
+        max-width: 437px;
+        max-height: 246px;
+        position: absolute;
+        z-index: 1;
+    }
+}
+
+.link-card-lock:hover .img-lock {
+    opacity: 1;
 }
 
 .slider img {
