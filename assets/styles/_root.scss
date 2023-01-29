@@ -14,5 +14,18 @@ $light: #e4e4e4;
 $dark: #2a2a2a;
 $intermediate: #3d3d3d;
 $gray: #bdbdbd;
+$green: #71FF00;
+$red: #FF0F00;
+$purple: #8E00FF;
 
-
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "light": $light,
+    "dark": $dark,
+    "intermediate": $intermediate,
+    "gray": $gray,
+    "green": $green,
+    "red": $red,
+    "purple": $purple
+);
