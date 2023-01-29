@@ -14,7 +14,8 @@
     min-height: 100vh;
 }
 
-.admin-list, .video-show {
+.admin-list,
+.video-show {
     --space-nav-admin: 280px;
     max-height: 100vh;
     max-width: calc(100% - var(--space-nav-admin));
@@ -23,10 +24,19 @@
     overflow: auto;
 }
 
-.vich-image, .th-thumb {
+.vich-image,
+.th-thumb {
     img {
         height: 600px;
         width: 800px;
+        object-fit: contain;
+    }
+}
+
+.tr-preview {
+    img {
+        height: fit-content;
+        width: fit-content;
         object-fit: contain;
     }
 }
