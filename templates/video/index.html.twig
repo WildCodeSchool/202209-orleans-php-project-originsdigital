@@ -18,26 +18,30 @@
 				<div class="link-video ratio ratio-16x9 d-flex justify-content-center">
 					{% include "/components/_videoPlayer.html.twig" %}
 				</div>
-				<div class="bloc-description mt-4 d-flex justify-content-between">
-					<div class="title-view mb-3">
+				<div class="bloc-description row mt-2">
+					<div
+						class="title-view col-md-10">
+						{# <div class="title-view mb-3"> #}
 						<h1 class="m-2 text-center title-show d-flex flex-wrap">{{video.name}}</h1>
 						<div class="d-flex">
-							<p class="mx-2">{{video.view ~ ' vues'}}</p>
-							<p class="mx-3">{{video.duration ~ ' min'}}</p>
+							<p class="mx-2 badge bg-secondary text-light">{{video.view ~ ' vues'}}</p>
+							<p class="mx-3 fw-bold text-secondary">{{video.duration ~ ' min'}}</p>
 						</div>
 						<p class="mx-2">{{video.description}}</p>
 					</div>
-					<div class="bloc-like d-flex flex-wrap justify-content-center align-items-start m-2">
-						{% if app.user %}
+					{% if app.user %}
+						<div class="bloc-like col-md-2 d-flex justify-content-center align-items-start mt-2">
 							<div class="bloc-thumb">
 								<form method="post" action="{{ path('app_video_like', {id: video.id})}}">
 									<input type="hidden" name="_token" value="{{ csrf_token('likes' ~ video.id) }}">
 									<button class="btn btn-lg btn-left me-2">
 										<i class="bi {{app.user in video.likes ? 'bi-hand-thumbs-up-fill' : 'bi-hand-thumbs-up' }}"></i>
+										<span class="ml-2 text-light">
+											{{ video.likes | length }}
+										</span>
 									</button>
 								</form>
 							</div>
-								<span class = "ml-2"> {{ video.likes | length }} </span>
 							<div class="bloc-heart">
 								<form method="post" action="{{ path('app_video_favoris', {id: video.id})}}">
 									<input type="hidden" name="_token" value="{{ csrf_token('favorite' ~ video.id) }}">
@@ -46,8 +50,27 @@
 									</button>
 								</form>
 							</div>
-						{% endif %}
-					</div>
+						</div>
+					{% else %}
+						<div class="bloc-like col-md-2 d-flex flex-column mt-2">
+							<div class="bloc-btn d-flex justify-content-center">
+								<div class="bloc-thumb">
+									<button class="btn disabled btn-lg btn-left me-2">
+										<i class="bi bi-hand-thumbs-up-fill"></i>
+										<span class="ml-2 text-light">
+											{{ video.likes | length }}
+										</span>
+									</button>
+								</div>
+								<div class="bloc-heart">
+									<button class="btn disabled btn-lg btn-love">
+										<i class="bi svg-img bi-heart-fill"></i>
+									</button>
+								</div>
+							</div>
+							<span class="fst-italic d-flex justify-content-center">Connexion obligatoire</span>
+						</div>
+					{% endif %}
 				</div>
 			</div>
 		</div>

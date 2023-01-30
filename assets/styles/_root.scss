@@ -14,5 +14,20 @@ $light: #e4e4e4;
 $dark: #2a2a2a;
 $intermediate: #3d3d3d;
 $gray: #bdbdbd;
+$success: #71FF00;
+$danger: #FF0F00;
+$tertiary: #8E00FF;
+$warning: #d4c600;
 
-
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "light": $light,
+    "dark": $dark,
+    "intermediate": $intermediate,
+    "gray": $gray,
+    "success": $success,
+    "danger": $danger,
+    "tertiary": $tertiary,
+    "warning": $warning,
+);

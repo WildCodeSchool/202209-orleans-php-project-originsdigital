@@ -38,11 +38,16 @@
 	</ul>
 	<hr>
 	<div class="dropdown">
-		<a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-			{% if app.user %}
-				<img class="rounded-circle" width="32" height="32" src="{{ vich_uploader_asset(app.user) }}" alt="avatar">
-			{% else %}
-				<img class="rounded-circle" width="32" height="32" src="{{ asset('build/images/Ellipse2.png') }}" alt="avatar">
+		{% if app.user %}
+			<a href="#" class="d-flex justify-content-between align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+				{% if app.user.userPicture is null %}
+					<img class="rounded-circle" width="32" height="32" src="{{ asset('build/images/Ellipse2.png') }}" alt="avatar">
+				{% else %}
+					<img class="rounded-circle" width="32" height="32" src="{{ vich_uploader_asset(app.user) }}" alt="avatar">
+				{% endif %}
+			{% endif %}
+			{% if is_granted('ROLE_ADMIN') %}
+				<span class="fw-bold">{{app.user.userName}}</span>
 			{% endif %}
 		</a>
 		<ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">

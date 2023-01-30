@@ -8,6 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ActualityType extends AbstractType
 {
@@ -17,7 +18,12 @@ class ActualityType extends AbstractType
             ->add('name', TextType::class, [
                 'label' => 'Nom de la bannière'
             ])
-            ->add('picture')
+            ->add('pictureFile', VichImageType::class, [
+                'label' => 'Image de bannière',
+                'required' => true,
+                'allow_delete' => false,
+                'download_uri' => false,
+            ])
             ->add('link', UrlType::class, [
                 'label' => 'Lien de la bannière',
                 'required' => false,

@@ -21,13 +21,12 @@
 .img-ads{
     width: 100%;
     height: fit-content;
-    object-fit: contain;
 }
 
 .btn-left, .btn-love {
     background-color: rgba($primary, .6);
     i {
-        color: $secondary;
+        color: $light;
     }
 }
 
@@ -35,3 +34,6 @@
     background-color: $primary;
 }
 
+.bg-video {
+    margin-top: 7rem;
+}

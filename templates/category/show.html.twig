@@ -14,8 +14,7 @@
 	<section class="video-list">
 		<div class="container">
 			<h1 class="category-title m-5 text-center">{{ category.name }}</h1>
-
-			<div class="bloc-category-show">
+			<div class="bloc-category-show text-center">
 				{% for video in videos %}
 					<div class="d-flex justify-content-around mb-5 overflow-auto card-show-cat">
 						{% include "/components/_blocVideo.html.twig" %}
@@ -25,6 +24,8 @@
 							<p class="mx-4 mb-0">{{ video.description }}</p>
 						</div>
 					</div>
+				{% else %}
+					<span>Aucune vidéo trouvée.</span>
 				{% endfor %}
 			</div>
 		</div>
