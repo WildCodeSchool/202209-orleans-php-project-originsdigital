@@ -11,11 +11,11 @@
                         <h1 class="fw-bold text-light mb-2">Bonjour
                             {{ app.user.firstName }}
                         </h1>
-                        <div class="profile-photo m-auto">
+                        <div>
                             {% if app.user.userPicture is null %}
-							<img class="rounded-circle" src="{{ asset('build/images/Ellipse2.png') }}" alt="avatar">
+							<img class="rounded-circle profile-photo" src="{{ asset('build/images/Ellipse2.png') }}" alt="avatar">
 						{% else %}
-							<img class="rounded-circle" src="{{ vich_uploader_asset(app.user) }}" alt="avatar">
+							<img class="rounded-circle profile-photo" src="{{ vich_uploader_asset(app.user) }}" alt="avatar">
 						{% endif %}
                         </div>
                         <div class="row mb-2 text-light width-50">

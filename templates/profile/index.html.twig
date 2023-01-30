@@ -15,7 +15,7 @@
 						<h1 class="fw-bold text-light mb-3 mt-3">Bonjour
 							{{ app.user.firstName }}
 						</h1>
-						<div class="profile-photo">
+						<div>
 
 							{% if user.userPicture %}
 
@@ -23,7 +23,7 @@
 
 							{% else %}
 
-								<img src="{{ asset('build/images/Ellipse2.png') }}" alt="avatarImage" class="profile-photo">
+								<img src="{{ asset('build/images/Ellipse2.png') }}" alt="avatarImage" class="rounded-circle profile-photo border-primary">
 
 							{% endif %}
 						</div>
