@@ -46,7 +46,9 @@
 					<img class="rounded-circle" width="32" height="32" src="{{ vich_uploader_asset(app.user) }}" alt="avatar">
 				{% endif %}
 			{% endif %}
-			<span class="fw-bold">{{app.user.roles[0]}}</span>
+			{% if is_granted('ROLE_ADMIN') %}
+				<span class="fw-bold">{{app.user.userName}}</span>
+			{% endif %}
 		</a>
 		<ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
 			<li>
