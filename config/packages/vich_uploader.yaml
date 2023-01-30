@@ -6,26 +6,26 @@ vich_uploader:
 
     mappings:
         avatars:
-            uri_prefix: /uploads/avatars
-            upload_destination: "%kernel.project_dir%/public/uploads/avatars"
+            uri_prefix: /uploads/images/avatars
+            upload_destination: "%kernel.project_dir%/public/uploads/images/avatars"
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
         videos:
             uri_prefix: /uploads/videos
             upload_destination: "%kernel.project_dir%/public/uploads/videos"
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
         logos:
-            uri_prefix: /uploads/logos
-            upload_destination: "%kernel.project_dir%/public/uploads/logos"
+            uri_prefix: /uploads/images/logos
+            upload_destination: "%kernel.project_dir%/public/uploads/images/logos"
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
         vignettes:
-            uri_prefix: /uploads/vignettes
-            upload_destination: "%kernel.project_dir%/public/uploads/vignettes"
+            uri_prefix: /uploads/images/vignettes
+            upload_destination: "%kernel.project_dir%/public/uploads/images/vignettes"
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
         backgrounds:
             uri_prefix: /uploads/images/backgrounds
             upload_destination: "%kernel.project_dir%/public/uploads/images/backgrounds"
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
         actualities:
-            uri_prefix: /uploads/actualities
-            upload_destination: "%kernel.project_dir%/public/uploads/actualities"
+            uri_prefix: /uploads/images/actualities
+            upload_destination: "%kernel.project_dir%/public/uploads/images/actualities"
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
