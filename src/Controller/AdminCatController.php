@@ -45,14 +45,6 @@ class AdminCatController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_admin_cat_show', methods: ['GET'])]
-    public function show(Category $category): Response
-    {
-        return $this->render('admin_cat/show.html.twig', [
-            'category' => $category,
-        ]);
-    }
-
     #[Route('/{id}/modifier', name: 'app_admin_cat_edit', methods: ['GET', 'POST'])]
     public function edit(
         Request $request,

@@ -40,14 +40,6 @@ class AdController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_ad_show', methods: ['GET'])]
-    public function show(Advertisement $advertisement): Response
-    {
-        return $this->render('ad/show.html.twig', [
-            'advertisement' => $advertisement,
-        ]);
-    }
-
     #[Route('/{id}/edit', name: 'app_ad_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Advertisement $advertisement, AdvertRepository $advertRepository): Response
     {
