@@ -30,6 +30,14 @@
     object-fit: contain;
 }
 
+.tr-preview {
+    img {
+        height: fit-content;
+        width: fit-content;
+        object-fit: contain;
+    }
+}
+
 .title-add {
     margin-block: 3rem;
 }
