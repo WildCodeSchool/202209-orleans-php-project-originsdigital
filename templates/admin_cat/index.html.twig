@@ -20,8 +20,8 @@
 					</thead>
 					<tbody class="p-2">
 						{% for category in categories %}
-							<tr>
-								<td class="align-middle">{{ category.name }}</td>
+							<tr class="align-middle">
+								<td>{{ category.name }}</td>
                                 <td>
 								<img src="{{asset('uploads/images/backgrounds/' ~ category.background)}}" class="vich-image" alt="{{category.background}}">
 								</td>
