@@ -2,9 +2,7 @@
 	{% if video.public == true %}
 		{% include "/components/_thumbnail.html.twig" %}
 	{% else %}
-		<a href="{{path('app_login')}}" class="link-card">
-			<img src="{{asset('build/images/LOCK.png')}}" alt="Connexion obligatoire" class="img-video-lock">
-		</a>
+		{% include "/components/_thumbnailPremium.html.twig" %}
 	{% endif %}
 {% else %}
 	{% include "/components/_thumbnail.html.twig" %}
