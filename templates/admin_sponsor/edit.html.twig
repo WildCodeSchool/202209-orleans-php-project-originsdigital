@@ -4,12 +4,8 @@
 {% endblock %}
 
 {% block body %}
-	<h1 class="fw-bold text-light mb-2 text-uppercase text-center">Modifiez le sponsor</h1>
-	<div class="d-flex justify-content-center">
-		<div class="text-center">
+	<h1 class="text-center m-3 mb-5">{{ "modifier une catégorie"|upper }}</h1>
+		<div class="d-grid gap-2 col-10 py-1 mx-auto pb-3 mt-5">
 			{{ include('admin_sponsor/_form.html.twig', {'button_label': 'Modifier'}) }}
-			<a href="{{ path('app_admin_sponsor_index') }}" class="btn btn-outline-primary my-4">Retour à la liste</a>
-			{{ include('admin_sponsor/_delete_form.html.twig') }}
-		</div>
 	</div>
 </div>{% endblock %}

@@ -4,12 +4,11 @@
 {% endblock %}
 
 {% block body %}
-	<main class="container-fluid admin-list">
-		<h1 class="fw-bold text-light mb-2 text-uppercase text-center">Ajouter un sponsor</h1>
-
-		{{ include('admin_sponsor/_form.html.twig') }}
-		<div class="text-center">
-			<a href="{{ path('app_admin_sponsor_index') }}" class="btn btn-outline-primary my-4">Retour à la liste</a>
+	<main class="container-fluid admin-list p-3">
+		<h1 class="text-light mb-2 text-uppercase text-center m-3 mb-5">Ajouter un sponsor</h1>
+		<div class="d-grid gap-2 col-10 py-1 mx-auto pb-3">
+			{{ include('admin_sponsor/_form.html.twig') }}
 		</div>
+
 	</main>
 {% endblock %}
