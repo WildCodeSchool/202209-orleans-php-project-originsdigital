@@ -15,7 +15,7 @@ vich_uploader:
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
         logos:
             uri_prefix: /uploads/logos
-            upload_destination: "%kernel.project_dir%/public/uploads/logos"
+            upload_destination: "%kernel.project_dir%/public/uploads/images/logos"
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
         vignettes:
             uri_prefix: /uploads/vignettes
@@ -27,5 +27,5 @@ vich_uploader:
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
         actualities:
             uri_prefix: /uploads/actualities
-            upload_destination: "%kernel.project_dir%/public/uploads/actualities"
+            upload_destination: "%kernel.project_dir%/public/uploads/images/actualities"
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
