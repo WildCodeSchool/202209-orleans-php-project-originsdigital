@@ -1,5 +1,9 @@
 {{ form_start(form) }}
     {{ form_widget(form) }}
-    <button class="btn btn-primary mt-3 me-3">{{ button_label|default('Ajouter la publicité') }}</button>
-    <a class="btn btn-secondary mt-3" href="{{ path('app_ad_index') }}">Retour à la liste</a>
+    {% if advertisement.name is empty %}
+	<button class="btn btn-primary mt-3 me-3">{{ button_label|default('Ajouter') }}</button>
+{% else %}
+	<button class="btn btn-success mt-3 me-3">{{ button_label|default('Modifier') }}</button>
+{% endif %}
+    <a class="btn btn-dark mt-3" href="{{ path('app_ad_index') }}">Retour à la liste</a>
 {{ form_end(form) }}
