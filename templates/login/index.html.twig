@@ -10,7 +10,7 @@
 			<div class="row d-flex justify-content-center">
 				<div class="col-md-8 col-lg-6 col-xl-11">
 					<div class="card">
-						<div class="card-body text-black">
+						<div class="card-body text-black w-100">
 							<div class="mb-md-1 mt-md-4 pb-5">
 								{% if error %}
 									<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -32,9 +32,6 @@
 										<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 									</div>
 									<div clas="d-flex align-items-center text-center">
-										<p class="small mb-2 pb-lg-2 d-flex justify-content-center">
-											<a class="text-light-50 text-decoration-none" href="#!">Mot de passe oublié ?</a>
-										</p>
 										<div class="text-center">
 											<button class="btn btn-outline-primary btnstyle text-light btn-lg mt-3 mb-3" type="submit">Se connecter</button>
 										</div>
