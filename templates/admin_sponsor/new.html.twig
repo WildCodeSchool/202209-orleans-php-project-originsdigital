@@ -1,14 +1,13 @@
 {% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}New Sponsor
+{% block title %}Admin | Ajout Sponsor
 {% endblock %}
 
 {% block body %}
 	<main class="container-fluid admin-list p-3">
-		<h1 class="text-light mb-2 text-uppercase text-center m-3 mb-5">Ajouter un sponsor</h1>
-		<div class="d-grid gap-2 col-10 py-1 mx-auto pb-3">
+		<h1 class="text-center title-add">{{ "ajouter une bannière"|upper }}</h1>
+		<div class="d-grid gap-2 col-10 py-1 mx-auto form-add pb-3">
 			{{ include('admin_sponsor/_form.html.twig') }}
 		</div>
-
 	</main>
 {% endblock %}

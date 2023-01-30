@@ -25,15 +25,14 @@
 								<td>{{ sponsor.name }}</td>
 								<td>
 									{% if sponsor.logo is null %}
-										<img src={{ asset('build/images/placeHolder.png') }} class="vich-image-my-2" alt="{{ sponsor.logo }}">
+										<img src={{ asset('build/images/placeHolder.png') }} class="vich-image" alt="{{ sponsor.logo }}">
 									{% else %}
-										<img src="{{ vich_uploader_asset(sponsor) }}" class="vich-image-my-2" alt="{{ sponsor.logo }}">
+										<img src="{{ vich_uploader_asset(sponsor) }}" class="vich-image" alt="{{ sponsor.logo }}">
 									{% endif %}
 								</td>
 								<td>{{ sponsor.link }}</td>
 								<td>
-									<div class="d-flex justify-content-center align-items-center m-4">
-										<a class="btn btn-tertiary me-2" href="{{ path('app_admin_sponsor_show', {'id': sponsor.id}) }}">Afficher</a>
+									<div class="d-flex justify-content-center align-items-center m-2">
 										<a class="btn btn-success me-2" href="{{ path('app_admin_sponsor_edit', {'id': sponsor.id}) }}">Modifier</a>
 										{{ include('admin_sponsor/_delete_form.html.twig') }}
 									</div>
