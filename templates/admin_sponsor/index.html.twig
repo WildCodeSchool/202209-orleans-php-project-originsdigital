@@ -25,9 +25,9 @@
 								<td>{{ sponsor.name }}</td>
 								<td>
 									{% if sponsor.logo is null %}
-										<img src={{ asset('build/images/placeHolder.png') }} class="vich-image-my-2" alt="{{ sponsor.logo }}">
+										<img src={{ asset('build/images/placeHolder.png') }} class="image-vich-my-2" alt="{{ sponsor.logo }}">
 									{% else %}
-										<img src="{{ vich_uploader_asset(sponsor) }}" class="vich-image-my-2" alt="{{ sponsor.logo }}">
+										<img src="{{ vich_uploader_asset(sponsor) }}" class="image-vich-my-2" alt="{{ sponsor.logo }}">
 									{% endif %}
 								</td>
 								<td>{{ sponsor.link }}</td>
