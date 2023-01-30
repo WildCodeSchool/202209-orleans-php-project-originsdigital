@@ -14,9 +14,9 @@ $light: #e4e4e4;
 $dark: #2a2a2a;
 $intermediate: #3d3d3d;
 $gray: #bdbdbd;
-$green: #71FF00;
-$red: #FF0F00;
-$purple: #8E00FF;
+$success: #71FF00;
+$danger: #FF0F00;
+$tertiary: #8E00FF;
 
 $theme-colors: (
     "primary": $primary,
@@ -25,7 +25,7 @@ $theme-colors: (
     "dark": $dark,
     "intermediate": $intermediate,
     "gray": $gray,
-    "green": $green,
-    "red": $red,
-    "purple": $purple
+    "success": $success,
+    "danger": $danger,
+    "tertiary": $tertiary,
 );
