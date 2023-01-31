@@ -1,11 +1,5 @@
-<div class="mb-2 text-light px-5">
-	<div class="d-flex justify-content-center">
 		{{ form_start(form) }}
 		{{ form_widget(form) }}
-        <div class="text-center">
-		<button class="btn btn-primary mt-2 me-2">{{ button_label|default('Enregistrer') }}</button>
-		</div>
+		<button class="btn btn-lg btn-outline-primary mt-3 me-3">{{ button_label|default('Ajouter le sponsor') }}</button>
+		<a class="btn btn-lg btn-dark mt-3" href="{{ path('app_admin_sponsor_index') }}">Retour</a>
         {{ form_end(form) }}
-	</div>
-</div>
-
