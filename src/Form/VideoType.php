@@ -49,6 +49,7 @@ class VideoType extends AbstractType
                 'delete_label' => false,
                 'allow_delete' => false,
                 'download_label' => false,
+                'help' => 'La video ne doit pas faire plus de 2Mo et être au format mp4.'
             ])
             ->add('public', CheckboxType::class, [
                 'label' => 'Voulez-vous rendre cette vidéo accessible à tous?',
