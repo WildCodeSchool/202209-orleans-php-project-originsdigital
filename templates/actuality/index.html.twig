@@ -7,7 +7,7 @@
 	<div class="admin-list container-fluid">
 		<div class="row d-flex justify-content-center">
 			<h1 class="video-index-title text-center">{{ "index des bannières"|upper }}</h1>
-			<section class="video-summary flex-wrap ps-4 m-2">
+			<section class="video-summary flex-wrap ps-4 m-2 mb-5">
 				<a class="video-new btn btn-outline-primary my-4" href="{{ path('app_actuality_new') }}">Ajouter une bannière</a>
 
 				<table class="table table-borderless text-white text-center">
@@ -24,12 +24,11 @@
 							<tr class="align-middle">
 								<td>{{ actuality.name }}</td>
 								<td>
-									<img src="{{asset('uploads/images/actualities/' ~ actuality.picture)}}" class="vich-image" alt="{{actuality.picture}}">
+									<img src="{{asset('uploads/images/actualities/' ~ actuality.picture)}}" class="image-vich" alt="{{actuality.picture}}">
 								</td>
 								<td>{{ actuality.link}}</td>
 								<td>
 									<div class="d-flex justify-content-center align-items-center m-2">
-										<a class="btn btn-outline-warning me-2" href="{{ path('app_actuality_show', {'id': actuality.id}) }}">Afficher</a>
 										<a class="btn btn-success me-2" href="{{ path('app_actuality_edit', {'id': actuality.id}) }}">Modifier</a>
 										{{ include('actuality/_delete_form.html.twig') }}
 									</div>

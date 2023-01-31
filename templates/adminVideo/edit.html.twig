@@ -7,7 +7,7 @@
 	<div class="video-show container-fluid p-3">
 		<h1 class="text-center m-3">{{ "Modifier une vidéo"|upper }}</h1>
 		<div class="d-grid gap-2 col-10 py-1 mx-auto pb-3">
-			{{ include('adminVideo/_form.html.twig', {'button_label': 'Modifier la vidéo'}) }}
+            {% include 'adminVideo/_form.html.twig' with {'button_label': 'Modifier', 'button_class': 'btn-success'} %}
 		</div>
 	</div>
 {% endblock %}
