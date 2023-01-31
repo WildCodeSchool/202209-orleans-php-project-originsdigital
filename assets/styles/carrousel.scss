@@ -51,7 +51,9 @@
     opacity: 1;
 }
 
-.slider img {
+.slider img,
+.slider .img-lock,
+.slider .img-video-lock {
     width: 100%;
     aspect-ratio: 16 / 9;
     padding: var(--spacing-block);
