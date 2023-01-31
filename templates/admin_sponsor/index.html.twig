@@ -8,7 +8,7 @@
 		<div class="row d-flex justify-content-center">
 			<h1 class="video-index-title text-center">{{ "Index des sponsors"|upper }}</h1>
 			<section class="video-summary flex-wrap ps-4 m-2">
-				<a class="video-new btn btn-outline-primary my-4" href="{{ path('app_admin_sponsor_new') }}">Ajouter un sponsor</a>
+				<a class="video-new btn btn-outline-primary my-4 mb-5" href="{{ path('app_admin_sponsor_new') }}">Ajouter un sponsor</a>
 
 				<table class="table table-borderless text-white text-center">
 					<thead class="video-field pt-2 border-bottom">
@@ -32,8 +32,7 @@
 								</td>
 								<td>{{ sponsor.link }}</td>
 								<td>
-									<div class="d-flex justify-content-center align-items-center m-4">
-										<a class="btn btn-outline-warning me-2" href="{{ path('app_admin_sponsor_show', {'id': sponsor.id}) }}">Afficher</a>
+									<div class="d-flex justify-content-center align-items-center m-2">
 										<a class="btn btn-success me-2" href="{{ path('app_admin_sponsor_edit', {'id': sponsor.id}) }}">Modifier</a>
 										{{ include('admin_sponsor/_delete_form.html.twig') }}
 									</div>

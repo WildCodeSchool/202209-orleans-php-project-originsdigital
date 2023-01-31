@@ -41,14 +41,6 @@ class AdminSponsorController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_admin_sponsor_show', methods: ['GET'])]
-    public function show(Sponsor $sponsor): Response
-    {
-        return $this->render('admin_sponsor/show.html.twig', [
-            'sponsor' => $sponsor,
-        ]);
-    }
-
     #[Route('/{id}/edit', name: 'app_admin_sponsor_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Sponsor $sponsor, SponsorRepository $sponsorRepository): Response
     {

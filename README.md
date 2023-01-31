@@ -1,23 +1,4 @@
-# Project 3 - Starter Kit - Symfony
-
-## Presentation
-
-This starter kit is here to easily start a repository for Wild Code School students.
-
-It's symfony website-skeleton project with some additional library (webpack, fixtures) and tools to validate code standards.
-
-* GrumPHP, as pre-commit hook, will run 2 tools when `git commit` is run :
-
-    * PHP_CodeSniffer to check PSR12
-    * PHPStan focuses on finding errors in your code (without actually running it)
-    * PHPmd will check if you follow PHP best practices
-
-  If tests fail, the commit is canceled and a warning message is displayed to developper.
-
-* Github Action as Continuous Integration will be run when a branch with active pull request is updated on github. It will run :
-
-    * Tasks to check if vendor, .idea, env.local are not versionned,
-    * PHP_CodeSniffer, PHPStan and PHPmd with same configuration as GrumPHP.
+# Project 3 - Symfony - Ze-sport (OriginsDigital)
 
 ## Getting Started for Students
 
@@ -52,29 +33,6 @@ If you develop on Windows, you should edit you git configuration to change your 
 `git config --global core.autocrlf true`
 
 The `.editorconfig` file in root directory do this for you. You probably need `EditorConfig` extension if your IDE is VSCode.
-
-### Run locally with Docker
-
-1. Fill DATABASE_URL variable in .env.local file with
-`DATABASE_URL="mysql://root:password@database:3306/<choose_a_db_name>"`
-2. Install Docker Desktop an run the command:
-```bash
-docker-compose up -d
-```
-3. Wait a moment and visit http://localhost:8000
-
-
-## Deployment
-
-Some files are used to manage automatic deployments (using tools as Caprover, Docker and Github Action). Please do not modify them.
-
-* [captain-definition](/captain-definition) Caprover entry point
-* [Dockerfile](/Dockerfile) Web app configuration for Docker container
-* [docker-entry.sh](/docker-entry.sh) shell instruction to execute when docker image is built
-* [nginx.conf](/ginx.conf) Nginx server configuration
-* [php.ini](/php.ini) Php configuration
-
-
 ## Built With
 
 * [Symfony](https://github.com/symfony/symfony)
@@ -93,10 +51,14 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Versioning
 
+Git  / Github
 
 ## Authors
 
-Wild Code School trainers team
+Wild Code School team:
+- [Kevyn SOLA](https://github.com/KevynSola)
+- [Hélène Vilaine](https://github.com/shvilaine)
+- [Lucian Purcaru](https://github.com/lucianpurcaru)
 
 ## License
 
