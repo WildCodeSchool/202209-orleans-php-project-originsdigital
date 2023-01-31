@@ -1,15 +1,13 @@
 {% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}Edit Sponsor
+{% block title %}Admin | Modification Bannière
 {% endblock %}
 
 {% block body %}
-	<h1 class="fw-bold text-light mb-2 text-uppercase text-center">Modifiez le sponsor</h1>
-	<div class="d-flex justify-content-center">
-		<div class="text-center">
-			{{ include('admin_sponsor/_form.html.twig', {'button_label': 'Modifier'}) }}
-			<a href="{{ path('app_admin_sponsor_index') }}" class="btn btn-outline-primary my-4">Retour à la liste</a>
-			{{ include('admin_sponsor/_delete_form.html.twig') }}
+	<main class="container-fluid admin-list p-3">
+		<h1 class="text-center m-3 mb-5">{{ "modifier une catégorie"|upper }}</h1>
+		<div class="d-grid gap-2 col-10 py-1 mx-auto form-add pb-3">
+			{% include 'admin_sponsor/_form.html.twig' with {'button_label': 'Modifier', 'button_class': 'btn-success'} %}
 		</div>
-	</div>
-</div>{% endblock %}
+	</main>
+{% endblock %}
