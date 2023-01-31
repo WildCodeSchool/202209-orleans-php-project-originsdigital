@@ -41,14 +41,6 @@ class ActualityController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_actuality_show', methods: ['GET'])]
-    public function show(Actuality $actuality): Response
-    {
-        return $this->render('actuality/show.html.twig', [
-            'actuality' => $actuality,
-        ]);
-    }
-
     #[Route('/{id}/edit', name: 'app_actuality_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Actuality $actuality, ActualityRepository $actualityRepository): Response
     {

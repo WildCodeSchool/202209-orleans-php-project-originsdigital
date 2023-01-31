@@ -7,9 +7,7 @@
 	<div class="video-show container-fluid p-3">
 		<h1 class="text-center m-3">{{ "afficher une vidéo"|upper }}</h1>
 
-		<a class="btn btn-light mt-3" href={{ path('app_admin_video_delete', {'id': video.id} ) }}>Supprimer</a>
-
-		<table class="table flex-wrap text-light my-3">
+		<table class="table flex-wrap text-light my-3 mt-5">
 			<tbody>
 				<tr>
 					<th>Titre</th>
@@ -27,9 +25,15 @@
 					<th>Durée</th>
 					<td>{{ video.duration }}</td>
 				</tr>
-                <tr class="th-thumb">
+				<tr class="th-thumb">
 					<th>Vignette</th>
-					<td><img src={{ vich_uploader_asset(video, 'thumbnail') }}></td>
+					<td>
+						{% if video.picture is null %}
+							<img src={{ asset('build/images/videoPlaceholder.jpeg') }} alt="{{video.name}}" class="image-vich">
+						{% else %}
+							<img src="{{ vich_uploader_asset(video, 'thumbnail') }}" alt="{{video.name}}" class="image-vich">
+						{% endif %}
+					</td>
 				</tr>
 				<tr>
 					<th>Lien de la vidéo</th>

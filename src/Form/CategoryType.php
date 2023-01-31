@@ -22,6 +22,7 @@ class CategoryType extends AbstractType
                 'required' => false,
                 'allow_delete' => true,
                 'download_label' => false,
+                'help' => 'Conseil: Prenez une image entre 800 et 1200 pixels de largeur.'
             ]);
     }
 
