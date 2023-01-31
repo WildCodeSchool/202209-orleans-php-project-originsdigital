@@ -1,15 +1,17 @@
 <section class="bloc-sponsor bg-intermediate mt-5">
-	<ul class="d-flex flex-wrap nav justify-content-center">
-		{% for sponsor in sponsors %}
-			<li class="nav-item">
-				<a href={{ sponsor.link }} class="px-5 text-decoration-none">
-					{% if sponsor.logo is null %}
-						<img src={{ asset('build/images/placeHolder.png') }} alt="{{ sponsor.logo }}" class="py-5">
-					{% else %}
-						<img src="{{ vich_uploader_asset(sponsor) }}" alt="{{ sponsor.logo }}" class="py-5">
-					{% endif %}
-				</a>
-			</li>
-		{% endfor %}
-	</ul>
+	<div class="container">
+		<div class="row">
+			{% for sponsor in sponsors %}
+				<div class="col-3">
+					<a href={{ sponsor.link }} class="text-decoration-none">
+						{% if sponsor.logo is null %}
+							<img src={{ asset('build/images/placeHolder.png') }} alt="{{ sponsor.logo }}" class="py-5 logo-sponsor-size">
+						{% else %}
+							<img src="{{ vich_uploader_asset(sponsor) }}" alt="{{ sponsor.logo }}" class="py-5 logo-sponsor-size">
+						{% endif %}
+					</a>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
 </section>

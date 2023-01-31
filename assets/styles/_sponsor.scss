@@ -2,3 +2,16 @@
     background-color: $intermediate;
     box-shadow: 0px 2px 15px $dark;
 }
+
+.logo-sponsor-size {
+    width: 200px;
+    object-fit: contain;
+    filter: grayscale(100%);
+
+}
+
+@media (max-width:1000px) {
+    .logo-sponsor-size {
+        width: 100px;
+    }
+}
