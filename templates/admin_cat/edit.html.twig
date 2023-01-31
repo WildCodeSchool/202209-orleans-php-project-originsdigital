@@ -3,10 +3,10 @@
 {% block title %}Admin | Modification catégorie{% endblock %}
 
 {% block body %}
-    <div class="video-show container-fluid p-3">
-		<h1 class="text-center m-3 mb-5">{{ "modifier une catégorie"|upper }}</h1>
-		<div class="d-grid gap-2 col-10 py-1 mx-auto pb-3 mt-5">
+    <main class="container-fluid admin-list p-3">
+		<h1 class="text-center title-add">{{ "modifier une catégorie"|upper }}</h1>
+		<div class="d-grid gap-2 col-10 py-1 mx-auto form-add pb-3 mt-5">
 			{% include 'admin_cat/_form.html.twig' with {'button_label': 'Modifier', 'button_class': 'btn-success'} %}
 		</div>
-	</div>
+	</main>
 {% endblock %}
