@@ -30,6 +30,12 @@
     object-fit: contain;
 }
 
+.vich-image image {
+    max-height: 600px;
+    max-width: 1200px;
+    object-fit: contain;
+}
+
 .tr-preview {
     img {
         height: fit-content;
