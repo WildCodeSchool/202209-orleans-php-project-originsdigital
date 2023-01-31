@@ -26,11 +26,8 @@
 								<img src="{{asset('uploads/images/backgrounds/' ~ category.background)}}" class="image-vich" alt="{{category.background}}">
 								</td>
 								<td class="d-flex justify-content-center align-items-center m-2">
-<<<<<<< HEAD
 									<a class="btn btn-success me-3" href="{{ path('app_admin_cat_edit', {'id': category.id}) }}">Modifiez</a>
-=======
 									<a class="btn btn-success me-2" href="{{ path('app_admin_cat_edit', {'id': category.id}) }}">Modifier</a>
->>>>>>> 9d7374aa31ef2c4542f8ff4f96ce7823ed3261ad
 									{{ include('admin_cat/_delete_form.html.twig') }}
 								</td>
 							</tr>
