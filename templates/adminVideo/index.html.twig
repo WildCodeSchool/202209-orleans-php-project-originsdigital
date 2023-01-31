@@ -30,7 +30,7 @@
 							{% if video.picture is null %}
 								<img src={{ asset('build/images/videoPlaceholder.jpeg') }} class="image-vich my-2" alt="{{video.picture}}">
 							{% else %}
-								<img src="{{asset('uploads/vignettes/' ~ video.picture)}}" class="image-vich my-2" alt="{{video.picture}}">
+								<img src="{{asset('uploads/images/vignettes/' ~ video.picture)}}" class="image-vich my-2" alt="{{video.picture}}">
 							{% endif %}
 						</td>
 						<td class="">{{ video.duration }}</td>
