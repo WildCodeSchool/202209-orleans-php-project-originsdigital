@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="row">
 			{% for sponsor in sponsors %}
-				<div class="col-3">
+				<div class="col-md-3 col-6 m-auto">
 					<a href={{ sponsor.link }} class="text-decoration-none">
 						{% if sponsor.logo is null %}
 							<img src={{ asset('build/images/placeHolder.png') }} alt="{{ sponsor.logo }}" class="py-5 logo-sponsor-size">
