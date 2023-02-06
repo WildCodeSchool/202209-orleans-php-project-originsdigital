@@ -17,7 +17,7 @@ class AdminVideoController extends AbstractController
     public function index(VideoRepository $videoRepository): Response
     {
         return $this->render('adminVideo/index.html.twig', [
-            'videos' => $videoRepository->findAll(),
+            'videos' => $videoRepository->findBy([], ['name' => 'ASC']),
         ]);
     }
 
