@@ -12,7 +12,7 @@
 
 {% block body %}
 	<section class="video-list">
-		<div class="container">
+		<div class="container-fluid px-5">
 			<h1 class="category-title m-5 text-center">{{ category.name }}</h1>
 			<div class="bloc-category-show">
 				<div class="row">
@@ -20,8 +20,8 @@
 						<div class="col-md-3 mt-3">
 							<div class="grid-cat">
 								{% include "/components/_blocVideo.html.twig" %}
-								<span class="fs-3">{{video.name}}</span>
 							</div>
+							<span class="fs-3">{{video.name}}</span>
 						</div>
 					{% else %}
 						<span>Aucune vidéo trouvée.</span>
