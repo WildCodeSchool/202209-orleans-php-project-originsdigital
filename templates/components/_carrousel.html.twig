@@ -1,10 +1,8 @@
 <div class="row-carrousel mt-5 pb-3">
+	{% if category.video|length > 4 %}
 	<div class="header">
 		<h3 class="title-carrousel ms-5">{{category.name}}</h3>
 	</div>
-	{% if category.video|length < 4 %}
-		<span class="p-5">Pas assez de vidéos dans la catégorie pour les afficher.(4 minimum)</span>
-	{% else %}
 		<div class="bloc-carrousel">
 			<button class="handle left-handle">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="arrow bi bi-caret-left-fill" viewbox="0 0 16 16">
