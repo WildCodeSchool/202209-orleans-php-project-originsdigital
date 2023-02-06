@@ -27,7 +27,7 @@
 							<p class="mx-2 badge bg-secondary text-light">{{video.view ~ ' vues'}}</p>
 							<p class="mx-3 fw-bold text-secondary">{{video.duration ~ ' min'}}</p>
 						</div>
-						<p class="mx-2">{{video.description}}</p>
+						<p class="mx-2">{{video.description|nl2br}}</p>
 					</div>
 					{% if app.user %}
 						<div class="bloc-like col-md-2 d-flex justify-content-center align-items-start mt-2">
