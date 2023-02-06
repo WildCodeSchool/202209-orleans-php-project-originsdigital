@@ -77,14 +77,16 @@
 			</div>
 		</div>
 		<div class="container-fluid p-0 mt-5">
-			<div class="bloc-ads mb-4">
-				<div class="string-ad bg-light">
-					<p class="text-center text-dark mb-0">Publicité</p>
+			{% if ads != null %}
+				<div class="bloc-ads mb-4">
+					<div class="string-ad bg-light">
+						<p class="text-center text-dark mb-0">Publicité</p>
+					</div>
+					<a href="{{ ads.linkTo }}" target="_blank">
+						<img src="{{asset('uploads/images/ads/' ~ ads.poster)}}" class="img-ads" alt="{{ads.name}}">
+					</a>
 				</div>
-				<a href="{{ ads.linkTo }}" target="_blank">
-					<img src="{{asset('uploads/images/ads/' ~ ads.poster)}}" class="img-ads" alt="{{ads.name}}">
-				</a>
-			</div>
+			{% endif %}
 		</div>
 	</section>
 {% endblock %}
