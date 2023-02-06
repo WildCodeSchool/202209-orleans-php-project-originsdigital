@@ -14,6 +14,7 @@
 					<thead class="video-field pt-2 border-bottom">
 						<th>Nom</th>
 						<th>Catégorie</th>
+                        <th>Premium</th>
 						<th>Vignette</th>
 						<th>Durée</th>
 						<th>Vues</th>
@@ -26,6 +27,13 @@
 					<tr class="align-middle">
 						<td>{{ video.name }}</td>
 						<td>{{ video.category.name }}</td>
+                        <td class="d-flex justify-content-center align-items-center pt-3 mt-4">
+                        {% if video.public == true %}
+                        <span class="premium-badge badge bg-warning m-3">PREMIUM</span>
+                        {% else %}
+                        <span class="premium-badge badge bg-intermediate m-3">PUBLIC</span>
+                        </td>
+                        {% endif %}
 						<td>
 							{% if video.picture is null %}
 								<img src={{ asset('build/images/videoPlaceholder.jpeg') }} class="image-vich my-2" alt="{{video.picture}}">
@@ -35,9 +43,10 @@
 						</td>
 						<td class="">{{ video.duration }}</td>
 						<td class="">{{ video.view }}</td>
-						<td class="d-flex justify-content-center align-items-center m-4">
-							<a class="btn btn-success me-2" href="{{ path('app_admin_video_edit', {'id': video.id}) }}">Modifier</a>
-                            {{ include('adminVideo/_delete_form.html.twig') }}
+						<td>
+							<div class="d-flex justify-content-center align-items-center m-2">
+								<a class="btn btn-outline-success me-2" href="{{ path('app_admin_video_edit', {'id': video.id}) }}">Modifier</a>
+								{{ include('adminVideo/_delete_form.html.twig') }}</div>
 						</td>
 					</tr>
 				{% else %}

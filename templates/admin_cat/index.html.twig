@@ -14,7 +14,7 @@
 					<thead class="video-field pt-2 border-bottom">
 						<tr>
 							<th>Nom</th>
-                            <th>Images</th>
+							<th>Images</th>
 							<th>Actions</th>
 						</tr>
 					</thead>
@@ -22,12 +22,13 @@
 						{% for category in categories %}
 							<tr class="align-middle">
 								<td>{{ category.name }}</td>
-                                <td>
-								<img src="{{asset('uploads/images/backgrounds/' ~ category.background)}}" class="image-vich" alt="{{category.background}}">
+								<td>
+									<img src="{{asset('uploads/images/backgrounds/' ~ category.background)}}" class="image-vich" alt="{{category.background}}">
 								</td>
-								<td class="d-flex justify-content-center align-items-center m-2">
-									<a class="btn btn-success me-2" href="{{ path('app_admin_cat_edit', {'id': category.id}) }}">Modifier</a>
-									{{ include('admin_cat/_delete_form.html.twig') }}
+								<td>
+									<div class="d-flex justify-content-center align-items-center m-2">
+										<a class="btn btn-outline-success me-2" href="{{ path('app_admin_cat_edit', {'id': category.id}) }}">Modifier</a>
+										{{ include('admin_cat/_delete_form.html.twig') }}</div>
 								</td>
 							</tr>
 						{% else %}

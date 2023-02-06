@@ -27,21 +27,23 @@
     flex: 0 0 calc(100% / var(--items-per-screen));
 }
 
+.link-card .premium-badge {
+    position: absolute;
+}
+
 .link-card-lock {
+    position: relative;
     .premium-badge {
         position: absolute;
         z-index: 2;
     }
     .img-lock {
         opacity: 0;
-        max-width: 437px;
-        max-height: 246px;
         position: absolute;
         z-index: 3;
     }
     .img-video-lock {
-        max-width: 437px;
-        max-height: 246px;
+        transition: all 150ms ease-in-out;
         position: absolute;
         z-index: 1;
     }
@@ -49,6 +51,7 @@
 
 .link-card-lock:hover .img-lock {
     opacity: 1;
+    transform: scale(1.02);
 }
 
 .slider img,
@@ -60,7 +63,7 @@
     transition: all 150ms ease-in-out;
 }
 
-.slider img:hover {
+.slider .link-card:hover {
     filter: brightness(110%);
     transform: scale(1.02);
 }
