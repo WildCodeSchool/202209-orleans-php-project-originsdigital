@@ -1,11 +1,11 @@
 {% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}Admin | Modification Bannière
+{% block title %}Admin | Modification Sponsor
 {% endblock %}
 
 {% block body %}
 	<main class="container-fluid admin-list p-3">
-		<h1 class="text-center m-3 mb-5">{{ "modifier une catégorie"|upper }}</h1>
+		<h1 class="text-center m-3 mb-5">{{ "modifier un sponsor"|upper }}</h1>
 		<div class="d-grid gap-2 col-10 py-1 mx-auto form-add pb-3">
 			{% include 'admin_sponsor/_form.html.twig' with {'button_label': 'Modifier', 'button_class': 'btn-success'} %}
 		</div>

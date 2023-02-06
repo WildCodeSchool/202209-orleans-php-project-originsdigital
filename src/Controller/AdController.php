@@ -5,10 +5,11 @@ namespace App\Controller;
 use App\Entity\Advertisement;
 use App\Form\AdvertisementType;
 use App\Repository\AdvertRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 #[Route('/admin/ad')]
 class AdController extends AbstractController
@@ -63,6 +64,8 @@ class AdController extends AbstractController
     {
         if ($this->isCsrfTokenValid('delete' . $advertisement->getId(), $request->request->get('_token'))) {
             $advertRepository->remove($advertisement, true);
+
+            $this->addFlash('success', 'La publicité a bien été supprimée.');
         }
 
         return $this->redirectToRoute('app_ad_index', [], Response::HTTP_SEE_OTHER);
