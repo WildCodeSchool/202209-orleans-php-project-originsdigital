@@ -43,9 +43,10 @@
 						</td>
 						<td class="">{{ video.duration }}</td>
 						<td class="">{{ video.view }}</td>
-						<td class="d-flex justify-content-center align-items-center m-4">
-							<a class="btn btn-outline-success me-2" href="{{ path('app_admin_video_edit', {'id': video.id}) }}">Modifier</a>
-                            {{ include('adminVideo/_delete_form.html.twig') }}
+						<td>
+							<div class="d-flex justify-content-center align-items-center m-2">
+								<a class="btn btn-outline-success me-2" href="{{ path('app_admin_video_edit', {'id': video.id}) }}">Modifier</a>
+								{{ include('adminVideo/_delete_form.html.twig') }}</div>
 						</td>
 					</tr>
 				{% else %}
