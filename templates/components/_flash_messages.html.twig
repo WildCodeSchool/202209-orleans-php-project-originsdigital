@@ -1,13 +1,8 @@
-<div class="flash-container">
-	<div class="row">
-		<div class="col-sm-12">
-			{% for label, messages in app.flashes %}
-				{% for message in messages %}
-					<div class="alert text-center alert-{{ label }}">
-						{{ message }}
-					</div>
-				{% endfor %}
-			{% endfor %}
+{% for label, messages in app.flashes %}
+	{% for message in messages %}
+		<div class="alert text-center alert-{{ label }} flash-block alert-dismissible" role="alert">
+			{{ message }}
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 		</div>
-	</div>
-</div>
+	{% endfor %}
+{% endfor %}

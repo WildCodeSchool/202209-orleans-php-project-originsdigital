@@ -49,7 +49,7 @@ class AdminSponsorController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $sponsorRepository->save($sponsor, true);
-            $this->addFlash('success', 'Les modification ont bien été enregistrées.');
+            $this->addFlash('success', 'Le sponsor à bien été modifié.');
 
             return $this->redirectToRoute('app_admin_sponsor_index', [], Response::HTTP_SEE_OTHER);
         }

@@ -49,6 +49,7 @@ class ActualityController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $actualityRepository->save($actuality, true);
+            $this->addFlash('success', 'La bannière à bien été modifié.');
 
             return $this->redirectToRoute('app_actuality_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -64,6 +65,7 @@ class ActualityController extends AbstractController
     {
         if ($this->isCsrfTokenValid('delete' . $actuality->getId(), $request->request->get('_token'))) {
             $actualityRepository->remove($actuality, true);
+            $this->addFlash('success', 'La bannière à bien été supprimée.');
         }
 
         return $this->redirectToRoute('app_actuality_index', [], Response::HTTP_SEE_OTHER);
