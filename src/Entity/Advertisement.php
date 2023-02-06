@@ -37,6 +37,10 @@ class Advertisement
     private ?File $posterFile = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Url(
+        protocols: ['http', 'https', 'ftp'],
+    )]
+    #[Assert\NotBlank(message: 'The url {{ value }} is not a valid url')]
     private ?string $linkTo = null;
 
     #[ORM\Column(type: types::DATETIME_MUTABLE, nullable: true)]
@@ -64,7 +68,7 @@ class Advertisement
         return $this->poster;
     }
 
-    public function setPoster(string $poster): self
+    public function setPoster(?string $poster): self
     {
         $this->poster = $poster;
 
