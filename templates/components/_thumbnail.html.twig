@@ -1,4 +1,7 @@
 <a href="{{path('app_video_show', {'video': video.id})}}" class="link-card">
+	{% if video.public == false %}
+		<span class="premium-badge badge bg-warning m-3">PREMIUM</span>
+	{% endif %}
 	{% if video.picture is null %}
 		<img src={{ asset('build/images/videoPlaceholder.jpeg') }} alt="{{video.name}}" class="img-video">
 	{% else %}

@@ -19,15 +19,16 @@
 					{% include "/components/_videoPlayer.html.twig" %}
 				</div>
 				<div class="bloc-description row mt-2">
-					<div
-						class="title-view col-md-10">
-						{# <div class="title-view mb-3"> #}
+					<div class="title-view col-md-10">
 						<h1 class="m-2 text-center title-show d-flex flex-wrap">{{video.name}}</h1>
 						<p class="mx-2 fst-italic text-light">Vidéo publiée le
 							{{video.updatedAt|date("d/m/Y")}}</p>
 						<div class="d-flex">
 							<p class="mx-2 badge bg-secondary text-light">{{video.view ~ ' vues'}}</p>
 							<p class="mx-3 fw-bold text-secondary">{{video.duration ~ ' min'}}</p>
+							{% if video.public == false %}
+								<p class="premium-badge badge bg-warning mx-2">PREMIUM</p>
+							{% endif %}
 						</div>
 						<p class="mx-2">{{video.description|nl2br}}</p>
 					</div>
