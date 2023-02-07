@@ -49,7 +49,7 @@ class UserFixtures extends Fixture
         $manager->persist($contributor);
 
         $contributor = new User();
-        $contributor->setEmail('user-4@mail.com');
+        $contributor->setEmail('user_4@mail.com');
         $contributor->setRoles(['ROLE_CONTRIBUTOR']);
         $hashedPassword = $this->passwordHasher->hashPassword($contributor, 'phpislove');
         $contributor->setPassword($hashedPassword);
@@ -59,7 +59,7 @@ class UserFixtures extends Fixture
         $manager->persist($contributor);
 
         $contributor = new User();
-        $contributor->setEmail('user-5@mail.com');
+        $contributor->setEmail('user_5@mail.com');
         $contributor->setRoles(['ROLE_CONTRIBUTOR']);
         $hashedPassword = $this->passwordHasher->hashPassword($contributor, 'windowsvista');
         $contributor->setPassword($hashedPassword);
