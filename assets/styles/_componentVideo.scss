@@ -1,16 +1,33 @@
-.bloc-category-show {
-    .card-show-cat {
-        box-shadow: inset 3px 3px 15px 0px $light;
-        transition: background-color 500ms ease-in-out;
-        .img-video,
+.grid-cat {
+    .link-card-lock {
+        .premium-badge {
+            position: absolute;
+            z-index: 2;
+        }
+        .img-lock {
+            opacity: 0;
+            position: absolute;
+            z-index: 3;
+        }
         .img-video-lock {
-            max-width: 490px;
-            min-width: 490px;
-            max-height: 279px;
-            object-fit: cover;
+            position: absolute;
+            z-index: 1;
         }
     }
-    .card-show-cat:hover {
-        background-color: rgba($primary, .25);
-    }
+}
+
+.link-card-lock:hover .img-lock {
+    opacity: 1;
+}
+
+.grid-cat img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    padding: var(--spacing-block);
+    transition: all 150ms ease-in-out;
+}
+
+.grid-cat a {
+    position: relative;
+    display: block;
 }

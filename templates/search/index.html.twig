@@ -6,24 +6,22 @@
 {% endblock %}
 
 {% block body %}
-	<main class="container searchbar">
-		<div class="text-center pt-5">
-			<div class="text-light p-5">
-				<div class="d-flex justify-content-center mt-3 fs-1 fw-bold">
-					{{ form_start(form) }}
-					{{ form_widget(form) }}
-					<button class="btn btnstyle btn-primary">Rechercher</button>
-					{{ form_end(form) }}
-				</div>
+	<main class="container searchbar pt-5">
+		<div class="text-light p-5">
+			<div class="d-flex justify-content-center mt-3 fs-1 fw-bold">
+				{{ form_start(form) }}
+				{{ form_widget(form) }}
+				<button class="btn btnstyle w-100 btn-primary">Rechercher</button>
+				{{ form_end(form) }}
 			</div>
-			<div class="bloc-category-show">
+		</div>
+		<div class="bloc-category-show">
+			<div class="row">
 				{% for video in videos %}
-					<div class="d-flex justify-content-around mb-5 overflow-auto card-show-cat">
-						{% include "/components/_blocVideo.html.twig" %}
-						<div class="title-view mt-2 d-flex flex-column justify-content-evenly align-items-start w-100">
-							<h2 class="mx-4 mb-0">{{video.name}}</h2>
-							<p class="mx-4 mb-0">{{video.view ~ ' vues'}}</p>
-							<p class="mx-4 mb-0">{{ video.description }}</p>
+					<div class="col-md-3 mt-3">
+						<div class="grid-cat">
+							{% include "/components/_blocVideo.html.twig" %}
+							<span class="fs-3">{{video.name}}</span>
 						</div>
 					</div>
 				{% endfor %}
