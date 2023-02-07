@@ -29,8 +29,11 @@ class VideoController extends AbstractController
         AdvertRepository $advertRepository
     ): Response {
         $ads = $advertRepository->findAll();
-        $randAds = $ads[array_rand($ads, 1)];
-
+        if (!empty($ads)) {
+            $randAds = $ads[array_rand($ads, 1)];
+        } else {
+            $randAds = [];
+        }
         $countViews = $video->getView() + 1;
         $video->setView($countViews);
         $videoRepository->save($video, true);

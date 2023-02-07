@@ -1,4 +1,8 @@
 .section-fav {
     min-height: 100vh;
     margin-top: 7rem;
+    .favoris-title {
+        padding-bottom: 0.5rem;
+        border-bottom: 3px solid $primary;
+    }
 }
