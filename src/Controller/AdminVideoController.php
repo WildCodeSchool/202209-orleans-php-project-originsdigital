@@ -59,7 +59,7 @@ class AdminVideoController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $videoRepository->save($video, true);
-            $this->addFlash('success', 'La vidéo à bien été modifié.');
+            $this->addFlash('success', 'La vidéo a bien été modifiée.');
 
             return $this->redirectToRoute('app_admin_video_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -75,7 +75,7 @@ class AdminVideoController extends AbstractController
     {
         if ($this->isCsrfTokenValid('delete' . $video->getId(), $request->request->get('_token'))) {
             $videoRepository->remove($video, true);
-            $this->addFlash('success', 'La vidéo à bien été supprimée.');
+            $this->addFlash('success', 'La vidéo a bien été supprimée.');
         }
 
         return $this->redirectToRoute('app_admin_video_index', [], Response::HTTP_SEE_OTHER);
