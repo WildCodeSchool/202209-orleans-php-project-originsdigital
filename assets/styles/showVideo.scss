@@ -20,7 +20,8 @@
 
 .img-ads{
     width: 100%;
-    height: fit-content;
+    min-height: 140px;
+    object-fit: cover;
 }
 
 .btn-left, .btn-love {
