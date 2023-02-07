@@ -31,9 +31,9 @@ class UserFixtures extends Fixture
         $contributor = new User();
         $contributor->setEmail('user_2@mail.com');
         $contributor->setRoles(['ROLE_CONTRIBUTOR']);
-        $hashedPassword = $this->passwordHasher->hashPassword($contributor, 'user-2password');
+        $hashedPassword = $this->passwordHasher->hashPassword($contributor, 'emilyinparis');
         $contributor->setPassword($hashedPassword);
-        $contributor->setUserName('emily-in-paris');
+        $contributor->setUserName('ecooper');
         $contributor->setFirstName('Emily');
         $contributor->setLastName('Cooper');
         $manager->persist($contributor);
@@ -41,7 +41,7 @@ class UserFixtures extends Fixture
         $contributor = new User();
         $contributor->setEmail('user_3@mail.com');
         $contributor->setRoles(['ROLE_CONTRIBUTOR']);
-        $hashedPassword = $this->passwordHasher->hashPassword($contributor, 'user-3password');
+        $hashedPassword = $this->passwordHasher->hashPassword($contributor, 'kiki45');
         $contributor->setPassword($hashedPassword);
         $contributor->setUserName('kiki45');
         $contributor->setFirstName('Mark');
@@ -51,7 +51,7 @@ class UserFixtures extends Fixture
         $contributor = new User();
         $contributor->setEmail('user-4@mail.com');
         $contributor->setRoles(['ROLE_CONTRIBUTOR']);
-        $hashedPassword = $this->passwordHasher->hashPassword($contributor, 'user-4password');
+        $hashedPassword = $this->passwordHasher->hashPassword($contributor, 'phpislove');
         $contributor->setPassword($hashedPassword);
         $contributor->setUserName('sblondeau');
         $contributor->setFirstName('Sylvain');
@@ -61,9 +61,9 @@ class UserFixtures extends Fixture
         $contributor = new User();
         $contributor->setEmail('user-5@mail.com');
         $contributor->setRoles(['ROLE_CONTRIBUTOR']);
-        $hashedPassword = $this->passwordHasher->hashPassword($contributor, 'user-5password');
+        $hashedPassword = $this->passwordHasher->hashPassword($contributor, 'windowsvista');
         $contributor->setPassword($hashedPassword);
-        $contributor->setUserName('macrohard');
+        $contributor->setUserName('microsoft');
         $contributor->setFirstName('Billy');
         $contributor->setLastName('Laporte');
         $manager->persist($contributor);
