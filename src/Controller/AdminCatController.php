@@ -35,6 +35,7 @@ class AdminCatController extends AbstractController
             $category->setSlug($slug);
 
             $categoryRepository->save($category, true);
+            $this->addFlash('success', 'La catégorie a bien été ajoutée.');
 
             return $this->redirectToRoute('app_admin_cat_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -60,6 +61,7 @@ class AdminCatController extends AbstractController
             $category->setSlug($slug);
 
             $categoryRepository->save($category, true);
+            $this->addFlash('success', 'La catégorie a bien été modifiée.');
 
             return $this->redirectToRoute('app_admin_cat_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -75,6 +77,7 @@ class AdminCatController extends AbstractController
     {
         if ($this->isCsrfTokenValid('delete' . $category->getId(), $request->request->get('_token'))) {
             $categoryRepository->remove($category, true);
+            $this->addFlash('success', 'La catégorie a bien été supprimée.');
         }
 
         return $this->redirectToRoute('app_admin_cat_index', [], Response::HTTP_SEE_OTHER);

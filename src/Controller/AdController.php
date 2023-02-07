@@ -31,6 +31,7 @@ class AdController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $advertRepository->save($advertisement, true);
+            $this->addFlash('success', 'La publicité a bien été ajoutée.');
 
             return $this->redirectToRoute('app_ad_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -49,6 +50,7 @@ class AdController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $advertRepository->save($advertisement, true);
+            $this->addFlash('success', 'La publicité a bien été modifiée.');
 
             return $this->redirectToRoute('app_ad_index', [], Response::HTTP_SEE_OTHER);
         }
