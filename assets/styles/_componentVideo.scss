@@ -38,14 +38,16 @@
     opacity: 1;
 }
 
-.grid-cat img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    padding: var(--spacing-block);
-    transition: all 150ms ease-in-out;
-}
-
-.grid-cat a {
-    position: relative;
-    display: block;
+.grid-cat {
+    img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        padding: var(--spacing-block);
+        transition: all 150ms ease-in-out;
+    }
+    a {
+        aspect-ratio: 16 / 9;
+        display: block;
+        position: relative;
+    }
 }
