@@ -15,6 +15,8 @@ class CategoryFixtures extends Fixture
         'World of Warcraft' => 'world-warcraft.webp',
         'Rocket League' => 'rocket-league.webp',
         'Overwatch 2' => 'overwatch-2.webp',
+        'Hearthstone' => 'hearthstone.jpg',
+        'Mario Kart' => 'mario-kart.webp',
     ];
 
     private SluggerInterface $slugger;
