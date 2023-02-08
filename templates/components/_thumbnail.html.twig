@@ -1,4 +1,5 @@
 <a href="{{path('app_video_show', {'video': video.id})}}" class="link-card">
+	<span class="fw-bold title-video">{{video.name}}</span>
 	{% if video.public == false %}
 		<span class="premium-badge badge bg-warning m-3">PREMIUM</span>
 	{% endif %}
