@@ -10,9 +10,10 @@ use Symfony\Component\Filesystem\Filesystem;
 class ActualityFixtures extends Fixture
 {
     public const ACTU_IMG = [
-        'Elden-ring' => 'eldenring.jpg',
-        'Blop' => 'blob.jpg',
-        'Xbox-game-pass' => 'xbox-game-pass-banniere.jpeg',
+        'League-of-legend' => 'world-lol.jpg',
+        'Overwatch' => 'world-over.jpg',
+        'Rocket-league' => 'world-rl.jpg',
+        'World-of-warcraft' => 'world-wow.webp'
     ];
 
     public function __construct(private Filesystem $filesystem)
