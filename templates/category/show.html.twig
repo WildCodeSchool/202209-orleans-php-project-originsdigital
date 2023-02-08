@@ -18,10 +18,9 @@
 				<div class="row">
 					{% for video in videos %}
 						<div class="col-md-3 mt-3">
-							<div class="grid-cat">
+							<div class="grid-cat mb-3">
 								{% include "/components/_blocVideo.html.twig" %}
 							</div>
-							<span class="fs-3">{{video.name}}</span>
 						</div>
 					{% else %}
 						<span>Aucune vidéo trouvée.</span>
