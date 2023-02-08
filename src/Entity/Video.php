@@ -32,6 +32,7 @@ class Video
     private ?string $description = null;
 
     #[ORM\Column]
+    #[Assert\Positive]
     private ?int $duration = null;
 
     #[ORM\Column(nullable: true)]
