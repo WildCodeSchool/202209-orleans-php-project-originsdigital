@@ -8,5 +8,9 @@
     height: 200px;
     object-fit: contain;
     filter: grayscale(100%);
+    transition: 150ms ease-out;
+}
 
+.logo-sponsor-size:hover {
+    filter: grayscale(0%);
 }

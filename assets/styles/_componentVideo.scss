@@ -16,6 +16,24 @@
     }
 }
 
+.link-card {
+    .title-video {
+        position: absolute;
+        padding: 2rem;
+        opacity: 1;
+        height: 100%;
+        aspect-ratio: 16 / 9;
+        display: flex;
+        flex-direction: column-reverse;
+        font-size: 1.5rem;
+        text-shadow: 3px 2px 2px $dark;
+        color: $light;
+    }
+    .title-video:hover {
+        opacity: 0;
+    }
+}
+
 .link-card-lock:hover .img-lock {
     opacity: 1;
 }
